@@ -1,0 +1,15 @@
+llm:
+  provider: ollama
+  model: qwen3:4b
+  base_url: http://localhost:11434
+  temperature: 0.1
+  timeout_seconds: 180
+generation:
+  prompt_version: amazon-grounded-v1
+  max_evidence: 5
+intent:
+  model_path: models/intent
+  minimum_confidence: 0.72
+routing:
+  policy_path: configs/escalation_policy.yaml
+

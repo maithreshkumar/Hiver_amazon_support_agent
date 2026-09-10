@@ -1,0 +1,69 @@
+status: approved_by_human
+version: "1.0"
+approved_at: "2026-09-09"
+approval_provenance: "Explicit user approval in the Codex project task, with three stated refinements before training."
+refinements:
+  - shipping_promise_failure merged into delivery_tracking_or_delay
+  - prime_membership_or_video split into prime_membership and prime_video_issue
+  - refund_or_charge renamed to refund_or_payment_issue
+intents:
+  - name: delivery_tracking_or_delay
+    description: Order location, estimated arrival, late delivery, tracking status, or failed delivery-speed promise.
+    inclusion_criteria: [Tracking or arrival-status questions, Late or repeatedly rescheduled delivery, Prime or guaranteed shipping promise failure]
+    exclusion_criteria: [Package explicitly marked delivered but not received, Wrong incomplete or damaged item]
+    common_confusions: [delivered_but_missing, wrong_or_incomplete_item]
+  - name: delivered_but_missing
+    description: Order is marked delivered but the customer cannot locate or has not received it.
+    inclusion_criteria: [Carrier or Amazon status says delivered, Customer explicitly reports non-receipt]
+    exclusion_criteria: [Order is merely late or still in transit]
+    common_confusions: [delivery_tracking_or_delay]
+  - name: return_request
+    description: Customer wants to return an item or needs help with return logistics or status.
+    inclusion_criteria: [Return eligibility or window, Return label pickup or received-return status]
+    exclusion_criteria: [Refund-only or payment issue without a return]
+    common_confusions: [refund_or_payment_issue, damaged_or_defective_item]
+  - name: refund_or_payment_issue
+    description: Refund status, duplicate or unknown charge, failed payment, or payment-method problem.
+    inclusion_criteria: [Missing or delayed refund, Duplicate incorrect or disputed charge, Card or payment failure]
+    exclusion_criteria: [Account takeover or fraud indicators, Return logistics without a refund question]
+    common_confusions: [return_request, account_access_or_security]
+  - name: order_cancellation
+    description: Customer wants to cancel an order or asks why an order was cancelled.
+    inclusion_criteria: [Cancellation request, Unexpected or failed cancellation]
+    exclusion_criteria: [Return after fulfilment]
+    common_confusions: [return_request, refund_or_payment_issue]
+  - name: damaged_or_defective_item
+    description: Received item or packaging is damaged, defective, broken, or unusable.
+    inclusion_criteria: [Physical damage or defect, Product does not work as expected]
+    exclusion_criteria: [Entirely different or incomplete item with no defect]
+    common_confusions: [wrong_or_incomplete_item, return_request]
+  - name: wrong_or_incomplete_item
+    description: Customer received a different product, wrong quantity, missing part, or incomplete order.
+    inclusion_criteria: [Wrong item or product, Missing units pieces or accessories]
+    exclusion_criteria: [Correct item that is damaged, Entire delivery missing]
+    common_confusions: [damaged_or_defective_item, delivered_but_missing]
+  - name: account_access_or_security
+    description: Login, account access, suspicious message, compromise, fraud, or security concern.
+    inclusion_criteria: [Locked account password or login failure, Phishing scam compromise or unauthorized access]
+    exclusion_criteria: [Ordinary payment failure with no security signal]
+    common_confusions: [refund_or_payment_issue]
+  - name: prime_membership
+    description: Prime membership enrollment, billing, cancellation, eligibility, or benefits excluding video issues.
+    inclusion_criteria: [Membership fee or renewal, Prime eligibility or benefit question]
+    exclusion_criteria: [Prime Video problem, Delivery-speed promise failure]
+    common_confusions: [prime_video_issue, delivery_tracking_or_delay]
+  - name: prime_video_issue
+    description: Prime Video title availability, playback, application, subtitle, or streaming problem.
+    inclusion_criteria: [Video will not play or service is down, Missing title episode subtitle or regional availability]
+    exclusion_criteria: [Prime membership billing or renewal]
+    common_confusions: [prime_membership]
+  - name: seller_or_marketplace_issue
+    description: Issue primarily involving a marketplace or third-party seller.
+    inclusion_criteria: [Seller conduct contact or marketplace dispute, Third-party fulfilment concern]
+    exclusion_criteria: [Amazon-fulfilled issue with no seller involvement]
+    common_confusions: [delivery_tracking_or_delay, refund_or_payment_issue]
+  - name: general_or_context_missing
+    description: Message lacks enough textual or linked-media context for a reliable operational intent.
+    inclusion_criteria: [Greeting help mention or link-only message, Multiple unresolved issues with no safe primary intent]
+    exclusion_criteria: [Message clearly matching another approved intent]
+    common_confusions: [all operational intents]

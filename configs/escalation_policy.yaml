@@ -1,0 +1,30 @@
+version: 1
+status: approved_by_human
+approved_at: "2026-09-09"
+approval_provenance: "Explicit user approval in the Codex project task, conditional on conservative handling of risk and uncertainty."
+default_decision: ESCALATE
+false_auto_handle_cost: high
+confidence:
+  minimum_intent: 0.72
+  minimum_retrieval_similarity: 0.55
+risk_rules:
+  always_escalate:
+    - account_security
+    - account_access_or_security
+    - fraud_or_unauthorized_charge
+    - refund_or_payment_issue
+    - legal_threat
+    - safety_issue
+    - payment_dispute
+  text_signals:
+    - unauthorized
+    - hacked
+    - fraud
+    - lawyer
+    - legal action
+    - dangerous
+    - injured
+notes:
+  - Human approved the conservative policy direction on 2026-09-09.
+  - Account compromise, suspected fraud, sensitive payment disputes, low intent confidence, weak retrieval, and unsupported answers must escalate.
+  - The routing engine must always return an explicit reason.

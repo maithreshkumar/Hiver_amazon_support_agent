@@ -1,0 +1,25 @@
+brand:
+  name: Amazon
+  support_account: AmazonHelp
+
+paths:
+  raw_csv: data/raw/twcs.csv
+  staging_db: data/interim/twcs.sqlite3
+  processed_dir: data/processed
+  reports_dir: data/reports
+
+processing:
+  batch_size: 50000
+  split_ratios:
+    train: 0.70
+    dev: 0.15
+    test: 0.15
+  random_seed: 42
+  exclude_contaminated_threads: true
+
+intent_discovery:
+  candidate_clusters: 12
+  max_messages: 50000
+  min_df: 5
+  max_features: 25000
+

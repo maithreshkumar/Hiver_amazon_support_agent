@@ -1,0 +1,22 @@
+taxonomy_path: configs/intents.yaml
+weak_labels_path: data/processed/weak_labels.parquet
+quarantine_path: data/reports/weak_label_quarantine.parquet
+intent_model_dir: models/intent
+baseline_dir: models/baselines
+weak_labeling:
+  per_intent_target: 300
+  batch_size: 4
+  embedding_batch_size: 64
+  max_llm_reviews: 24
+  adjudication_model: qwen2.5:1.5b
+  minimum_confidence: 0.75
+  random_seed: 42
+classifier:
+  base_model: distilroberta-base
+  max_length: 192
+  epochs: 2
+  train_batch_size: 16
+  evaluation_batch_size: 32
+  learning_rate: 0.00002
+  validation_fraction: 0.15
+  random_seed: 42

@@ -1,0 +1,37 @@
+[build-system]
+requires = ["setuptools>=75"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "hiver-amazon-support-agent"
+version = "0.1.0"
+description = "Evidence-first AmazonHelp support agent for the Hiver SDE Intern assignment"
+requires-python = ">=3.11"
+dependencies = [
+  "joblib>=1.4,<2",
+  "langdetect>=1.0.9,<2",
+  "pandas>=2.2,<4",
+  "pyarrow>=17,<24",
+  "PyYAML>=6,<7",
+  "scikit-learn>=1.5,<2",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8,<10"]
+phase2 = [
+  "accelerate>=1,<2",
+  "safetensors>=0.5,<1",
+  "torch>=2.4,<3",
+  "transformers>=4.45,<6",
+]
+
+[project.scripts]
+hiver-prepare = "hiver_support.data.prepare:main"
+hiver-discover-intents = "hiver_support.intents.discovery:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]

@@ -1,0 +1,20 @@
+{
+  "imported_at": "2026-09-10T11:47:55.827561+00:00",
+  "source_path": "C:\\Users\\Maithresh\\Desktop\\Hiver_amazon_support_agent\\data\\golden\\human_labels_import.csv",
+  "source_sha256": "1adea385334692171f637cb86a20d38c30af6a77e65dc095a4daf4bb13757a17",
+  "canonical_path": "C:\\Users\\Maithresh\\Desktop\\Hiver_amazon_support_agent\\data\\golden\\golden_set.csv",
+  "canonical_sha256": "9273e9c34ffa28579b898af20f8954c76fc5d386c39ed9a3a259d168cd36cd0f",
+  "annotation_methodology": "Human-reviewed golden set where the human made the final intent and routing decisions after reviewing the examples and correcting disagreements during assisted annotation.",
+  "training_or_tuning_use": false,
+  "validation": {
+    "rows": 200,
+    "unique_examples": 200,
+    "unique_threads": 200,
+    "completed": 200,
+    "remaining": 0,
+    "train_overlap": 0,
+    "retrieval_overlap": 0,
+    "weak_label_overlap": 0,
+    "all_in_test_split": true
+  }
+}

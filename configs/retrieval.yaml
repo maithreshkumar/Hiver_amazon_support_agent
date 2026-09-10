@@ -1,0 +1,10 @@
+provider: ollama
+model: qwen3-embedding:0.6b
+base_url: http://localhost:11434
+corpus_path: data/processed/retrieval_corpus.parquet
+index_dir: indexes/amazon_support
+max_records: 3000
+batch_size: 64
+top_k: 5
+minimum_similarity: 0.55
+random_seed: 42
