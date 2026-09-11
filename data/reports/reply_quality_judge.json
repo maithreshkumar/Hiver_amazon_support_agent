@@ -1,0 +1,2538 @@
+{
+  "generated_at": "2026-09-10T12:25:17.615393+00:00",
+  "scope": "Deterministic 48-example stratified human-gold response/routing sample",
+  "judge_provider": "ollama",
+  "judge_model": "qwen2.5:1.5b",
+  "generator_model": "qwen3:4b",
+  "separate_from_generator": true,
+  "human_ratings_visible_to_judge": false,
+  "prompt_version": "reply-judge-v1",
+  "rubric_version": "support-quality-v1",
+  "mean_scores": {
+    "trivial": {
+      "groundedness": 3.5833333333333335,
+      "helpfulness": 3.5625,
+      "actionability": 3.5,
+      "safety": 3.625,
+      "historical_consistency": 3.6458333333333335,
+      "unsupported_claim_avoidance": 3.625,
+      "overall": 3.590277777777778
+    },
+    "tfidf_retrieval_only": {
+      "groundedness": 3.6458333333333335,
+      "helpfulness": 3.5625,
+      "actionability": 3.5,
+      "safety": 3.625,
+      "historical_consistency": 3.6458333333333335,
+      "unsupported_claim_avoidance": 3.6666666666666665,
+      "overall": 3.607638888888889
+    },
+    "rag_with_safety": {
+      "groundedness": 3.5,
+      "helpfulness": 3.4166666666666665,
+      "actionability": 3.3541666666666665,
+      "safety": 3.4791666666666665,
+      "historical_consistency": 3.5,
+      "unsupported_claim_avoidance": 3.5208333333333335,
+      "overall": 3.4618055555555554
+    }
+  },
+  "records": [
+    {
+      "example_id": "gold-183",
+      "judge_provider": "ollama",
+      "judge_model": "qwen2.5:1.5b",
+      "prompt_version": "reply-judge-v1",
+      "rubric_version": "support-quality-v1",
+      "blinded_candidate_mapping": {
+        "A": "tfidf_retrieval_only",
+        "B": "trivial",
+        "C": "rag_with_safety"
+      },
+      "scores_by_system": {
+        "tfidf_retrieval_only": {
+          "scores": {
+            "groundedness": 3,
+            "helpfulness": 3,
+            "actionability": 3,
+            "safety": 3,
+            "historical_consistency": 3,
+            "unsupported_claim_avoidance": 3
+          },
+          "aggregate": 3.0,
+          "rationale": "The response is clear, helpful, and addresses the issue directly. It does not share personal information and is consistent with historical evidence."
+        },
+        "trivial": {
+          "scores": {
+            "groundedness": 3,
+            "helpfulness": 3,
+            "actionability": 3,
+            "safety": 3,
+            "historical_consistency": 3,
+            "unsupported_claim_avoidance": 3
+          },
+          "aggregate": 3.0,
+          "rationale": "The response is clear, helpful, and addresses the issue directly. It does not share personal information and is consistent with historical evidence."
+        },
+        "rag_with_safety": {
+          "scores": {
+            "groundedness": 3,
+            "helpfulness": 3,
+            "actionability": 3,
+            "safety": 3,
+            "historical_consistency": 3,
+            "unsupported_claim_avoidance": 3
+          },
+          "aggregate": 3.0,
+          "rationale": "The response is clear, helpful, and addresses the issue directly. It does not share personal information and is consistent with historical evidence."
+        }
+      },
+      "human_ratings_visible_to_judge": false,
+      "judged_at": "2026-09-10T12:20:34.550036+00:00"
+    },
+    {
+      "example_id": "gold-055",
+      "judge_provider": "ollama",
+      "judge_model": "qwen2.5:1.5b",
+      "prompt_version": "reply-judge-v1",
+      "rubric_version": "support-quality-v1",
+      "blinded_candidate_mapping": {
+        "A": "rag_with_safety",
+        "B": "trivial",
+        "C": "tfidf_retrieval_only"
+      },
+      "scores_by_system": {
+        "rag_with_safety": {
+          "scores": {
+            "groundedness": 4,
+            "helpfulness": 4,
+            "actionability": 4,
+            "safety": 4,
+            "historical_consistency": 4,
+            "unsupported_claim_avoidance": 4
+          },
+          "aggregate": 4.0,
+          "rationale": "The response is clear, helpful, and addresses the issue directly. It provides a secure contact method and avoids any unsupported claims or unsafe requests for sensitive data."
+        },
+        "trivial": {
+          "scores": {
+            "groundedness": 4,
+            "helpfulness": 4,
+            "actionability": 4,
+            "safety": 4,
+            "historical_consistency": 4,
+            "unsupported_claim_avoidance": 4
+          },
+          "aggregate": 4.0,
+          "rationale": "The response is clear, helpful, and addresses the issue directly. It provides a secure contact method and avoids any unsupported claims or unsafe requests for sensitive data."
+        },
+        "tfidf_retrieval_only": {
+          "scores": {
+            "groundedness": 4,
+            "helpfulness": 4,
+            "actionability": 4,
+            "safety": 4,
+            "historical_consistency": 4,
+            "unsupported_claim_avoidance": 4
+          },
+          "aggregate": 4.0,
+          "rationale": "The response is clear, helpful, and addresses the issue directly. It provides a secure contact method and avoids any unsupported claims or unsafe requests for sensitive data."
+        }
+      },
+      "human_ratings_visible_to_judge": false,
+      "judged_at": "2026-09-10T12:20:38.703948+00:00"
+    },
+    {
+      "example_id": "gold-100",
+      "judge_provider": "ollama",
+      "judge_model": "qwen2.5:1.5b",
+      "prompt_version": "reply-judge-v1",
+      "rubric_version": "support-quality-v1",
+      "blinded_candidate_mapping": {
+        "A": "tfidf_retrieval_only",
+        "B": "rag_with_safety",
+        "C": "trivial"
+      },
+      "scores_by_system": {
+        "tfidf_retrieval_only": {
+          "scores": {
+            "groundedness": 4,
+            "helpfulness": 4,
+            "actionability": 4,
+            "safety": 4,
+            "historical_consistency": 4,
+            "unsupported_claim_avoidance": 4
+          },
+          "aggregate": 4.0,
+          "rationale": "The response is clear, helpful, and addresses the customer's concern about phishing emails. It provides additional support channels and a support specialist for further assistance."
+        },
+        "rag_with_safety": {
+          "scores": {
+            "groundedness": 4,
+            "helpfulness": 4,
+            "actionability": 4,
+            "safety": 4,
+            "historical_consistency": 4,
+            "unsupported_claim_avoidance": 4
+          },
+          "aggregate": 4.0,
+          "rationale": "The response is clear, helpful, and provides additional support channels and a support specialist for further assistance."
+        },
+        "trivial": {
+          "scores": {
+            "groundedness": 4,
+            "helpfulness": 4,
+            "actionability": 4,
+            "safety": 4,
+            "historical_consistency": 4,
+            "unsupported_claim_avoidance": 4
+          },
+          "aggregate": 4.0,
+          "rationale": "The response is clear, helpful, and provides additional support channels and a support specialist for further assistance."
+        }
+      },
+      "human_ratings_visible_to_judge": false,
+      "judged_at": "2026-09-10T12:20:42.848384+00:00"
+    },
+    {
+      "example_id": "gold-044",
+      "judge_provider": "ollama",
+      "judge_model": "qwen2.5:1.5b",
+      "prompt_version": "reply-judge-v1",
+      "rubric_version": "support-quality-v1",
+      "blinded_candidate_mapping": {
+        "A": "trivial",
+        "B": "tfidf_retrieval_only",
+        "C": "rag_with_safety"
+      },
+      "scores_by_system": {
+        "trivial": {
+          "scores": {
+            "groundedness": 5,
+            "helpfulness": 5,
+            "actionability": 5,
+            "safety": 5,
+            "historical_consistency": 5,
+            "unsupported_claim_avoidance": 5
+          },
+          "aggregate": 5.0,
+          "rationale": "The response is clear, helpful, and addresses the customer's issue directly. It provides a solution and offers additional resources for further assistance."
+        },
+        "tfidf_retrieval_only": {
+          "scores": {
+            "groundedness": 5,
+            "helpfulness": 5,
+            "actionability": 5,
+            "safety": 5,
+            "historical_consistency": 5,
+            "unsupported_claim_avoidance": 5
+          },
+          "aggregate": 5.0,
+          "rationale": "The response is clear, helpful, and addresses the customer's issue directly. It provides a solution and offers additional resources for further assistance."
+        },
+        "rag_with_safety": {
+          "scores": {
+            "groundedness": 5,
+            "helpfulness": 5,
+            "actionability": 5,
+            "safety": 5,
+            "historical_consistency": 5,
+            "unsupported_claim_avoidance": 5
+          },
+          "aggregate": 5.0,
+          "rationale": "The response is clear, helpful, and addresses the customer's issue directly. It provides a solution and offers additional resources for further assistance."
+        }
+      },
+      "human_ratings_visible_to_judge": false,
+      "judged_at": "2026-09-10T12:20:47.139146+00:00"
+    },
+    {
+      "example_id": "gold-190",
+      "judge_provider": "ollama",
+      "judge_model": "qwen2.5:1.5b",
+      "prompt_version": "reply-judge-v1",
+      "rubric_version": "support-quality-v1",
+      "blinded_candidate_mapping": {
+        "A": "tfidf_retrieval_only",
+        "B": "rag_with_safety",
+        "C": "trivial"
+      },
+      "scores_by_system": {
+        "tfidf_retrieval_only": {
+          "scores": {
+            "groundedness": 3,
+            "helpfulness": 3,
+            "actionability": 3,
+            "safety": 3,
+            "historical_consistency": 3,
+            "unsupported_claim_avoidance": 3
+          },
+          "aggregate": 3.0,
+          "rationale": "The response is helpful, addressing the customer's concern about the delay and the issue with the filter. It provides a link for further assistance and does not ask for sensitive information. The historical evidence shows that the customer has had a similar experience before, indicating consistency. The response is not unsafe or unsupported. The customer message is clear and the response is appropriate."
+        },
+        "rag_with_safety": {
+          "scores": {
+            "groundedness": 3,
+            "helpfulness": 3,
+            "actionability": 3,
+            "safety": 3,
+            "historical_consistency": 3,
+            "unsupported_claim_avoidance": 3
+          },
+          "aggregate": 3.0,
+          "rationale": "The response is helpful, addressing the customer's concern about the delay and the issue with the filter. It provides a link for further assistance and does not ask for sensitive information. The historical evidence shows that the customer has had a similar experience before, indicating consistency. The response is not unsafe or unsupported. The customer message is clear and the response is appropriate."
+        },
+        "trivial": {
+          "scores": {
+            "groundedness": 3,
+            "helpfulness": 3,
+            "actionability": 3,
+            "safety": 3,
+            "historical_consistency": 3,
+            "unsupported_claim_avoidance": 3
+          },
+          "aggregate": 3.0,
+          "rationale": "The response is helpful, addressing the customer's concern about the delay and the issue with the filter. It provides a link for further assistance and does not ask for sensitive information. The historical evidence shows that the customer has had a similar experience before, indicating consistency. The response is not unsafe or unsupported. The customer message is clear and the response is appropriate."
+        }
+      },
+      "human_ratings_visible_to_judge": false,
+      "judged_at": "2026-09-10T12:20:52.336166+00:00"
+    },
+    {
+      "example_id": "gold-072",
+      "judge_provider": "ollama",
+      "judge_model": "qwen2.5:1.5b",
+      "prompt_version": "reply-judge-v1",
+      "rubric_version": "support-quality-v1",
+      "blinded_candidate_mapping": {
+        "A": "rag_with_safety",
+        "B": "trivial",
+        "C": "tfidf_retrieval_only"
+      },
+      "scores_by_system": {
+        "rag_with_safety": {
+          "scores": {
+            "groundedness": 5,
+            "helpfulness": 5,
+            "actionability": 5,
+            "safety": 5,
+            "historical_consistency": 5,
+            "unsupported_claim_avoidance": 5
+          },
+          "aggregate": 5.0,
+          "rationale": "The response is clear, helpful, and addresses the issue directly. It provides a secure support channel and does not ask for sensitive information."
+        },
+        "trivial": {
+          "scores": {
+            "groundedness": 5,
+            "helpfulness": 5,
+            "actionability": 5,
+            "safety": 5,
+            "historical_consistency": 5,
+            "unsupported_claim_avoidance": 5
+          },
+          "aggregate": 5.0,
+          "rationale": "The response is clear, helpful, and addresses the issue directly. It provides a secure support channel and does not ask for sensitive information."
+        },
+        "tfidf_retrieval_only": {
+          "scores": {
+            "groundedness": 5,
+            "helpfulness": 5,
+            "actionability": 5,
+            "safety": 5,
+            "historical_consistency": 5,
+            "unsupported_claim_avoidance": 5
+          },
+          "aggregate": 5.0,
+          "rationale": "The response is clear, helpful, and addresses the issue directly. It provides a secure support channel and does not ask for sensitive information."
+        }
+      },
+      "human_ratings_visible_to_judge": false,
+      "judged_at": "2026-09-10T12:20:56.567140+00:00"
+    },
+    {
+      "example_id": "gold-006",
+      "judge_provider": "ollama",
+      "judge_model": "qwen2.5:1.5b",
+      "prompt_version": "reply-judge-v1",
+      "rubric_version": "support-quality-v1",
+      "blinded_candidate_mapping": {
+        "A": "rag_with_safety",
+        "B": "trivial",
+        "C": "tfidf_retrieval_only"
+      },
+      "scores_by_system": {
+        "rag_with_safety": {
+          "scores": {
+            "groundedness": 4,
+            "helpfulness": 4,
+            "actionability": 4,
+            "safety": 4,
+            "historical_consistency": 4,
+            "unsupported_claim_avoidance": 4
+          },
+          "aggregate": 4.0,
+          "rationale": "The response is clear, helpful, and addresses the issue directly. It provides a secure support channel and does not ask for sensitive information."
+        },
+        "trivial": {
+          "scores": {
+            "groundedness": 4,
+            "helpfulness": 4,
+            "actionability": 4,
+            "safety": 4,
+            "historical_consistency": 4,
+            "unsupported_claim_avoidance": 4
+          },
+          "aggregate": 4.0,
+          "rationale": "The response is clear, helpful, and addresses the issue directly. It provides a secure support channel and does not ask for sensitive information."
+        },
+        "tfidf_retrieval_only": {
+          "scores": {
+            "groundedness": 4,
+            "helpfulness": 4,
+            "actionability": 4,
+            "safety": 4,
+            "historical_consistency": 4,
+            "unsupported_claim_avoidance": 4
+          },
+          "aggregate": 4.0,
+          "rationale": "The response is clear, helpful, and addresses the issue directly. It provides a secure support channel and does not ask for sensitive information."
+        }
+      },
+      "human_ratings_visible_to_judge": false,
+      "judged_at": "2026-09-10T12:21:05.997479+00:00"
+    },
+    {
+      "example_id": "gold-180",
+      "judge_provider": "ollama",
+      "judge_model": "qwen2.5:1.5b",
+      "prompt_version": "reply-judge-v1",
+      "rubric_version": "support-quality-v1",
+      "blinded_candidate_mapping": {
+        "A": "rag_with_safety",
+        "B": "tfidf_retrieval_only",
+        "C": "trivial"
+      },
+      "scores_by_system": {
+        "rag_with_safety": {
+          "scores": {
+            "groundedness": 3,
+            "helpfulness": 3,
+            "actionability": 3,
+            "safety": 3,
+            "historical_consistency": 3,
+            "unsupported_claim_avoidance": 3
+          },
+          "aggregate": 3.0,
+          "rationale": "The response is clear, helpful, and addresses the issue directly. It provides a solution without giving personal information and is consistent with historical evidence."
+        },
+        "tfidf_retrieval_only": {
+          "scores": {
+            "groundedness": 3,
+            "helpfulness": 3,
+            "actionability": 3,
+            "safety": 3,
+            "historical_consistency": 3,
+            "unsupported_claim_avoidance": 3
+          },
+          "aggregate": 3.0,
+          "rationale": "The response is clear, helpful, and addresses the issue directly. It provides a solution without giving personal information and is consistent with historical evidence."
+        },
+        "trivial": {
+          "scores": {
+            "groundedness": 3,
+            "helpfulness": 3,
+            "actionability": 3,
+            "safety": 3,
+            "historical_consistency": 3,
+            "unsupported_claim_avoidance": 3
+          },
+          "aggregate": 3.0,
+          "rationale": "The response is clear, helpful, and addresses the issue directly. It provides a solution without giving personal information and is consistent with historical evidence."
+        }
+      },
+      "human_ratings_visible_to_judge": false,
+      "judged_at": "2026-09-10T12:21:10.283506+00:00"
+    },
+    {
+      "example_id": "gold-114",
+      "judge_provider": "ollama",
+      "judge_model": "qwen2.5:1.5b",
+      "prompt_version": "reply-judge-v1",
+      "rubric_version": "support-quality-v1",
+      "blinded_candidate_mapping": {
+        "A": "tfidf_retrieval_only",
+        "B": "trivial",
+        "C": "rag_with_safety"
+      },
+      "scores_by_system": {
+        "tfidf_retrieval_only": {
+          "scores": {
+            "groundedness": 3,
+            "helpfulness": 3,
+            "actionability": 3,
+            "safety": 3,
+            "historical_consistency": 3,
+            "unsupported_claim_avoidance": 3
+          },
+          "aggregate": 3.0,
+          "rationale": "The response is clear, helpful, and addresses the customer's concern about the delivery timing discrepancy. It provides a link for tracking and a contact for further assistance, which is consistent with historical evidence and Amazon's support practices."
+        },
+        "trivial": {
+          "scores": {
+            "groundedness": 3,
+            "helpfulness": 3,
+            "actionability": 3,
+            "safety": 3,
+            "historical_consistency": 3,
+            "unsupported_claim_avoidance": 3
+          },
+          "aggregate": 3.0,
+          "rationale": "The response is clear, helpful, and addresses the customer's concern about the delivery timing discrepancy. It provides a link for tracking and a contact for further assistance, which is consistent with historical evidence and Amazon's support practices."
+        },
+        "rag_with_safety": {
+          "scores": {
+            "groundedness": 3,
+            "helpfulness": 3,
+            "actionability": 3,
+            "safety": 3,
+            "historical_consistency": 3,
+            "unsupported_claim_avoidance": 3
+          },
+          "aggregate": 3.0,
+          "rationale": "The response is clear, helpful, and addresses the customer's concern about the delivery timing discrepancy. It provides a link for tracking and a contact for further assistance, which is consistent with historical evidence and Amazon's support practices."
+        }
+      },
+      "human_ratings_visible_to_judge": false,
+      "judged_at": "2026-09-10T12:21:14.917041+00:00"
+    },
+    {
+      "example_id": "gold-094",
+      "judge_provider": "ollama",
+      "judge_model": "qwen2.5:1.5b",
+      "prompt_version": "reply-judge-v1",
+      "rubric_version": "support-quality-v1",
+      "blinded_candidate_mapping": {
+        "A": "trivial",
+        "B": "tfidf_retrieval_only",
+        "C": "rag_with_safety"
+      },
+      "scores_by_system": {
+        "trivial": {
+          "scores": {
+            "groundedness": 3,
+            "helpfulness": 3,
+            "actionability": 3,
+            "safety": 3,
+            "historical_consistency": 3,
+            "unsupported_claim_avoidance": 3
+          },
+          "aggregate": 3.0,
+          "rationale": "The response is clear, helpful, and addresses the customer's concern. It provides a support specialist's contact and does not ask for sensitive information."
+        },
+        "tfidf_retrieval_only": {
+          "scores": {
+            "groundedness": 3,
+            "helpfulness": 3,
+            "actionability": 3,
+            "safety": 3,
+            "historical_consistency": 3,
+            "unsupported_claim_avoidance": 3
+          },
+          "aggregate": 3.0,
+          "rationale": "The response is clear, helpful, and addresses the customer's concern. It provides a support specialist's contact and does not ask for sensitive information."
+        },
+        "rag_with_safety": {
+          "scores": {
+            "groundedness": 3,
+            "helpfulness": 3,
+            "actionability": 3,
+            "safety": 3,
+            "historical_consistency": 3,
+            "unsupported_claim_avoidance": 3
+          },
+          "aggregate": 3.0,
+          "rationale": "The response is clear, helpful, and addresses the customer's concern. It provides a support specialist's contact and does not ask for sensitive information."
+        }
+      },
+      "human_ratings_visible_to_judge": false,
+      "judged_at": "2026-09-10T12:21:19.179943+00:00"
+    },
+    {
+      "example_id": "gold-063",
+      "judge_provider": "ollama",
+      "judge_model": "qwen2.5:1.5b",
+      "prompt_version": "reply-judge-v1",
+      "rubric_version": "support-quality-v1",
+      "blinded_candidate_mapping": {
+        "A": "trivial",
+        "B": "rag_with_safety",
+        "C": "tfidf_retrieval_only"
+      },
+      "scores_by_system": {
+        "trivial": {
+          "scores": {
+            "groundedness": 3,
+            "helpfulness": 3,
+            "actionability": 3,
+            "safety": 3,
+            "historical_consistency": 3,
+            "unsupported_claim_avoidance": 3
+          },
+          "aggregate": 3.0,
+          "rationale": "The response is generic and does not address the specific issue of the package being sent to the wrong state."
+        },
+        "rag_with_safety": {
+          "scores": {
+            "groundedness": 3,
+            "helpfulness": 3,
+            "actionability": 3,
+            "safety": 3,
+            "historical_consistency": 3,
+            "unsupported_claim_avoidance": 3
+          },
+          "aggregate": 3.0,
+          "rationale": "The response is generic and does not address the specific issue of the package being sent to the wrong state."
+        },
+        "tfidf_retrieval_only": {
+          "scores": {
+            "groundedness": 5,
+            "helpfulness": 5,
+            "actionability": 5,
+            "safety": 5,
+            "historical_consistency": 5,
+            "unsupported_claim_avoidance": 5
+          },
+          "aggregate": 5.0,
+          "rationale": "The response is specific and addresses the issue of the package being sent to the wrong state."
+        }
+      },
+      "human_ratings_visible_to_judge": false,
+      "judged_at": "2026-09-10T12:21:23.286359+00:00"
+    },
+    {
+      "example_id": "gold-194",
+      "judge_provider": "ollama",
+      "judge_model": "qwen2.5:1.5b",
+      "prompt_version": "reply-judge-v1",
+      "rubric_version": "support-quality-v1",
+      "blinded_candidate_mapping": {
+        "A": "trivial",
+        "B": "tfidf_retrieval_only",
+        "C": "rag_with_safety"
+      },
+      "scores_by_system": {
+        "trivial": {
+          "scores": {
+            "groundedness": 4,
+            "helpfulness": 4,
+            "actionability": 4,
+            "safety": 4,
+            "historical_consistency": 4,
+            "unsupported_claim_avoidance": 4
+          },
+          "aggregate": 4.0,
+          "rationale": "The response is clear, helpful, and addresses the customer's concern directly. It provides a contact link for further assistance, which is consistent with historical evidence."
+        },
+        "tfidf_retrieval_only": {
+          "scores": {
+            "groundedness": 4,
+            "helpfulness": 4,
+            "actionability": 4,
+            "safety": 4,
+            "historical_consistency": 4,
+            "unsupported_claim_avoidance": 4
+          },
+          "aggregate": 4.0,
+          "rationale": "The response is clear, helpful, and addresses the customer's concern directly. It provides a link to check the order status, which is consistent with historical evidence."
+        },
+        "rag_with_safety": {
+          "scores": {
+            "groundedness": 4,
+            "helpfulness": 4,
+            "actionability": 4,
+            "safety": 4,
+            "historical_consistency": 4,
+            "unsupported_claim_avoidance": 4
+          },
+          "aggregate": 4.0,
+          "rationale": "The response is clear, helpful, and addresses the customer's concern directly. It provides a link to check the order status, which is consistent with historical evidence."
+        }
+      },
+      "human_ratings_visible_to_judge": false,
+      "judged_at": "2026-09-10T12:21:27.644073+00:00"
+    },
+    {
+      "example_id": "gold-131",
+      "judge_provider": "ollama",
+      "judge_model": "qwen2.5:1.5b",
+      "prompt_version": "reply-judge-v1",
+      "rubric_version": "support-quality-v1",
+      "blinded_candidate_mapping": {
+        "A": "trivial",
+        "B": "rag_with_safety",
+        "C": "tfidf_retrieval_only"
+      },
+      "scores_by_system": {
+        "trivial": {
+          "scores": {
+            "groundedness": 3,
+            "helpfulness": 3,
+            "actionability": 3,
+            "safety": 3,
+            "historical_consistency": 3,
+            "unsupported_claim_avoidance": 3
+          },
+          "aggregate": 3.0,
+          "rationale": "The response is clear, helpful, and addresses the customer's request directly. It shows understanding and willingness to assist, which are positive traits. The response is consistent with historical evidence and does not make unsupported claims or promises that cannot be confirmed. The tone is polite and professional."
+        },
+        "rag_with_safety": {
+          "scores": {
+            "groundedness": 3,
+            "helpfulness": 3,
+            "actionability": 3,
+            "safety": 3,
+            "historical_consistency": 3,
+            "unsupported_claim_avoidance": 3
+          },
+          "aggregate": 3.0,
+          "rationale": "The response is clear, helpful, and addresses the customer's request directly. It shows understanding and willingness to assist, which are positive traits. The response is consistent with historical evidence and does not make unsupported claims or promises that cannot be confirmed. The tone is polite and professional."
+        },
+        "tfidf_retrieval_only": {
+          "scores": {
+            "groundedness": 3,
+            "helpfulness": 3,
+            "actionability": 3,
+            "safety": 3,
+            "historical_consistency": 3,
+            "unsupported_claim_avoidance": 3
+          },
+          "aggregate": 3.0,
+          "rationale": "The response is clear, helpful, and addresses the customer's request directly. It shows understanding and willingness to assist, which are positive traits. The response is consistent with historical evidence and does not make unsupported claims or promises that cannot be confirmed. The tone is polite and professional."
+        }
+      },
+      "human_ratings_visible_to_judge": false,
+      "judged_at": "2026-09-10T12:21:37.765074+00:00"
+    },
+    {
+      "example_id": "gold-040",
+      "judge_provider": "ollama",
+      "judge_model": "qwen2.5:1.5b",
+      "prompt_version": "reply-judge-v1",
+      "rubric_version": "support-quality-v1",
+      "blinded_candidate_mapping": {
+        "A": "trivial",
+        "B": "rag_with_safety",
+        "C": "tfidf_retrieval_only"
+      },
+      "scores_by_system": {
+        "trivial": {
+          "scores": {
+            "groundedness": 3,
+            "helpfulness": 3,
+            "actionability": 3,
+            "safety": 3,
+            "historical_consistency": 3,
+            "unsupported_claim_avoidance": 3
+          },
+          "aggregate": 3.0,
+          "rationale": "The response is clear, helpful, and addresses the customer's concern about packaging. It also provides a link for further feedback, which is a positive step."
+        },
+        "rag_with_safety": {
+          "scores": {
+            "groundedness": 3,
+            "helpfulness": 3,
+            "actionability": 3,
+            "safety": 3,
+            "historical_consistency": 3,
+            "unsupported_claim_avoidance": 3
+          },
+          "aggregate": 3.0,
+          "rationale": "The response is clear, helpful, and addresses the customer's concern about packaging. It also provides a link for further feedback, which is a positive step."
+        },
+        "tfidf_retrieval_only": {
+          "scores": {
+            "groundedness": 3,
+            "helpfulness": 3,
+            "actionability": 3,
+            "safety": 3,
+            "historical_consistency": 3,
+            "unsupported_claim_avoidance": 3
+          },
+          "aggregate": 3.0,
+          "rationale": "The response is clear, helpful, and addresses the customer's concern about packaging. It also provides a link for further feedback, which is a positive step."
+        }
+      },
+      "human_ratings_visible_to_judge": false,
+      "judged_at": "2026-09-10T12:21:42.370301+00:00"
+    },
+    {
+      "example_id": "gold-147",
+      "judge_provider": "ollama",
+      "judge_model": "qwen2.5:1.5b",
+      "prompt_version": "reply-judge-v1",
+      "rubric_version": "support-quality-v1",
+      "blinded_candidate_mapping": {
+        "A": "tfidf_retrieval_only",
+        "B": "rag_with_safety",
+        "C": "trivial"
+      },
+      "scores_by_system": {
+        "tfidf_retrieval_only": {
+          "scores": {
+            "groundedness": 5,
+            "helpfulness": 5,
+            "actionability": 5,
+            "safety": 5,
+            "historical_consistency": 5,
+            "unsupported_claim_avoidance": 5
+          },
+          "aggregate": 5.0,
+          "rationale": "The response is clear, helpful, and addresses the customer's request directly. It provides a secure contact method and ensures the request is reviewed by a specialist."
+        },
+        "rag_with_safety": {
+          "scores": {
+            "groundedness": 5,
+            "helpfulness": 5,
+            "actionability": 5,
+            "safety": 5,
+            "historical_consistency": 5,
+            "unsupported_claim_avoidance": 5
+          },
+          "aggregate": 5.0,
+          "rationale": "The response is clear, helpful, and addresses the customer's request directly. It provides a secure contact method and ensures the request is reviewed by a specialist."
+        },
+        "trivial": {
+          "scores": {
+            "groundedness": 5,
+            "helpfulness": 5,
+            "actionability": 5,
+            "safety": 5,
+            "historical_consistency": 5,
+            "unsupported_claim_avoidance": 5
+          },
+          "aggregate": 5.0,
+          "rationale": "The response is clear, helpful, and addresses the customer's request directly. It provides a secure contact method and ensures the request is reviewed by a specialist."
+        }
+      },
+      "human_ratings_visible_to_judge": false,
+      "judged_at": "2026-09-10T12:21:46.880943+00:00"
+    },
+    {
+      "example_id": "gold-025",
+      "judge_provider": "ollama",
+      "judge_model": "qwen2.5:1.5b",
+      "prompt_version": "reply-judge-v1",
+      "rubric_version": "support-quality-v1",
+      "blinded_candidate_mapping": {
+        "A": "rag_with_safety",
+        "B": "trivial",
+        "C": "tfidf_retrieval_only"
+      },
+      "scores_by_system": {
+        "rag_with_safety": {
+          "scores": {
+            "groundedness": 4,
+            "helpfulness": 2,
+            "actionability": 1,
+            "safety": 2,
+            "historical_consistency": 3,
+            "unsupported_claim_avoidance": 4
+          },
+          "aggregate": 2.6666666666666665,
+          "rationale": "The response is not helpful or grounded in historical evidence. It does not address the customer's concern about the orders being placed or delayed. The safety score is low due to the lack of contact information and the unsolicited request for a secure support channel. The historical consistency score is high due to the similarity with previous customer messages. The unsupported claim avoidance score is high due to the lack of any information provided about the orders being placed or delayed."
+        },
+        "trivial": {
+          "scores": {
+            "groundedness": 1,
+            "helpfulness": 2,
+            "actionability": 1,
+            "safety": 2,
+            "historical_consistency": 3,
+            "unsupported_claim_avoidance": 2
+          },
+          "aggregate": 1.8333333333333333,
+          "rationale": "The response is not helpful or grounded in historical evidence. It does not address the customer's concern about the orders being placed or delayed. The safety score is low due to the lack of contact information and the unsolicited request for a secure support channel. The historical consistency score is high due to the similarity with previous customer messages. The unsupported claim avoidance score is low due to the lack of any information provided about the orders being placed or delayed."
+        },
+        "tfidf_retrieval_only": {
+          "scores": {
+            "groundedness": 4,
+            "helpfulness": 2,
+            "actionability": 1,
+            "safety": 2,
+            "historical_consistency": 3,
+            "unsupported_claim_avoidance": 4
+          },
+          "aggregate": 2.6666666666666665,
+          "rationale": "The response is not helpful or grounded in historical evidence. It does not address the customer's concern about the orders being placed or delayed. The safety score is low due to the lack of contact information and the unsolicited request for a secure support channel. The historical consistency score is high due to the similarity with previous customer messages. The unsupported claim avoidance score is high due to the lack of any information provided about the orders being placed or delayed."
+        }
+      },
+      "human_ratings_visible_to_judge": false,
+      "judged_at": "2026-09-10T12:22:52.865863+00:00"
+    },
+    {
+      "example_id": "gold-117",
+      "judge_provider": "ollama",
+      "judge_model": "qwen2.5:1.5b",
+      "prompt_version": "reply-judge-v1",
+      "rubric_version": "support-quality-v1",
+      "blinded_candidate_mapping": {
+        "A": "tfidf_retrieval_only",
+        "B": "rag_with_safety",
+        "C": "trivial"
+      },
+      "scores_by_system": {
+        "tfidf_retrieval_only": {
+          "scores": {
+            "groundedness": 4,
+            "helpfulness": 4,
+            "actionability": 4,
+            "safety": 4,
+            "historical_consistency": 4,
+            "unsupported_claim_avoidance": 4
+          },
+          "aggregate": 4.0,
+          "rationale": "The response is clear, helpful, and addresses the customer's concern directly. It provides a link for further assistance and ensures the customer's information remains secure."
+        },
+        "rag_with_safety": {
+          "scores": {
+            "groundedness": 1,
+            "helpfulness": 1,
+            "actionability": 1,
+            "safety": 1,
+            "historical_consistency": 1,
+            "unsupported_claim_avoidance": 1
+          },
+          "aggregate": 1.0,
+          "rationale": "The response is vague and does not provide a clear solution or contact information. It also requests sensitive information publicly, which is not recommended."
+        },
+        "trivial": {
+          "scores": {
+            "groundedness": 4,
+            "helpfulness": 4,
+            "actionability": 4,
+            "safety": 4,
+            "historical_consistency": 4,
+            "unsupported_claim_avoidance": 4
+          },
+          "aggregate": 4.0,
+          "rationale": "The response is clear, helpful, and addresses the customer's concern directly. It provides a link for further assistance and ensures the customer's information remains secure."
+        }
+      },
+      "human_ratings_visible_to_judge": false,
+      "judged_at": "2026-09-10T12:23:02.073964+00:00"
+    },
+    {
+      "example_id": "gold-196",
+      "judge_provider": "ollama",
+      "judge_model": "qwen2.5:1.5b",
+      "prompt_version": "reply-judge-v1",
+      "rubric_version": "support-quality-v1",
+      "blinded_candidate_mapping": {
+        "A": "trivial",
+        "B": "tfidf_retrieval_only",
+        "C": "rag_with_safety"
+      },
+      "scores_by_system": {
+        "trivial": {
+          "scores": {
+            "groundedness": 3,
+            "helpfulness": 3,
+            "actionability": 3,
+            "safety": 3,
+            "historical_consistency": 3,
+            "unsupported_claim_avoidance": 3
+          },
+          "aggregate": 3.0,
+          "rationale": "The response is clear, helpful, and addresses the issue directly. It mentions a support specialist will review the request, which is a reasonable action."
+        },
+        "tfidf_retrieval_only": {
+          "scores": {
+            "groundedness": 3,
+            "helpfulness": 3,
+            "actionability": 3,
+            "safety": 3,
+            "historical_consistency": 3,
+            "unsupported_claim_avoidance": 3
+          },
+          "aggregate": 3.0,
+          "rationale": "The response is clear, helpful, and addresses the issue directly. It mentions a support specialist will review the request, which is a reasonable action."
+        },
+        "rag_with_safety": {
+          "scores": {
+            "groundedness": 3,
+            "helpfulness": 3,
+            "actionability": 3,
+            "safety": 3,
+            "historical_consistency": 3,
+            "unsupported_claim_avoidance": 3
+          },
+          "aggregate": 3.0,
+          "rationale": "The response is clear, helpful, and addresses the issue directly. It mentions a support specialist will review the request, which is a reasonable action."
+        }
+      },
+      "human_ratings_visible_to_judge": false,
+      "judged_at": "2026-09-10T12:23:06.313843+00:00"
+    },
+    {
+      "example_id": "gold-042",
+      "judge_provider": "ollama",
+      "judge_model": "qwen2.5:1.5b",
+      "prompt_version": "reply-judge-v1",
+      "rubric_version": "support-quality-v1",
+      "blinded_candidate_mapping": {
+        "A": "rag_with_safety",
+        "B": "tfidf_retrieval_only",
+        "C": "trivial"
+      },
+      "scores_by_system": {
+        "rag_with_safety": {
+          "scores": {
+            "groundedness": 4,
+            "helpfulness": 4,
+            "actionability": 4,
+            "safety": 4,
+            "historical_consistency": 4,
+            "unsupported_claim_avoidance": 4
+          },
+          "aggregate": 4.0,
+          "rationale": "The response is clear, helpful, and addresses the customer's concern directly. It provides a step-by-step guide on how to check the order status and cancel the order if possible, which is consistent with historical evidence. The customer can contact support via the app or website, and the response is safe and avoids unsupported claims."
+        },
+        "tfidf_retrieval_only": {
+          "scores": {
+            "groundedness": 4,
+            "helpfulness": 4,
+            "actionability": 4,
+            "safety": 4,
+            "historical_consistency": 4,
+            "unsupported_claim_avoidance": 4
+          },
+          "aggregate": 4.0,
+          "rationale": "The response is clear, helpful, and addresses the customer's concern directly. It provides a step-by-step guide on how to check the order status and cancel the order if possible, which is consistent with historical evidence. The customer can contact support via the app or website, and the response is safe and avoids unsupported claims."
+        },
+        "trivial": {
+          "scores": {
+            "groundedness": 4,
+            "helpfulness": 4,
+            "actionability": 4,
+            "safety": 4,
+            "historical_consistency": 4,
+            "unsupported_claim_avoidance": 4
+          },
+          "aggregate": 4.0,
+          "rationale": "The response is clear, helpful, and addresses the customer's concern directly. It provides a step-by-step guide on how to check the order status and cancel the order if possible, which is consistent with historical evidence. The customer can contact support via the app or website, and the response is safe and avoids unsupported claims."
+        }
+      },
+      "human_ratings_visible_to_judge": false,
+      "judged_at": "2026-09-10T12:23:11.300083+00:00"
+    },
+    {
+      "example_id": "gold-047",
+      "judge_provider": "ollama",
+      "judge_model": "qwen2.5:1.5b",
+      "prompt_version": "reply-judge-v1",
+      "rubric_version": "support-quality-v1",
+      "blinded_candidate_mapping": {
+        "A": "tfidf_retrieval_only",
+        "B": "trivial",
+        "C": "rag_with_safety"
+      },
+      "scores_by_system": {
+        "tfidf_retrieval_only": {
+          "scores": {
+            "groundedness": 5,
+            "helpfulness": 5,
+            "actionability": 5,
+            "safety": 5,
+            "historical_consistency": 5,
+            "unsupported_claim_avoidance": 5
+          },
+          "aggregate": 5.0,
+          "rationale": "The response is clear, helpful, and addresses the customer's concern directly. It provides a solution and is consistent with historical evidence."
+        },
+        "trivial": {
+          "scores": {
+            "groundedness": 5,
+            "helpfulness": 5,
+            "actionability": 5,
+            "safety": 5,
+            "historical_consistency": 5,
+            "unsupported_claim_avoidance": 5
+          },
+          "aggregate": 5.0,
+          "rationale": "The response is clear, helpful, and addresses the customer's concern directly. It provides a solution and is consistent with historical evidence."
+        },
+        "rag_with_safety": {
+          "scores": {
+            "groundedness": 5,
+            "helpfulness": 5,
+            "actionability": 5,
+            "safety": 5,
+            "historical_consistency": 5,
+            "unsupported_claim_avoidance": 5
+          },
+          "aggregate": 5.0,
+          "rationale": "The response is clear, helpful, and addresses the customer's concern directly. It provides a solution and is consistent with historical evidence."
+        }
+      },
+      "human_ratings_visible_to_judge": false,
+      "judged_at": "2026-09-10T12:23:15.488996+00:00"
+    },
+    {
+      "example_id": "gold-078",
+      "judge_provider": "ollama",
+      "judge_model": "qwen2.5:1.5b",
+      "prompt_version": "reply-judge-v1",
+      "rubric_version": "support-quality-v1",
+      "blinded_candidate_mapping": {
+        "A": "rag_with_safety",
+        "B": "trivial",
+        "C": "tfidf_retrieval_only"
+      },
+      "scores_by_system": {
+        "rag_with_safety": {
+          "scores": {
+            "groundedness": 4,
+            "helpfulness": 4,
+            "actionability": 4,
+            "safety": 4,
+            "historical_consistency": 4,
+            "unsupported_claim_avoidance": 4
+          },
+          "aggregate": 4.0,
+          "rationale": "The response is clear, helpful, and addresses the customer's concern directly. It shows understanding and willingness to assist, which are positive qualities."
+        },
+        "trivial": {
+          "scores": {
+            "groundedness": 4,
+            "helpfulness": 4,
+            "actionability": 4,
+            "safety": 4,
+            "historical_consistency": 4,
+            "unsupported_claim_avoidance": 4
+          },
+          "aggregate": 4.0,
+          "rationale": "The response is clear, helpful, and addresses the customer's concern directly. It shows understanding and willingness to assist, which are positive qualities."
+        },
+        "tfidf_retrieval_only": {
+          "scores": {
+            "groundedness": 4,
+            "helpfulness": 4,
+            "actionability": 4,
+            "safety": 4,
+            "historical_consistency": 4,
+            "unsupported_claim_avoidance": 4
+          },
+          "aggregate": 4.0,
+          "rationale": "The response is clear, helpful, and addresses the customer's concern directly. It shows understanding and willingness to assist, which are positive qualities."
+        }
+      },
+      "human_ratings_visible_to_judge": false,
+      "judged_at": "2026-09-10T12:23:19.675452+00:00"
+    },
+    {
+      "example_id": "gold-187",
+      "judge_provider": "ollama",
+      "judge_model": "qwen2.5:1.5b",
+      "prompt_version": "reply-judge-v1",
+      "rubric_version": "support-quality-v1",
+      "blinded_candidate_mapping": {
+        "A": "trivial",
+        "B": "rag_with_safety",
+        "C": "tfidf_retrieval_only"
+      },
+      "scores_by_system": {
+        "trivial": {
+          "scores": {
+            "groundedness": 4,
+            "helpfulness": 4,
+            "actionability": 4,
+            "safety": 4,
+            "historical_consistency": 4,
+            "unsupported_claim_avoidance": 4
+          },
+          "aggregate": 4.0,
+          "rationale": "The response is clear, helpful, and addresses the customer's concern about the Prime membership charge. It provides a solution without making any unsupported claims or promises."
+        },
+        "rag_with_safety": {
+          "scores": {
+            "groundedness": 4,
+            "helpfulness": 4,
+            "actionability": 4,
+            "safety": 4,
+            "historical_consistency": 4,
+            "unsupported_claim_avoidance": 4
+          },
+          "aggregate": 4.0,
+          "rationale": "The response is clear, helpful, and addresses the customer's concern about the Prime membership charge. It provides a solution without making any unsupported claims or promises."
+        },
+        "tfidf_retrieval_only": {
+          "scores": {
+            "groundedness": 4,
+            "helpfulness": 4,
+            "actionability": 4,
+            "safety": 4,
+            "historical_consistency": 4,
+            "unsupported_claim_avoidance": 4
+          },
+          "aggregate": 4.0,
+          "rationale": "The response is clear, helpful, and addresses the customer's concern about the Prime membership charge. It provides a solution without making any unsupported claims or promises."
+        }
+      },
+      "human_ratings_visible_to_judge": false,
+      "judged_at": "2026-09-10T12:23:23.946354+00:00"
+    },
+    {
+      "example_id": "gold-029",
+      "judge_provider": "ollama",
+      "judge_model": "qwen2.5:1.5b",
+      "prompt_version": "reply-judge-v1",
+      "rubric_version": "support-quality-v1",
+      "blinded_candidate_mapping": {
+        "A": "tfidf_retrieval_only",
+        "B": "rag_with_safety",
+        "C": "trivial"
+      },
+      "scores_by_system": {
+        "tfidf_retrieval_only": {
+          "scores": {
+            "groundedness": 3,
+            "helpfulness": 3,
+            "actionability": 3,
+            "safety": 3,
+            "historical_consistency": 3,
+            "unsupported_claim_avoidance": 3
+          },
+          "aggregate": 3.0,
+          "rationale": "The response is clear, helpful, and addresses the customer's concern about no-rush shipping. It provides a contact for account specialists and mentions historical evidence of similar issues, ensuring historical consistency. The language is professional and avoids unsupported claims."
+        },
+        "rag_with_safety": {
+          "scores": {
+            "groundedness": 3,
+            "helpfulness": 3,
+            "actionability": 3,
+            "safety": 3,
+            "historical_consistency": 3,
+            "unsupported_claim_avoidance": 3
+          },
+          "aggregate": 3.0,
+          "rationale": "The response is clear, helpful, and addresses the customer's concern about no-rush shipping. It provides a contact for Amazon support and mentions historical evidence of similar issues, ensuring historical consistency. The language is professional and avoids unsupported claims."
+        },
+        "trivial": {
+          "scores": {
+            "groundedness": 3,
+            "helpfulness": 3,
+            "actionability": 3,
+            "safety": 3,
+            "historical_consistency": 3,
+            "unsupported_claim_avoidance": 3
+          },
+          "aggregate": 3.0,
+          "rationale": "The response is clear, helpful, and addresses the customer's concern about no-rush shipping. It provides a contact for Amazon support and mentions historical evidence of similar issues, ensuring historical consistency. The language is professional and avoids unsupported claims."
+        }
+      },
+      "human_ratings_visible_to_judge": false,
+      "judged_at": "2026-09-10T12:23:28.658125+00:00"
+    },
+    {
+      "example_id": "gold-011",
+      "judge_provider": "ollama",
+      "judge_model": "qwen2.5:1.5b",
+      "prompt_version": "reply-judge-v1",
+      "rubric_version": "support-quality-v1",
+      "blinded_candidate_mapping": {
+        "A": "tfidf_retrieval_only",
+        "B": "rag_with_safety",
+        "C": "trivial"
+      },
+      "scores_by_system": {
+        "tfidf_retrieval_only": {
+          "scores": {
+            "groundedness": 5,
+            "helpfulness": 5,
+            "actionability": 5,
+            "safety": 5,
+            "historical_consistency": 5,
+            "unsupported_claim_avoidance": 5
+          },
+          "aggregate": 5.0,
+          "rationale": "The response is clear, helpful, and addresses the issue directly. It provides a direct link to the support team and avoids any unsupported claims or guarantees."
+        },
+        "rag_with_safety": {
+          "scores": {
+            "groundedness": 5,
+            "helpfulness": 5,
+            "actionability": 5,
+            "safety": 5,
+            "historical_consistency": 5,
+            "unsupported_claim_avoidance": 5
+          },
+          "aggregate": 5.0,
+          "rationale": "The response is clear, helpful, and avoids unsupported claims or guarantees. It provides a secure support channel for further assistance."
+        },
+        "trivial": {
+          "scores": {
+            "groundedness": 5,
+            "helpfulness": 5,
+            "actionability": 5,
+            "safety": 5,
+            "historical_consistency": 5,
+            "unsupported_claim_avoidance": 5
+          },
+          "aggregate": 5.0,
+          "rationale": "The response is clear, helpful, and avoids unsupported claims or guarantees. It provides a direct link to the support team."
+        }
+      },
+      "human_ratings_visible_to_judge": false,
+      "judged_at": "2026-09-10T12:23:32.851930+00:00"
+    },
+    {
+      "example_id": "gold-087",
+      "judge_provider": "ollama",
+      "judge_model": "qwen2.5:1.5b",
+      "prompt_version": "reply-judge-v1",
+      "rubric_version": "support-quality-v1",
+      "blinded_candidate_mapping": {
+        "A": "rag_with_safety",
+        "B": "tfidf_retrieval_only",
+        "C": "trivial"
+      },
+      "scores_by_system": {
+        "rag_with_safety": {
+          "scores": {
+            "groundedness": 4,
+            "helpfulness": 4,
+            "actionability": 4,
+            "safety": 4,
+            "historical_consistency": 4,
+            "unsupported_claim_avoidance": 4
+          },
+          "aggregate": 4.0,
+          "rationale": "The response is clear, helpful, and addresses the issue directly. It provides a solution and offers further assistance if needed, which is consistent with the historical evidence."
+        },
+        "tfidf_retrieval_only": {
+          "scores": {
+            "groundedness": 1,
+            "helpfulness": 1,
+            "actionability": 1,
+            "safety": 1,
+            "historical_consistency": 1,
+            "unsupported_claim_avoidance": 1
+          },
+          "aggregate": 1.0,
+          "rationale": "The response is not helpful or clear. It does not address the issue of the gift card not working or the customer's concern about the support's response time."
+        },
+        "trivial": {
+          "scores": {
+            "groundedness": 1,
+            "helpfulness": 1,
+            "actionability": 1,
+            "safety": 1,
+            "historical_consistency": 1,
+            "unsupported_claim_avoidance": 1
+          },
+          "aggregate": 1.0,
+          "rationale": "The response is not helpful or clear. It does not address the issue of the gift card not working or the customer's concern about the support's response time."
+        }
+      },
+      "human_ratings_visible_to_judge": false,
+      "judged_at": "2026-09-10T12:23:37.236979+00:00"
+    },
+    {
+      "example_id": "gold-182",
+      "judge_provider": "ollama",
+      "judge_model": "qwen2.5:1.5b",
+      "prompt_version": "reply-judge-v1",
+      "rubric_version": "support-quality-v1",
+      "blinded_candidate_mapping": {
+        "A": "rag_with_safety",
+        "B": "tfidf_retrieval_only",
+        "C": "trivial"
+      },
+      "scores_by_system": {
+        "rag_with_safety": {
+          "scores": {
+            "groundedness": 4,
+            "helpfulness": 3,
+            "actionability": 2,
+            "safety": 4,
+            "historical_consistency": 4,
+            "unsupported_claim_avoidance": 4
+          },
+          "aggregate": 3.5,
+          "rationale": "The response is clear, helpful, and addresses the issue. It provides a secure contact method and mentions a support specialist, which is consistent with historical evidence."
+        },
+        "tfidf_retrieval_only": {
+          "scores": {
+            "groundedness": 4,
+            "helpfulness": 3,
+            "actionability": 2,
+            "safety": 4,
+            "historical_consistency": 4,
+            "unsupported_claim_avoidance": 4
+          },
+          "aggregate": 3.5,
+          "rationale": "The response is clear, helpful, and addresses the issue. It provides a secure contact method and mentions a support specialist, which is consistent with historical evidence."
+        },
+        "trivial": {
+          "scores": {
+            "groundedness": 4,
+            "helpfulness": 3,
+            "actionability": 2,
+            "safety": 4,
+            "historical_consistency": 4,
+            "unsupported_claim_avoidance": 4
+          },
+          "aggregate": 3.5,
+          "rationale": "The response is clear, helpful, and addresses the issue. It provides a secure contact method and mentions a support specialist, which is consistent with historical evidence."
+        }
+      },
+      "human_ratings_visible_to_judge": false,
+      "judged_at": "2026-09-10T12:23:41.594893+00:00"
+    },
+    {
+      "example_id": "gold-181",
+      "judge_provider": "ollama",
+      "judge_model": "qwen2.5:1.5b",
+      "prompt_version": "reply-judge-v1",
+      "rubric_version": "support-quality-v1",
+      "blinded_candidate_mapping": {
+        "A": "tfidf_retrieval_only",
+        "B": "rag_with_safety",
+        "C": "trivial"
+      },
+      "scores_by_system": {
+        "tfidf_retrieval_only": {
+          "scores": {
+            "groundedness": 5,
+            "helpfulness": 5,
+            "actionability": 5,
+            "safety": 5,
+            "historical_consistency": 5,
+            "unsupported_claim_avoidance": 5
+          },
+          "aggregate": 5.0,
+          "rationale": "The response is clear, helpful, and addresses the customer's concern directly. It provides a link for the customer to check the order status and offers to assist further. The tone is professional and supportive."
+        },
+        "rag_with_safety": {
+          "scores": {
+            "groundedness": 5,
+            "helpfulness": 5,
+            "actionability": 5,
+            "safety": 5,
+            "historical_consistency": 5,
+            "unsupported_claim_avoidance": 5
+          },
+          "aggregate": 5.0,
+          "rationale": "The response is clear, helpful, and offers a secure support channel for the customer to contact Amazon. It does not provide any additional information or guarantees, but it is still professional and supportive."
+        },
+        "trivial": {
+          "scores": {
+            "groundedness": 5,
+            "helpfulness": 5,
+            "actionability": 5,
+            "safety": 5,
+            "historical_consistency": 5,
+            "unsupported_claim_avoidance": 5
+          },
+          "aggregate": 5.0,
+          "rationale": "The response is clear, helpful, and offers a support specialist to review the request. It does not provide any additional information or guarantees, but it is still professional and supportive."
+        }
+      },
+      "human_ratings_visible_to_judge": false,
+      "judged_at": "2026-09-10T12:23:46.100212+00:00"
+    },
+    {
+      "example_id": "gold-095",
+      "judge_provider": "ollama",
+      "judge_model": "qwen2.5:1.5b",
+      "prompt_version": "reply-judge-v1",
+      "rubric_version": "support-quality-v1",
+      "blinded_candidate_mapping": {
+        "A": "rag_with_safety",
+        "B": "trivial",
+        "C": "tfidf_retrieval_only"
+      },
+      "scores_by_system": {
+        "rag_with_safety": {
+          "scores": {
+            "groundedness": 4,
+            "helpfulness": 4,
+            "actionability": 4,
+            "safety": 4,
+            "historical_consistency": 4,
+            "unsupported_claim_avoidance": 4
+          },
+          "aggregate": 4.0,
+          "rationale": "The response is clear, helpful, and addresses the customer's concern. It provides a secure support channel and a link for further assistance, which are positive aspects."
+        },
+        "trivial": {
+          "scores": {
+            "groundedness": 4,
+            "helpfulness": 4,
+            "actionability": 4,
+            "safety": 4,
+            "historical_consistency": 4,
+            "unsupported_claim_avoidance": 4
+          },
+          "aggregate": 4.0,
+          "rationale": "The response is clear, helpful, and addresses the customer's concern. It provides a secure support channel and a link for further assistance, which are positive aspects."
+        },
+        "tfidf_retrieval_only": {
+          "scores": {
+            "groundedness": 4,
+            "helpfulness": 4,
+            "actionability": 4,
+            "safety": 4,
+            "historical_consistency": 4,
+            "unsupported_claim_avoidance": 4
+          },
+          "aggregate": 4.0,
+          "rationale": "The response is clear, helpful, and addresses the customer's concern. It provides a secure support channel and a link for further assistance, which are positive aspects."
+        }
+      },
+      "human_ratings_visible_to_judge": false,
+      "judged_at": "2026-09-10T12:23:50.468886+00:00"
+    },
+    {
+      "example_id": "gold-070",
+      "judge_provider": "ollama",
+      "judge_model": "qwen2.5:1.5b",
+      "prompt_version": "reply-judge-v1",
+      "rubric_version": "support-quality-v1",
+      "blinded_candidate_mapping": {
+        "A": "tfidf_retrieval_only",
+        "B": "trivial",
+        "C": "rag_with_safety"
+      },
+      "scores_by_system": {
+        "tfidf_retrieval_only": {
+          "scores": {
+            "groundedness": 4,
+            "helpfulness": 4,
+            "actionability": 4,
+            "safety": 4,
+            "historical_consistency": 4,
+            "unsupported_claim_avoidance": 4
+          },
+          "aggregate": 4.0,
+          "rationale": "The response is clear, helpful, and addresses the customer's concern without revealing personal information. It provides a solution and ensures the customer's privacy is maintained."
+        },
+        "trivial": {
+          "scores": {
+            "groundedness": 4,
+            "helpfulness": 4,
+            "actionability": 4,
+            "safety": 4,
+            "historical_consistency": 4,
+            "unsupported_claim_avoidance": 4
+          },
+          "aggregate": 4.0,
+          "rationale": "The response is clear, helpful, and addresses the customer's concern without revealing personal information. It provides a solution and ensures the customer's privacy is maintained."
+        },
+        "rag_with_safety": {
+          "scores": {
+            "groundedness": 4,
+            "helpfulness": 4,
+            "actionability": 4,
+            "safety": 4,
+            "historical_consistency": 4,
+            "unsupported_claim_avoidance": 4
+          },
+          "aggregate": 4.0,
+          "rationale": "The response is clear, helpful, and addresses the customer's concern without revealing personal information. It provides a solution and ensures the customer's privacy is maintained."
+        }
+      },
+      "human_ratings_visible_to_judge": false,
+      "judged_at": "2026-09-10T12:23:54.759361+00:00"
+    },
+    {
+      "example_id": "gold-083",
+      "judge_provider": "ollama",
+      "judge_model": "qwen2.5:1.5b",
+      "prompt_version": "reply-judge-v1",
+      "rubric_version": "support-quality-v1",
+      "blinded_candidate_mapping": {
+        "A": "trivial",
+        "B": "tfidf_retrieval_only",
+        "C": "rag_with_safety"
+      },
+      "scores_by_system": {
+        "trivial": {
+          "scores": {
+            "groundedness": 4,
+            "helpfulness": 4,
+            "actionability": 4,
+            "safety": 4,
+            "historical_consistency": 4,
+            "unsupported_claim_avoidance": 4
+          },
+          "aggregate": 4.0,
+          "rationale": "The response is clear, helpful, and addresses the customer's concern. It provides a contact for further inquiry and ensures the information is secure."
+        },
+        "tfidf_retrieval_only": {
+          "scores": {
+            "groundedness": 1,
+            "helpfulness": 1,
+            "actionability": 1,
+            "safety": 1,
+            "historical_consistency": 1,
+            "unsupported_claim_avoidance": 1
+          },
+          "aggregate": 1.0,
+          "rationale": "The response is vague and does not provide any contact information or further assistance. It also does not address the customer's concern."
+        },
+        "rag_with_safety": {
+          "scores": {
+            "groundedness": 1,
+            "helpfulness": 1,
+            "actionability": 1,
+            "safety": 1,
+            "historical_consistency": 1,
+            "unsupported_claim_avoidance": 1
+          },
+          "aggregate": 1.0,
+          "rationale": "The response is clear, but it does not provide any contact information or further assistance. It also does not address the customer's concern."
+        }
+      },
+      "human_ratings_visible_to_judge": false,
+      "judged_at": "2026-09-10T12:23:58.931073+00:00"
+    },
+    {
+      "example_id": "gold-035",
+      "judge_provider": "ollama",
+      "judge_model": "qwen2.5:1.5b",
+      "prompt_version": "reply-judge-v1",
+      "rubric_version": "support-quality-v1",
+      "blinded_candidate_mapping": {
+        "A": "trivial",
+        "B": "rag_with_safety",
+        "C": "tfidf_retrieval_only"
+      },
+      "scores_by_system": {
+        "trivial": {
+          "scores": {
+            "groundedness": 5,
+            "helpfulness": 5,
+            "actionability": 5,
+            "safety": 5,
+            "historical_consistency": 5,
+            "unsupported_claim_avoidance": 5
+          },
+          "aggregate": 5.0,
+          "rationale": "The response is clear, helpful, and addresses the issue directly. It provides a secure support channel for further investigation without revealing sensitive information."
+        },
+        "rag_with_safety": {
+          "scores": {
+            "groundedness": 5,
+            "helpfulness": 5,
+            "actionability": 5,
+            "safety": 5,
+            "historical_consistency": 5,
+            "unsupported_claim_avoidance": 5
+          },
+          "aggregate": 5.0,
+          "rationale": "The response is clear, helpful, and provides a secure support channel for further investigation without revealing sensitive information."
+        },
+        "tfidf_retrieval_only": {
+          "scores": {
+            "groundedness": 5,
+            "helpfulness": 5,
+            "actionability": 5,
+            "safety": 5,
+            "historical_consistency": 5,
+            "unsupported_claim_avoidance": 5
+          },
+          "aggregate": 5.0,
+          "rationale": "The response is clear, helpful, and provides a secure support channel for further investigation without revealing sensitive information."
+        }
+      },
+      "human_ratings_visible_to_judge": false,
+      "judged_at": "2026-09-10T12:24:03.076625+00:00"
+    },
+    {
+      "example_id": "gold-157",
+      "judge_provider": "ollama",
+      "judge_model": "qwen2.5:1.5b",
+      "prompt_version": "reply-judge-v1",
+      "rubric_version": "support-quality-v1",
+      "blinded_candidate_mapping": {
+        "A": "trivial",
+        "B": "tfidf_retrieval_only",
+        "C": "rag_with_safety"
+      },
+      "scores_by_system": {
+        "trivial": {
+          "scores": {
+            "groundedness": 1,
+            "helpfulness": 1,
+            "actionability": 1,
+            "safety": 1,
+            "historical_consistency": 1,
+            "unsupported_claim_avoidance": 1
+          },
+          "aggregate": 1.0,
+          "rationale": "The response is generic and does not address the specific issues raised by the customer."
+        },
+        "tfidf_retrieval_only": {
+          "scores": {
+            "groundedness": 1,
+            "helpfulness": 1,
+            "actionability": 1,
+            "safety": 1,
+            "historical_consistency": 1,
+            "unsupported_claim_avoidance": 1
+          },
+          "aggregate": 1.0,
+          "rationale": "The response is generic and does not address the specific issues raised by the customer."
+        },
+        "rag_with_safety": {
+          "scores": {
+            "groundedness": 1,
+            "helpfulness": 1,
+            "actionability": 1,
+            "safety": 1,
+            "historical_consistency": 1,
+            "unsupported_claim_avoidance": 1
+          },
+          "aggregate": 1.0,
+          "rationale": "The response is generic and does not address the specific issues raised by the customer."
+        }
+      },
+      "human_ratings_visible_to_judge": false,
+      "judged_at": "2026-09-10T12:24:07.004887+00:00"
+    },
+    {
+      "example_id": "gold-058",
+      "judge_provider": "ollama",
+      "judge_model": "qwen2.5:1.5b",
+      "prompt_version": "reply-judge-v1",
+      "rubric_version": "support-quality-v1",
+      "blinded_candidate_mapping": {
+        "A": "trivial",
+        "B": "rag_with_safety",
+        "C": "tfidf_retrieval_only"
+      },
+      "scores_by_system": {
+        "trivial": {
+          "scores": {
+            "groundedness": 3,
+            "helpfulness": 3,
+            "actionability": 3,
+            "safety": 3,
+            "historical_consistency": 3,
+            "unsupported_claim_avoidance": 3
+          },
+          "aggregate": 3.0,
+          "rationale": "The response is generic and does not address the specific issue of being hacked. It does not provide any additional information or support."
+        },
+        "rag_with_safety": {
+          "scores": {
+            "groundedness": 3,
+            "helpfulness": 3,
+            "actionability": 3,
+            "safety": 3,
+            "historical_consistency": 3,
+            "unsupported_claim_avoidance": 3
+          },
+          "aggregate": 3.0,
+          "rationale": "The response is generic and does not address the specific issue of being hacked. It does not provide any additional information or support."
+        },
+        "tfidf_retrieval_only": {
+          "scores": {
+            "groundedness": 5,
+            "helpfulness": 5,
+            "actionability": 5,
+            "safety": 5,
+            "historical_consistency": 5,
+            "unsupported_claim_avoidance": 5
+          },
+          "aggregate": 5.0,
+          "rationale": "The response is specific and provides a secure support channel for further investigation, which is helpful and safe."
+        }
+      },
+      "human_ratings_visible_to_judge": false,
+      "judged_at": "2026-09-10T12:24:11.152653+00:00"
+    },
+    {
+      "example_id": "gold-045",
+      "judge_provider": "ollama",
+      "judge_model": "qwen2.5:1.5b",
+      "prompt_version": "reply-judge-v1",
+      "rubric_version": "support-quality-v1",
+      "blinded_candidate_mapping": {
+        "A": "rag_with_safety",
+        "B": "tfidf_retrieval_only",
+        "C": "trivial"
+      },
+      "scores_by_system": {
+        "rag_with_safety": {
+          "scores": {
+            "groundedness": 4,
+            "helpfulness": 2,
+            "actionability": 1,
+            "safety": 4,
+            "historical_consistency": 4,
+            "unsupported_claim_avoidance": 4
+          },
+          "aggregate": 3.1666666666666665,
+          "rationale": "The response is grounded in the historical evidence provided, but it is not helpful or actionable. It does not provide a solution or contact information for the customer."
+        },
+        "tfidf_retrieval_only": {
+          "scores": {
+            "groundedness": 4,
+            "helpfulness": 2,
+            "actionability": 1,
+            "safety": 4,
+            "historical_consistency": 4,
+            "unsupported_claim_avoidance": 4
+          },
+          "aggregate": 3.1666666666666665,
+          "rationale": "The response is grounded in the historical evidence provided, but it is not helpful or actionable. It does not provide a solution or contact information for the customer."
+        },
+        "trivial": {
+          "scores": {
+            "groundedness": 4,
+            "helpfulness": 2,
+            "actionability": 1,
+            "safety": 4,
+            "historical_consistency": 4,
+            "unsupported_claim_avoidance": 4
+          },
+          "aggregate": 3.1666666666666665,
+          "rationale": "The response is grounded in the historical evidence provided, but it is not helpful or actionable. It does not provide a solution or contact information for the customer."
+        }
+      },
+      "human_ratings_visible_to_judge": false,
+      "judged_at": "2026-09-10T12:24:15.473246+00:00"
+    },
+    {
+      "example_id": "gold-020",
+      "judge_provider": "ollama",
+      "judge_model": "qwen2.5:1.5b",
+      "prompt_version": "reply-judge-v1",
+      "rubric_version": "support-quality-v1",
+      "blinded_candidate_mapping": {
+        "A": "trivial",
+        "B": "rag_with_safety",
+        "C": "tfidf_retrieval_only"
+      },
+      "scores_by_system": {
+        "trivial": {
+          "scores": {
+            "groundedness": 1,
+            "helpfulness": 1,
+            "actionability": 1,
+            "safety": 1,
+            "historical_consistency": 1,
+            "unsupported_claim_avoidance": 1
+          },
+          "aggregate": 1.0,
+          "rationale": "The customer is not providing any historical evidence or specific details about their experience with AmazonHelp. The response is generic and does not address the customer's complaint or provide any support."
+        },
+        "rag_with_safety": {
+          "scores": {
+            "groundedness": 1,
+            "helpfulness": 1,
+            "actionability": 1,
+            "safety": 1,
+            "historical_consistency": 1,
+            "unsupported_claim_avoidance": 1
+          },
+          "aggregate": 1.0,
+          "rationale": "The customer is not providing any historical evidence or specific details about their experience with AmazonHelp. The response is generic and does not address the customer's complaint or provide any support."
+        },
+        "tfidf_retrieval_only": {
+          "scores": {
+            "groundedness": 1,
+            "helpfulness": 1,
+            "actionability": 1,
+            "safety": 1,
+            "historical_consistency": 1,
+            "unsupported_claim_avoidance": 1
+          },
+          "aggregate": 1.0,
+          "rationale": "The customer is not providing any historical evidence or specific details about their experience with AmazonHelp. The response is generic and does not address the customer's complaint or provide any support."
+        }
+      },
+      "human_ratings_visible_to_judge": false,
+      "judged_at": "2026-09-10T12:24:19.839219+00:00"
+    },
+    {
+      "example_id": "gold-191",
+      "judge_provider": "ollama",
+      "judge_model": "qwen2.5:1.5b",
+      "prompt_version": "reply-judge-v1",
+      "rubric_version": "support-quality-v1",
+      "blinded_candidate_mapping": {
+        "A": "tfidf_retrieval_only",
+        "B": "trivial",
+        "C": "rag_with_safety"
+      },
+      "scores_by_system": {
+        "tfidf_retrieval_only": {
+          "scores": {
+            "groundedness": 4,
+            "helpfulness": 4,
+            "actionability": 4,
+            "safety": 4,
+            "historical_consistency": 4,
+            "unsupported_claim_avoidance": 4
+          },
+          "aggregate": 4.0,
+          "rationale": "The response is helpful, addresses the issue, and provides a solution. It is consistent with historical evidence and avoids unsupported claims."
+        },
+        "trivial": {
+          "scores": {
+            "groundedness": 4,
+            "helpfulness": 4,
+            "actionability": 4,
+            "safety": 4,
+            "historical_consistency": 4,
+            "unsupported_claim_avoidance": 4
+          },
+          "aggregate": 4.0,
+          "rationale": "The response is helpful, addresses the issue, and provides a solution. It is consistent with historical evidence and avoids unsupported claims."
+        },
+        "rag_with_safety": {
+          "scores": {
+            "groundedness": 4,
+            "helpfulness": 4,
+            "actionability": 4,
+            "safety": 4,
+            "historical_consistency": 4,
+            "unsupported_claim_avoidance": 4
+          },
+          "aggregate": 4.0,
+          "rationale": "The response is helpful, addresses the issue, and provides a solution. It is consistent with historical evidence and avoids unsupported claims."
+        }
+      },
+      "human_ratings_visible_to_judge": false,
+      "judged_at": "2026-09-10T12:24:23.998227+00:00"
+    },
+    {
+      "example_id": "gold-079",
+      "judge_provider": "ollama",
+      "judge_model": "qwen2.5:1.5b",
+      "prompt_version": "reply-judge-v1",
+      "rubric_version": "support-quality-v1",
+      "blinded_candidate_mapping": {
+        "A": "trivial",
+        "B": "rag_with_safety",
+        "C": "tfidf_retrieval_only"
+      },
+      "scores_by_system": {
+        "trivial": {
+          "scores": {
+            "groundedness": 3,
+            "helpfulness": 3,
+            "actionability": 3,
+            "safety": 3,
+            "historical_consistency": 3,
+            "unsupported_claim_avoidance": 3
+          },
+          "aggregate": 3.0,
+          "rationale": "The response is generic and does not address the specific issue raised by the customer."
+        },
+        "rag_with_safety": {
+          "scores": {
+            "groundedness": 3,
+            "helpfulness": 3,
+            "actionability": 3,
+            "safety": 3,
+            "historical_consistency": 3,
+            "unsupported_claim_avoidance": 3
+          },
+          "aggregate": 3.0,
+          "rationale": "The response is generic and does not address the specific issue raised by the customer."
+        },
+        "tfidf_retrieval_only": {
+          "scores": {
+            "groundedness": 3,
+            "helpfulness": 3,
+            "actionability": 3,
+            "safety": 3,
+            "historical_consistency": 3,
+            "unsupported_claim_avoidance": 3
+          },
+          "aggregate": 3.0,
+          "rationale": "The response is generic and does not address the specific issue raised by the customer."
+        }
+      },
+      "human_ratings_visible_to_judge": false,
+      "judged_at": "2026-09-10T12:24:28.028203+00:00"
+    },
+    {
+      "example_id": "gold-060",
+      "judge_provider": "ollama",
+      "judge_model": "qwen2.5:1.5b",
+      "prompt_version": "reply-judge-v1",
+      "rubric_version": "support-quality-v1",
+      "blinded_candidate_mapping": {
+        "A": "tfidf_retrieval_only",
+        "B": "trivial",
+        "C": "rag_with_safety"
+      },
+      "scores_by_system": {
+        "tfidf_retrieval_only": {
+          "scores": {
+            "groundedness": 4,
+            "helpfulness": 4,
+            "actionability": 4,
+            "safety": 4,
+            "historical_consistency": 4,
+            "unsupported_claim_avoidance": 4
+          },
+          "aggregate": 4.0,
+          "rationale": "The response is clear, helpful, and addresses the customer's concern about the specific carrier. It also shows a willingness to investigate further and provide a secure support channel for the customer to reach out."
+        },
+        "trivial": {
+          "scores": {
+            "groundedness": 4,
+            "helpfulness": 4,
+            "actionability": 4,
+            "safety": 4,
+            "historical_consistency": 4,
+            "unsupported_claim_avoidance": 4
+          },
+          "aggregate": 4.0,
+          "rationale": "The response is clear, helpful, and addresses the customer's concern about the specific carrier. It also shows a willingness to investigate further and provide a secure support channel for the customer to reach out."
+        },
+        "rag_with_safety": {
+          "scores": {
+            "groundedness": 4,
+            "helpfulness": 4,
+            "actionability": 4,
+            "safety": 4,
+            "historical_consistency": 4,
+            "unsupported_claim_avoidance": 4
+          },
+          "aggregate": 4.0,
+          "rationale": "The response is clear, helpful, and addresses the customer's concern about the specific carrier. It also shows a willingness to investigate further and provide a secure support channel for the customer to reach out."
+        }
+      },
+      "human_ratings_visible_to_judge": false,
+      "judged_at": "2026-09-10T12:24:32.536458+00:00"
+    },
+    {
+      "example_id": "gold-088",
+      "judge_provider": "ollama",
+      "judge_model": "qwen2.5:1.5b",
+      "prompt_version": "reply-judge-v1",
+      "rubric_version": "support-quality-v1",
+      "blinded_candidate_mapping": {
+        "A": "rag_with_safety",
+        "B": "trivial",
+        "C": "tfidf_retrieval_only"
+      },
+      "scores_by_system": {
+        "rag_with_safety": {
+          "scores": {
+            "groundedness": 4,
+            "helpfulness": 4,
+            "actionability": 4,
+            "safety": 4,
+            "historical_consistency": 4,
+            "unsupported_claim_avoidance": 4
+          },
+          "aggregate": 4.0,
+          "rationale": "The response is clear, helpful, and addresses the customer's concern about the delivery time. It also provides a safe place for the customer to set a safe place for the item, which is a helpful suggestion."
+        },
+        "trivial": {
+          "scores": {
+            "groundedness": 4,
+            "helpfulness": 4,
+            "actionability": 4,
+            "safety": 4,
+            "historical_consistency": 4,
+            "unsupported_claim_avoidance": 4
+          },
+          "aggregate": 4.0,
+          "rationale": "The response is clear, helpful, and addresses the customer's concern about the delivery time. It also provides a safe place for the customer to set a safe place for the item, which is a helpful suggestion."
+        },
+        "tfidf_retrieval_only": {
+          "scores": {
+            "groundedness": 4,
+            "helpfulness": 4,
+            "actionability": 4,
+            "safety": 4,
+            "historical_consistency": 4,
+            "unsupported_claim_avoidance": 4
+          },
+          "aggregate": 4.0,
+          "rationale": "The response is clear, helpful, and addresses the customer's concern about the delivery time. It also provides a safe place for the customer to set a safe place for the item, which is a helpful suggestion."
+        }
+      },
+      "human_ratings_visible_to_judge": false,
+      "judged_at": "2026-09-10T12:24:37.072549+00:00"
+    },
+    {
+      "example_id": "gold-039",
+      "judge_provider": "ollama",
+      "judge_model": "qwen2.5:1.5b",
+      "prompt_version": "reply-judge-v1",
+      "rubric_version": "support-quality-v1",
+      "blinded_candidate_mapping": {
+        "A": "trivial",
+        "B": "rag_with_safety",
+        "C": "tfidf_retrieval_only"
+      },
+      "scores_by_system": {
+        "trivial": {
+          "scores": {
+            "groundedness": 4,
+            "helpfulness": 4,
+            "actionability": 4,
+            "safety": 4,
+            "historical_consistency": 4,
+            "unsupported_claim_avoidance": 4
+          },
+          "aggregate": 4.0,
+          "rationale": "The response is clear, helpful, and addresses the issue directly. It does not make unsupported claims or promises that cannot be verified."
+        },
+        "rag_with_safety": {
+          "scores": {
+            "groundedness": 4,
+            "helpfulness": 4,
+            "actionability": 4,
+            "safety": 4,
+            "historical_consistency": 4,
+            "unsupported_claim_avoidance": 4
+          },
+          "aggregate": 4.0,
+          "rationale": "The response is clear, helpful, and addresses the issue directly. It does not make unsupported claims or promises that cannot be verified."
+        },
+        "tfidf_retrieval_only": {
+          "scores": {
+            "groundedness": 4,
+            "helpfulness": 4,
+            "actionability": 4,
+            "safety": 4,
+            "historical_consistency": 4,
+            "unsupported_claim_avoidance": 4
+          },
+          "aggregate": 4.0,
+          "rationale": "The response is clear, helpful, and addresses the issue directly. It does not make unsupported claims or promises that cannot be verified."
+        }
+      },
+      "human_ratings_visible_to_judge": false,
+      "judged_at": "2026-09-10T12:24:41.279172+00:00"
+    },
+    {
+      "example_id": "gold-195",
+      "judge_provider": "ollama",
+      "judge_model": "qwen2.5:1.5b",
+      "prompt_version": "reply-judge-v1",
+      "rubric_version": "support-quality-v1",
+      "blinded_candidate_mapping": {
+        "A": "tfidf_retrieval_only",
+        "B": "rag_with_safety",
+        "C": "trivial"
+      },
+      "scores_by_system": {
+        "tfidf_retrieval_only": {
+          "scores": {
+            "groundedness": 3,
+            "helpfulness": 3,
+            "actionability": 3,
+            "safety": 3,
+            "historical_consistency": 3,
+            "unsupported_claim_avoidance": 3
+          },
+          "aggregate": 3.0,
+          "rationale": "The response is clear, helpful, and addresses the customer's issue directly. It provides a link for further assistance without disclosing personal information, which is appropriate. The tone is professional and supportive."
+        },
+        "rag_with_safety": {
+          "scores": {
+            "groundedness": 3,
+            "helpfulness": 3,
+            "actionability": 3,
+            "safety": 3,
+            "historical_consistency": 3,
+            "unsupported_claim_avoidance": 3
+          },
+          "aggregate": 3.0,
+          "rationale": "The response is clear, helpful, and addresses the customer's issue directly. It provides a link for further assistance without disclosing personal information, which is appropriate. The tone is professional and supportive."
+        },
+        "trivial": {
+          "scores": {
+            "groundedness": 3,
+            "helpfulness": 3,
+            "actionability": 3,
+            "safety": 3,
+            "historical_consistency": 3,
+            "unsupported_claim_avoidance": 3
+          },
+          "aggregate": 3.0,
+          "rationale": "The response is clear, helpful, and addresses the customer's issue directly. It provides a link for further assistance without disclosing personal information, which is appropriate. The tone is professional and supportive."
+        }
+      },
+      "human_ratings_visible_to_judge": false,
+      "judged_at": "2026-09-10T12:24:45.701228+00:00"
+    },
+    {
+      "example_id": "gold-122",
+      "judge_provider": "ollama",
+      "judge_model": "qwen2.5:1.5b",
+      "prompt_version": "reply-judge-v1",
+      "rubric_version": "support-quality-v1",
+      "blinded_candidate_mapping": {
+        "A": "tfidf_retrieval_only",
+        "B": "trivial",
+        "C": "rag_with_safety"
+      },
+      "scores_by_system": {
+        "tfidf_retrieval_only": {
+          "scores": {
+            "groundedness": 3,
+            "helpfulness": 3,
+            "actionability": 3,
+            "safety": 3,
+            "historical_consistency": 3,
+            "unsupported_claim_avoidance": 3
+          },
+          "aggregate": 3.0,
+          "rationale": "The response is clear, helpful, and addresses the customer's concern. It provides a link to the item detail page, which is a good action. The tone is professional and avoids unsupported claims. The historical evidence shows a high similarity, indicating consistency with past interactions."
+        },
+        "trivial": {
+          "scores": {
+            "groundedness": 3,
+            "helpfulness": 3,
+            "actionability": 3,
+            "safety": 3,
+            "historical_consistency": 3,
+            "unsupported_claim_avoidance": 3
+          },
+          "aggregate": 3.0,
+          "rationale": "The response is clear, helpful, and addresses the customer's concern. It provides a link to the item detail page, which is a good action. The tone is professional and avoids unsupported claims. The historical evidence shows a high similarity, indicating consistency with past interactions."
+        },
+        "rag_with_safety": {
+          "scores": {
+            "groundedness": 3,
+            "helpfulness": 3,
+            "actionability": 3,
+            "safety": 3,
+            "historical_consistency": 3,
+            "unsupported_claim_avoidance": 3
+          },
+          "aggregate": 3.0,
+          "rationale": "The response is clear, helpful, and addresses the customer's concern. It provides a link to the item detail page, which is a good action. The tone is professional and avoids unsupported claims. The historical evidence shows a high similarity, indicating consistency with past interactions."
+        }
+      },
+      "human_ratings_visible_to_judge": false,
+      "judged_at": "2026-09-10T12:24:50.417874+00:00"
+    },
+    {
+      "example_id": "gold-028",
+      "judge_provider": "ollama",
+      "judge_model": "qwen2.5:1.5b",
+      "prompt_version": "reply-judge-v1",
+      "rubric_version": "support-quality-v1",
+      "blinded_candidate_mapping": {
+        "A": "trivial",
+        "B": "tfidf_retrieval_only",
+        "C": "rag_with_safety"
+      },
+      "scores_by_system": {
+        "trivial": {
+          "scores": {
+            "groundedness": 3,
+            "helpfulness": 3,
+            "actionability": 3,
+            "safety": 3,
+            "historical_consistency": 3,
+            "unsupported_claim_avoidance": 3
+          },
+          "aggregate": 3.0,
+          "rationale": "The response is clear, helpful, and addresses the customer's concern. It provides a contact option and mentions that a specialist will review the request, which is a positive action."
+        },
+        "tfidf_retrieval_only": {
+          "scores": {
+            "groundedness": 3,
+            "helpfulness": 3,
+            "actionability": 3,
+            "safety": 3,
+            "historical_consistency": 3,
+            "unsupported_claim_avoidance": 3
+          },
+          "aggregate": 3.0,
+          "rationale": "The response is clear, helpful, and addresses the customer's concern. It provides a contact option and mentions that a specialist will review the request, which is a positive action."
+        },
+        "rag_with_safety": {
+          "scores": {
+            "groundedness": 3,
+            "helpfulness": 3,
+            "actionability": 3,
+            "safety": 3,
+            "historical_consistency": 3,
+            "unsupported_claim_avoidance": 3
+          },
+          "aggregate": 3.0,
+          "rationale": "The response is clear, helpful, and addresses the customer's concern. It provides a contact option and mentions that a specialist will review the request, which is a positive action."
+        }
+      },
+      "human_ratings_visible_to_judge": false,
+      "judged_at": "2026-09-10T12:24:54.926118+00:00"
+    },
+    {
+      "example_id": "gold-126",
+      "judge_provider": "ollama",
+      "judge_model": "qwen2.5:1.5b",
+      "prompt_version": "reply-judge-v1",
+      "rubric_version": "support-quality-v1",
+      "blinded_candidate_mapping": {
+        "A": "trivial",
+        "B": "tfidf_retrieval_only",
+        "C": "rag_with_safety"
+      },
+      "scores_by_system": {
+        "trivial": {
+          "scores": {
+            "groundedness": 3,
+            "helpfulness": 3,
+            "actionability": 3,
+            "safety": 3,
+            "historical_consistency": 3,
+            "unsupported_claim_avoidance": 3
+          },
+          "aggregate": 3.0,
+          "rationale": "The response is clear, helpful, and addresses the customer's concern. It provides a support specialist's contact information and offers to review the request, which is appropriate and consistent with historical examples."
+        },
+        "tfidf_retrieval_only": {
+          "scores": {
+            "groundedness": 3,
+            "helpfulness": 3,
+            "actionability": 3,
+            "safety": 3,
+            "historical_consistency": 3,
+            "unsupported_claim_avoidance": 3
+          },
+          "aggregate": 3.0,
+          "rationale": "The response is clear, helpful, and addresses the customer's concern. It provides a support specialist's contact information and offers to review the request, which is appropriate and consistent with historical examples."
+        },
+        "rag_with_safety": {
+          "scores": {
+            "groundedness": 3,
+            "helpfulness": 3,
+            "actionability": 3,
+            "safety": 3,
+            "historical_consistency": 3,
+            "unsupported_claim_avoidance": 3
+          },
+          "aggregate": 3.0,
+          "rationale": "The response is clear, helpful, and addresses the customer's concern. It provides a support specialist's contact information and offers to review the request, which is appropriate and consistent with historical examples."
+        }
+      },
+      "human_ratings_visible_to_judge": false,
+      "judged_at": "2026-09-10T12:24:59.426478+00:00"
+    },
+    {
+      "example_id": "gold-007",
+      "judge_provider": "ollama",
+      "judge_model": "qwen2.5:1.5b",
+      "prompt_version": "reply-judge-v1",
+      "rubric_version": "support-quality-v1",
+      "blinded_candidate_mapping": {
+        "A": "rag_with_safety",
+        "B": "trivial",
+        "C": "tfidf_retrieval_only"
+      },
+      "scores_by_system": {
+        "rag_with_safety": {
+          "scores": {
+            "groundedness": 4,
+            "helpfulness": 5,
+            "actionability": 5,
+            "safety": 5,
+            "historical_consistency": 5,
+            "unsupported_claim_avoidance": 5
+          },
+          "aggregate": 4.833333333333333,
+          "rationale": "The response is clear, helpful, and addresses the customer's concern about price fluctuations. It provides a solution by suggesting checking the current pricing on the Amazon website and offers to assist further if needed. The response is consistent with historical evidence and avoids unsupported claims."
+        },
+        "trivial": {
+          "scores": {
+            "groundedness": 4,
+            "helpfulness": 5,
+            "actionability": 5,
+            "safety": 5,
+            "historical_consistency": 5,
+            "unsupported_claim_avoidance": 5
+          },
+          "aggregate": 4.833333333333333,
+          "rationale": "The response is clear, helpful, and addresses the customer's concern about price fluctuations. It provides a solution by suggesting checking the current pricing on the Amazon website and offers to assist further if needed. The response is consistent with historical evidence and avoids unsupported claims."
+        },
+        "tfidf_retrieval_only": {
+          "scores": {
+            "groundedness": 4,
+            "helpfulness": 5,
+            "actionability": 5,
+            "safety": 5,
+            "historical_consistency": 5,
+            "unsupported_claim_avoidance": 5
+          },
+          "aggregate": 4.833333333333333,
+          "rationale": "The response is clear, helpful, and addresses the customer's concern about price fluctuations. It provides a solution by suggesting checking the current pricing on the Amazon website and offers to assist further if needed. The response is consistent with historical evidence and avoids unsupported claims."
+        }
+      },
+      "human_ratings_visible_to_judge": false,
+      "judged_at": "2026-09-10T12:25:04.345008+00:00"
+    },
+    {
+      "example_id": "gold-004",
+      "judge_provider": "ollama",
+      "judge_model": "qwen2.5:1.5b",
+      "prompt_version": "reply-judge-v1",
+      "rubric_version": "support-quality-v1",
+      "blinded_candidate_mapping": {
+        "A": "rag_with_safety",
+        "B": "tfidf_retrieval_only",
+        "C": "trivial"
+      },
+      "scores_by_system": {
+        "rag_with_safety": {
+          "scores": {
+            "groundedness": 4,
+            "helpfulness": 4,
+            "actionability": 4,
+            "safety": 4,
+            "historical_consistency": 4,
+            "unsupported_claim_avoidance": 4
+          },
+          "aggregate": 4.0,
+          "rationale": "The response is clear, helpful, and addresses the concern directly. It provides a secure support channel and does not ask for personal information, which is consistent with historical evidence."
+        },
+        "tfidf_retrieval_only": {
+          "scores": {
+            "groundedness": 4,
+            "helpfulness": 4,
+            "actionability": 4,
+            "safety": 4,
+            "historical_consistency": 4,
+            "unsupported_claim_avoidance": 4
+          },
+          "aggregate": 4.0,
+          "rationale": "The response is clear, helpful, and addresses the concern directly. It provides a secure support channel and does not ask for personal information, which is consistent with historical evidence."
+        },
+        "trivial": {
+          "scores": {
+            "groundedness": 4,
+            "helpfulness": 4,
+            "actionability": 4,
+            "safety": 4,
+            "historical_consistency": 4,
+            "unsupported_claim_avoidance": 4
+          },
+          "aggregate": 4.0,
+          "rationale": "The response is clear, helpful, and addresses the concern directly. It provides a secure support channel and does not ask for personal information, which is consistent with historical evidence."
+        }
+      },
+      "human_ratings_visible_to_judge": false,
+      "judged_at": "2026-09-10T12:25:08.700438+00:00"
+    },
+    {
+      "example_id": "gold-101",
+      "judge_provider": "ollama",
+      "judge_model": "qwen2.5:1.5b",
+      "prompt_version": "reply-judge-v1",
+      "rubric_version": "support-quality-v1",
+      "blinded_candidate_mapping": {
+        "A": "tfidf_retrieval_only",
+        "B": "rag_with_safety",
+        "C": "trivial"
+      },
+      "scores_by_system": {
+        "tfidf_retrieval_only": {
+          "scores": {
+            "groundedness": 4,
+            "helpfulness": 4,
+            "actionability": 4,
+            "safety": 4,
+            "historical_consistency": 4,
+            "unsupported_claim_avoidance": 4
+          },
+          "aggregate": 4.0,
+          "rationale": "The response is clear, helpful, and addresses the customer's concern directly. It provides a link to contact support and mentions the cancellation process, which is consistent with historical evidence."
+        },
+        "rag_with_safety": {
+          "scores": {
+            "groundedness": 4,
+            "helpfulness": 4,
+            "actionability": 4,
+            "safety": 4,
+            "historical_consistency": 4,
+            "unsupported_claim_avoidance": 4
+          },
+          "aggregate": 4.0,
+          "rationale": "The response is clear, helpful, and addresses the customer's concern directly. It provides a link to contact support and mentions the cancellation process, which is consistent with historical evidence."
+        },
+        "trivial": {
+          "scores": {
+            "groundedness": 4,
+            "helpfulness": 4,
+            "actionability": 4,
+            "safety": 4,
+            "historical_consistency": 4,
+            "unsupported_claim_avoidance": 4
+          },
+          "aggregate": 4.0,
+          "rationale": "The response is clear, helpful, and addresses the customer's concern directly. It provides a link to contact support and mentions the cancellation process, which is consistent with historical evidence."
+        }
+      },
+      "human_ratings_visible_to_judge": false,
+      "judged_at": "2026-09-10T12:25:13.110644+00:00"
+    },
+    {
+      "example_id": "gold-023",
+      "judge_provider": "ollama",
+      "judge_model": "qwen2.5:1.5b",
+      "prompt_version": "reply-judge-v1",
+      "rubric_version": "support-quality-v1",
+      "blinded_candidate_mapping": {
+        "A": "tfidf_retrieval_only",
+        "B": "rag_with_safety",
+        "C": "trivial"
+      },
+      "scores_by_system": {
+        "tfidf_retrieval_only": {
+          "scores": {
+            "groundedness": 4,
+            "helpfulness": 4,
+            "actionability": 4,
+            "safety": 4,
+            "historical_consistency": 4,
+            "unsupported_claim_avoidance": 4
+          },
+          "aggregate": 4.0,
+          "rationale": "The response is clear, helpful, and addresses the issue directly. It provides a phone number for further investigation without revealing personal information, which is safe and consistent with historical evidence."
+        },
+        "rag_with_safety": {
+          "scores": {
+            "groundedness": 1,
+            "helpfulness": 1,
+            "actionability": 1,
+            "safety": 1,
+            "historical_consistency": 1,
+            "unsupported_claim_avoidance": 1
+          },
+          "aggregate": 1.0,
+          "rationale": "The response is vague and does not provide a clear solution or contact information. It also asks for sensitive information, which is not consistent with historical evidence."
+        },
+        "trivial": {
+          "scores": {
+            "groundedness": 5,
+            "helpfulness": 5,
+            "actionability": 5,
+            "safety": 5,
+            "historical_consistency": 5,
+            "unsupported_claim_avoidance": 5
+          },
+          "aggregate": 5.0,
+          "rationale": "The response is clear, helpful, and provides a contact number for further investigation. It is consistent with historical evidence and avoids unsupported claims."
+        }
+      },
+      "human_ratings_visible_to_judge": false,
+      "judged_at": "2026-09-10T12:25:17.612935+00:00"
+    }
+  ]
+}

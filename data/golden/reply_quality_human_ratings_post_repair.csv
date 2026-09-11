@@ -1,0 +1,389 @@
+﻿example_id,customer_message,generated_response,historical_evidence,human_groundedness,human_helpfulness,human_actionability,human_safety,human_historical_consistency,human_unsupported_claim_avoidance,human_rating_complete,labeler_id,human_rating_reason,rated_at,updated_at
+gold-183,Hi @115830 can you please fix your app... faceID doesn’t work https://t.co/hLeSCqBkN6,"We've noticed your app is having issues with Face ID. Could you please confirm if you're using the latest version of the app? If not, updating might resolve this. If the problem persists, we'll help you troubleshoot further.","Historical customer: Hi @115850 i was asked to change my password on App .is something fishy ?
+Historical AmazonHelp reply: @199058 Is this a notification on app or a human request? ^MJ
+
+Historical customer: @117795 your app has not been working for days. What’s going on?
+Historical AmazonHelp reply: @419468 Oh no! This is not the experience we want our customers to have. Do you have the latest version of the app installed? ^NN
+
+Historical customer: @119625 is this some bug in your app? https://t.co/qTInoInVL6
+Historical AmazonHelp reply: @560384 We'd like to get this checked. Could you let us know the exact problem you're facing . ^KH",4,4,4,5,5,4,True,Maithresh,Latest-app-version advice is directly supported; “updating might resolve it” is still a small inference.,2026-09-11T10:50:56.768181+00:00,2026-09-11T10:50:56.768181+00:00
+gold-055,@115821 UNLOCK MY ACCOUNT. I DON'T KNOW WHY YOU LOCKED ME OUT. YOU ARE HOLDING MY MONEY HOSTAGE.,"I'm sorry you're dealing with this. Because this may involve account security or unauthorized activity, please contact Amazon through a secure support channel. Do not post account, order, payment, transaction, or authentication details publicly.","Historical customer: @115830 then try to click ""Contact Us"" so you can unlock my account and it asks me to log in! I have already rung you and no responbse.
+Historical AmazonHelp reply: @559457 Hi, sorry to hear that, have you tried calling us on the number found here: https://t.co/zYVX1Qi29G? ^JJ
+
+Historical customer: Why is it so hard for you to protect my account @115821 ?? You've given me the run around for 6 days.
+Historical AmazonHelp reply: @391447 I apologize for the poor experience, Jacki. This isn't what we want to hear! What options have you been given so far? ^FD
+
+Historical customer: Hi @115830. I'm locked out of my account. Can't verify on my phone as email with code not coming through. No other option to verify. Help!
+Historical AmazonHelp reply: @490661 Oh no! So sorry for the trouble. When you can, give us a ring here: https://t.co/zYVX1Qi29G. We'll be happy to help! ^BL",4,3,4,5,4,5,True,Maithresh,"Secure escalation is appropriate for a locked account, though “unauthorized activity” is broader than what the customer actually stated.",2026-09-11T10:50:56.768181+00:00,2026-09-11T10:50:56.768181+00:00
+gold-100,@AmazonHelp takes 2 hours to send verification code which expires in 10 minutes. #frustrated,"I'm sorry this needs further investigation. Please contact Amazon through a secure support channel, and do not post order, address, account, or payment details publicly.","Historical customer: @AmazonHelp Done. Awaiting your response.
+Historical AmazonHelp reply: @298340 As you've shared your details, we'll work on it and get back to you. ^HN
+
+Historical customer: @AmazonHelp Thanks for the quick response, do you have any clue how long there will go before I get a response on my mail?
+Historical AmazonHelp reply: @187926 E-mail responses can take 24-48 hours. Please reach out to us via phone/chat if you would like live assistance with this. ^TK
+
+Historical customer: @AmazonHelp nothing will happen i know as if in 3 days nothing happened how could i trust you people!! Fake assurance
+Historical AmazonHelp reply: @351184 Apologies for the ordeal, we're working on this and we'll get back to you soon. ^PS",3,3,3,5,4,5,True,Maithresh,"Safe account escalation, but historical evidence does not specifically address delayed verification codes.",2026-09-11T10:50:56.768181+00:00,2026-09-11T10:50:56.768181+00:00
+gold-044,@AmazonHelp why does my fire stick just randomly decided to restart.  Tuff to watch football games when this happens thanks,"I'm sorry this needs further investigation. Please contact Amazon through a secure support channel, and do not post order, address, account, or payment details publicly.","Historical customer: @116439 having to restart my fire TV has become a daily occurrence, what gives? #notcool
+Historical AmazonHelp reply: @292992 That's strange! Without posting personal/account details, can you tell us what's going? What error message are you seeing? ^JM
+
+Historical customer: My firestick just stopped working out of the blue 😒 @115821 wassup?
+Historical AmazonHelp reply: @342264 I'm sorry for the trouble with your Fire Stick! Have you had a chance to review these steps?: https://t.co/e1rmv8M525 ^SD
+
+Historical customer: My amazon fire stick isn’t working. Anyone else?
+Historical AmazonHelp reply: @411792 Oh no! Lets get this fixed for you, Kathleen. What is the issue you are experiencing, exactly? Please let us know! ^JD",3,2,3,5,3,5,True,Maithresh,"Safe, but now unnecessarily escalates a Fire Stick restart issue even though historical evidence supports useful troubleshooting.",2026-09-11T10:50:56.768181+00:00,2026-09-11T10:50:56.768181+00:00
+gold-190,"I ordered a @115821 basics water filter, it was 2 days late and now it’s leaving black bits in my water!!!! I’m ill, I’d rather not be more ill!!!","I'm sorry this needs further investigation. Please contact Amazon through a secure support channel, and do not post order, address, account, or payment details publicly.","Historical customer: When you order shit from @115821 and expect it to arrive by the date they say and NOTHING gets here! Awesome. Cool. Amazing. 😡😡😡
+Historical AmazonHelp reply: @412761 Did you provide your information using the link provided by LS? ^MJ
+
+Historical customer: My @115821 order has been ""arriving today"" for 2 days now. Interesting.
+Historical AmazonHelp reply: @702018 I'm sorry you haven't received your order yet! Which carrier was scheduled to deliver your package? You can check here: https://t.co/Y5jpI9gRhE ^TN
+
+Historical customer: @115830 has just got worse, will not be usin this company again after them throwing my item into a random garden, so I haven't received it
+Historical AmazonHelp reply: @439344 I'm sorry to hear about this! We'd like to work on a resolution with you. Please use this link: https://t.co/JzP7hlA23B ^TH",2,3,3,5,3,5,True,Maithresh,"Escalation is sensible because of possible health/product safety, but retrieved evidence is poorly matched to the filter defect.",2026-09-11T10:50:56.768181+00:00,2026-09-11T10:50:56.768181+00:00
+gold-072,Mum ordered 2 Yankee Candles from @115830. Courier threw the box over the garden fence onto concrete and both are shattered. Returns process started.,"I'm sorry this needs further investigation. Please contact Amazon through a secure support channel, and do not post order, address, account, or payment details publicly.","Historical customer: @115830 has just got worse, will not be usin this company again after them throwing my item into a random garden, so I haven't received it
+Historical AmazonHelp reply: @439344 I'm sorry to hear about this! We'd like to work on a resolution with you. Please use this link: https://t.co/JzP7hlA23B ^TH
+
+Historical customer: Second time that my @115850 pantry order is all messed up with contents missing, wud never try your pantry service again.
+Historical AmazonHelp reply: @449287 Apologies for inconvenience with your order, Vineet. Please report this to our support team here: https://t.co/beaaDm0muc &amp; we'll get this sorted.^SF
+
+Historical customer: @115850 : it seems that you guys are more interested in getting products returned than delivery..check order #.[PHONE]
+Historical AmazonHelp reply: @319805 I'm sorry for the trouble with the delivery. However, we'll not be able to check your information over Twitter. Request 1/2 ^GK",4,3,3,5,4,5,True,Maithresh,Evidence supports human follow-up after damaged or mishandled delivery; response is safe but generic.,2026-09-11T10:50:56.768181+00:00,2026-09-11T10:50:56.768181+00:00
+gold-006,@AmazonHelp tracking my parcel says it was handed to resident. This is a lie. I have been in all evening and nothing has been delivered. Please can you send item again at no cost to myself.,"I'm sorry your order hasn't arrived as expected. This appears to require order-specific investigation, so please contact Amazon through a secure support channel and avoid posting order or address details publicly.","Historical customer: @AmazonHelp out parcel says delivered on my account to a neighbour but nobody has it and no note through door
+Historical AmazonHelp reply: @218493 I'm sorry for the trouble. We'd like to look at this with you. Please contact us here: https://t.co/JzP7hlA23B ^MH
+
+Historical customer: @AmazonHelp Hi there. My parcel was supposedly delivered to a neighbour but is nowhere to be found. Can you advise how to proceed? Thanks!
+Historical AmazonHelp reply: @389113 I'm so sorry to hear this! Here's some tips for a parcel you are unable to locate: https://t.co/PaDuqehvUk ^MJ
+
+Historical customer: Great job @115821 @AmazonHelp leaving my parcels on the doorstep for the whole world to see!!! Glad we pay delivery for no actual reason
+Historical AmazonHelp reply: @692185 I'm sorry for the trouble with the delivery, Hayley.  Please give us a chance to take a closer look and provide feedback by reaching out via phone or chat here: https://t.co/JzP7hlA23B. ^TG",5,4,4,5,5,5,True,Maithresh,Strong match for marked-delivered-but-missing and replacement-related investigation. The delivery escalation template fits well.,2026-09-11T10:50:56.768181+00:00,2026-09-11T10:50:56.768181+00:00
+gold-180,"@AmazonHelp my friend @220734 had his order of @84429 merch stolen from his porch, please help","I'm sorry you're dealing with this. Because this may involve account security or unauthorized activity, please contact Amazon through a secure support channel. Do not post account, order, payment, transaction, or authentication details publicly.","Historical customer: @AmazonHelp anyone I can get into contact with regarding amazon merch? the support email has been unresponsive
+Historical AmazonHelp reply: @734368 I'm sorry you're having trouble with Merch by Amazon. Are you already a content creator for Merch by Amazon, or are you trying to sign up? ^JS
+
+Historical customer: @AmazonHelp hi I just received an order from you and it’s arrived damaged :(
+Historical AmazonHelp reply: @192340 I'm terribly sorry your order arrived damaged! Please see the avail refund/replace options here: https://t.co/icfSETpdft ^WJ
+
+Historical customer: @AmazonHelp Can I you advise if this is a legit email from you? My phone was recently stolen so worried someone has done something thanks
+Historical AmazonHelp reply: @171456 That is a fake email, Laura. Here's a link to a help page that will help you identify those: https://t.co/8PUfYueTiD ^EM",2,3,4,5,2,3,True,Maithresh,"Secure support is reasonable, but porch theft is incorrectly framed as possible account security or unauthorized activity.",2026-09-11T10:50:56.768181+00:00,2026-09-11T10:50:56.768181+00:00
+gold-114,@115850 Why the hell your expected delivery time and actual delivery time vary so much?  It was showing delivery by 2nd dec and im getting call to collect it today only,"I'm sorry your order hasn't arrived as expected. This appears to require order-specific investigation, so please contact Amazon through a secure support channel and avoid posting order or address details publicly.","Historical customer: @115821 i still haven't received my delivery that's almost 2 weeks late?!!
+Historical AmazonHelp reply: @195359 We're here to help! What does the tracking currently display? What was the delivery date? Check: https://t.co/aaDyEz1VgE ^JE
+
+Historical customer: @115821 how is it arriving by 9pm today and not even out for delivery? https://t.co/I3Cpsdw888
+Historical AmazonHelp reply: @237513 I'm sorry your order hasn't shipped as expected! Please reach out to us here for further assistance: https://t.co/hApLpMlfHN ^QJ
+
+Historical customer: why offer ""same day"" yet you dont deliver same day @115821
+Historical AmazonHelp reply: @408982 I'm sorry for this wait. What was the initial delivery date given when you ordered: https://t.co/Y5jpI9gRhE ^DO",4,3,4,5,4,5,True,Maithresh,"Order-specific escalation fits, but it is less useful than the historical evidence, which could ask about tracking or delivery timing.",2026-09-11T10:50:56.768181+00:00,2026-09-11T10:50:56.768181+00:00
+gold-094,@28989 @115821 Update for the two people that care: it was not delivered!!,"I'm sorry your order hasn't arrived as expected. This appears to require order-specific investigation, so please contact Amazon through a secure support channel and avoid posting order or address details publicly.","Historical customer: @115821 how my package was delivered. Not cool https://t.co/JOZWwm2Rrx
+Historical AmazonHelp reply: @405205 Oh no! So sorry about this! Were any items missing from your package? ^VB
+
+Historical customer: @115821 y'all kinda suck, I was supposed to get a package today by 8, it just now says it was delivered but I didn't get anything
+Historical AmazonHelp reply: @424343 So sorry about that! We have some tips for locating a missing package here: https://t.co/igdhiEbKxn. Keep us in the loop! ^BL
+
+Historical customer: @115821 i still haven't received my delivery that's almost 2 weeks late?!!
+Historical AmazonHelp reply: @195359 We're here to help! What does the tracking currently display? What was the delivery date? Check: https://t.co/aaDyEz1VgE ^JE",4,3,4,5,4,5,True,Maithresh,Safe and appropriate delivery escalation; historical evidence could support more useful missing-package guidance.,2026-09-11T10:50:56.768181+00:00,2026-09-11T10:50:56.768181+00:00
+gold-063,"If @115821 could stop sending my packages to the wrong state, that'd be great. This is the third time it's happened in a month.","I'm sorry your order hasn't arrived as expected. This appears to require order-specific investigation, so please contact Amazon through a secure support channel and avoid posting order or address details publicly.","Historical customer: Hey @115821 stop sending my packages through @3375! This is the third time they've lost my package 😡
+Historical AmazonHelp reply: @664512 I'm sorry to hear this. We'd like to look into the delivery and available options here: https://t.co/hApLpMlfHN ^LI
+
+Historical customer: Why do I only have a problem when @115821 is the one shipping?!! Not that hard And PEOPLE that keep mail that doesn't belong to them are POS
+Historical AmazonHelp reply: @407849 I'm sorry for the frustration! We'd like to look into this for you. Please provide your order here: https://t.co/TYuE26hN6N. ^ST
+
+Historical customer: hey @115821 please stop using @123967 - there are always issues. Now I have to drive to the post office today to get my package that i needed yesterday and set for delivery yesterday.
+Historical AmazonHelp reply: @692582 I'm so sorry about the delivery issues! Please reach out to us here so we can leave carrier feedback: https://t.co/hApLpMlfHN ^JY",5,3,4,5,5,5,True,Maithresh,Repeated wrong-state delivery clearly warrants order-specific investigation; response is well grounded but generic.,2026-09-11T10:50:56.768181+00:00,2026-09-11T10:50:56.768181+00:00
+gold-194,"@116090 My package was not delivered. I live in Nova Scotia, not Quebec. https://t.co/IhIwAOeEew","I'm sorry your order hasn't arrived as expected. This appears to require order-specific investigation, so please contact Amazon through a secure support channel and avoid posting order or address details publicly.","Historical customer: I received a delivered message but where is the package? I have not received it @115850 @11__credit_card__
+Historical AmazonHelp reply: @191325 That's strange! Kindly get in touch with us here: https://t.co/4lBU9LYvGD and we’ll be glad to help you. ^AG
+
+Historical customer: @115821 my package has not been delievered even though it says it was 🚩
+Historical AmazonHelp reply: @317324 I'm sorry for the issue with your delivery! Have you tried the steps listed here: https://t.co/VI7UFFuKib? ^JA
+
+Historical customer: @126705 @115830 im in and it hasnt been delivered so please explain where it is https://t.co/vjQDL6CDAN
+Historical AmazonHelp reply: @403260 Hey, get in touch with us here: https://t.co/JzP7hlA23B so we can look into this ^KM",5,3,4,5,5,5,True,Maithresh,Wrong-location or non-delivery issue is clearly order-specific and the safe delivery escalation fits well.,2026-09-11T10:50:56.768181+00:00,2026-09-11T10:50:56.768181+00:00
+gold-131,Eccoloooo😍 #Kindle @115821 @117634 https://t.co/JKBiHowgZU,"I'm sorry this needs further investigation. Please contact Amazon through a secure support channel, and do not post order, address, account, or payment details publicly.","Historical customer: Thank you so much for your kick ass customer service @116090! You really understand how much your readers love their Kindles! #topnotch
+Historical AmazonHelp reply: @702208 Glad we could assist, Lisa! They don't call us ""Earth's Most Customer-Centric Company"" for nothing! ^AD
+
+Historical customer: @115821 why does the india store not have kindle share?
+Historical AmazonHelp reply: @193522 Currently we do not have the feature. Please stay tuned for further update on this. ^SG
+
+Historical customer: @AmazonHelp kindle publishing, stop destroying peoples book formats
+Historical AmazonHelp reply: @172481 Hi Gayla! Will you tell us more about what's happening? We'd like to help if possible! ^CS",2,1,2,5,2,4,True,Maithresh,"Looks like a positive Kindle post, but the system unnecessarily treats it as a support problem requiring investigation.",2026-09-11T10:50:56.768181+00:00,2026-09-11T10:50:56.768181+00:00
+gold-040,#Amazon needs to improve their packing methods. Everything from $10 gloves to a $ 2500 camera lens gets thrown in a box with an air pillow. That is not acceptable. Get your act together or lose a Prime customer! @115821,"I'm sorry this needs further investigation. Please contact Amazon through a secure support channel, and do not post order, address, account, or payment details publicly.","Historical customer: @119356 @AmazonHelp horrible service, lousy customer care, non existent courier phone numbers. So much for becoming a Prime customer!
+Historical AmazonHelp reply: @119620 Sorry to know about the delivery issue. Did we happen to miss estimate as mentioned here: https://t.co/ykWpCt0ely ?^KA
+
+Historical customer: Nice secure packaging @AmazonHelp 😂😂 https://t.co/AQ19zzewpE
+Historical AmazonHelp reply: @184035 I'm so sorry your package arrived in that condition! Is anything missing or damaged? ^WJ
+
+Historical customer: Hey, @AmazonHelp maybe don't package glasses in a thin bubble envelope. Not cool. https://t.co/CLKB405SzS
+Historical AmazonHelp reply: @531660 Understood. Please help us improve by linking this feedback to your order here: https://t.co/SXFVRqVhpG 1/2",4,2,3,5,4,5,True,Maithresh,"Safe and related to packaging feedback, but generic escalation is less useful than acknowledging the packaging complaint directly.",2026-09-11T10:50:56.768181+00:00,2026-09-11T10:50:56.768181+00:00
+gold-147,@115850 his no.is +918169450792 https://t.co/JVT5p2WtRt,"I'm sorry this needs further investigation. Please contact Amazon through a secure support channel, and do not post order, address, account, or payment details publicly.","Historical customer: @115850 Pls cl me [PHONE]
+Historical AmazonHelp reply: @201487 Our support team will be happy to look into this. You can connect with us here: https://t.co/R3EfhzgU8B.(1/2) ^CB
+
+Historical customer: @115850 https://t.co/uh3EvNDomO
+Historical AmazonHelp reply: @199018 Sorry about that. Kindly get in touch with us here: https://t.co/bGlCz5qvJb and we’ll be glad to help you. (1/2) ^AG
+
+Historical customer: @115850 is this true ???? https://t.co/nrDZOTGqAd
+Historical AmazonHelp reply: @176234 I would recommend you not to provide any details on the website as it is not associated with Amazon. ^KS",5,4,4,5,5,5,True,Maithresh,Major improvement: it no longer repeats the phone number and explicitly warns against posting sensitive details.,2026-09-11T10:50:56.768181+00:00,2026-09-11T10:50:56.768181+00:00
+gold-025,"@AmazonHelp hi my name is martin bardini, i placed two orders on your .com website and it now says i have no orders placed. Did it go thru??","I'm sorry this needs further investigation. Please contact Amazon through a secure support channel, and do not post order, address, account, or payment details publicly.","Historical customer: @AmazonHelp nothing.it shows no orders. Whereas u can check how many orders I have placed in last 6 months. What non sense is this!!! https://t.co/yCxCNhDhqC
+Historical AmazonHelp reply: @167119 We've responded to your query here: https://t.co/Dr9htvlXQb. Please check. ^MK
+
+Historical customer: @AmazonHelp can you help me check for my other order pls? Is it going to be delayed too?
+Historical AmazonHelp reply: @610908 Unfortunately, we don't have access to account info but, we'd like to help. Reach us by phone here: https://t.co/hApLpM3Ejd ^EB
+
+Historical customer: @AmazonHelp Placed the order via one click and it said Thursday. I placed a second one click order that said friday. email had both orders listed as fri
+Historical AmazonHelp reply: @312552 We don't have access to order details via Twitter. Let's take a look into this in real time here: https://t.co/hApLpMlfHN ^JZ",5,4,4,5,5,5,True,Maithresh,Orders disappearing from an account requires account-specific investigation; secure escalation is strongly supported.,2026-09-11T10:50:56.768181+00:00,2026-09-11T10:50:56.768181+00:00
+gold-117,"@AmazonHelp hi, I have accidentally purchased a kindle book (missclick), can I somehow cancel the order?","I'm sorry this needs further investigation. Please contact Amazon through a secure support channel, and do not post order, address, account, or payment details publicly.","Historical customer: @AmazonHelp I had ordered 4 books out of which I cancelled 1 but you seem to have cancelled 3 books.. pls rectify the same.
+Historical AmazonHelp reply: @183038 I understand your concern regarding the cancellation of the order. Please reach out to us here: https://t.co/vlvfJr4nN9 and we'll check this for you. ^AH
+
+Historical customer: @AmazonHelp I am not able to cancel my order..plz help
+Historical AmazonHelp reply: @161170 We'd be happy to help! These steps will help walk you through canceling the order: https://t.co/vmXqEMJN6J ^ML
+
+Historical customer: @AmazonHelp @115850 Cancel my order.
+Historical AmazonHelp reply: @207242 Kindly connect with our support team here: https://t.co/TdDksLo6Mf. ^PS",4,2,3,5,4,5,True,Maithresh,"Safe, but evidence contains direct Kindle cancellation guidance, so escalation is overly conservative.",2026-09-11T10:50:56.768181+00:00,2026-09-11T10:50:56.768181+00:00
+gold-196,"1st my order of 1+5T gets canceled, then when I try to book it again, I dont get the HDFC CC cash back, being informed by Amazon that offer can be availed only once per card. But where have I availed the benefit. I hv lost my booking again. @119862 @115850 https://t.co/FtRHO4NmNc","I'm sorry this needs further investigation. Please contact Amazon through a secure support channel, and do not post order, address, account, or payment details publicly.","Historical customer: Paid 1024 Rs. for an Order and got refunded 921Rs. @115850 @AmazonHelp deducted the remaining amount as an imaginary ""Cashback"". HELP!
+Historical AmazonHelp reply: @438051 I'm sorry to learn about the refund issues. Did you happen to escalate this to our support team here: https://t.co/T6y6Xlutbs?^VN
+
+Historical customer: @115850 ORDER # [PHONE], 4months on, still awaiting #HDFCBank card cashback worth 2K. Is Amazon fooling its #PrimeCustomers??
+Historical AmazonHelp reply: @492150 We've responded to your query here: https://t.co/7RlNn5VRtQ. Kindly check. 1/2 ^PS
+
+Historical customer: @AmazonHelp I had ordered 4 books out of which I cancelled 1 but you seem to have cancelled 3 books.. pls rectify the same.
+Historical AmazonHelp reply: @183038 I understand your concern regarding the cancellation of the order. Please reach out to us here: https://t.co/vlvfJr4nN9 and we'll check this for you. ^AH",4,3,4,5,4,5,True,Maithresh,Cancellation plus cashback dispute reasonably requires account-specific human review.,2026-09-11T10:50:56.768181+00:00,2026-09-11T10:50:56.768181+00:00
+gold-042,@AmazonHelp my delivery didn't arrive yesterday so I need to cancel my order but can't on the website or app? Please help,"I'm sorry your order hasn't arrived as expected. This appears to require order-specific investigation, so please contact Amazon through a secure support channel and avoid posting order or address details publicly.","Historical customer: @AmazonHelp I am not able to cancel my order..plz help
+Historical AmazonHelp reply: @161170 We'd be happy to help! These steps will help walk you through canceling the order: https://t.co/vmXqEMJN6J ^ML
+
+Historical customer: @AmazonHelp hi there - I accidentally cancelled an order that's out for delivery today. Can I reverse it as I still want it!
+Historical AmazonHelp reply: @450933 Was the order dispatched  when you canceled it? ^RS
+
+Historical customer: @AmazonHelp hi guys, my amazon fresh delivery got cancelled this morning for no reason. Any way to get more info?
+Historical AmazonHelp reply: @483865 Hi Samuel! You should've received an e-mail with more information regarding cancellation. Please check spam/junk folders! ^FD",4,2,3,5,4,5,True,Maithresh,Delivery escalation is safe but ignores the customer's main request to cancel the order after self-service failed.,2026-09-11T10:50:56.768181+00:00,2026-09-11T10:50:56.768181+00:00
+gold-047,"@115830 I have Amazon prime, is Amazon music a separate account or is this included please ?","I'm sorry this needs further investigation. Please contact Amazon through a secure support channel, and do not post order, address, account, or payment details publicly.","Historical customer: Hey @AmazonHelp I have a regular Amazon payment coming out of my account which looks like a Prime payment I haven't signed up for. Who can I
+Historical AmazonHelp reply: @267898 We'll be happy to look into that for you. Please reach out to us here: https://t.co/JzP7hlA23B ^RS
+
+Historical customer: Just signed up for Amazon Prime, now I'm just finding random ish to buy 🙄
+Historical AmazonHelp reply: @754212 Hey, welcome! How about some interesting finds for inspiration: https://t.co/5ZcrC19rSk 😊 ^TS
+
+Historical customer: @121284 Can't find a way to access the exclusive Preview for Amazon Prime Music with the Echo Dot. Am I missing something?
+Historical AmazonHelp reply: @452006 Please connect with our support team here: https://t.co/InPVqSrDyg and we'll be happy to help. ^SH",3,2,3,5,3,5,True,Maithresh,Safe but unnecessarily escalates a straightforward informational Prime Music question.,2026-09-11T10:50:56.768181+00:00,2026-09-11T10:50:56.768181+00:00
+gold-078,@115821 why do I pay money for prime and am being asked to tip the prime now delivery driver? #abandonedCart #googleExpress,"I'm sorry your order hasn't arrived as expected. This appears to require order-specific investigation, so please contact Amazon through a secure support channel and avoid posting order or address details publicly.","Historical customer: @115830 When you pay for prime and your delivery drivers can't find an easy location 🤣 useless
+Historical AmazonHelp reply: @510018 I'm sorry! Are you having an issue with a current order? We'd love to help you out! ^MH
+
+Historical customer: @AmazonHelp I have amazon prime but been charged for delivery 🙁🙁
+Historical AmazonHelp reply: @508569 Hey Charlie. Have you ordered directly from a seller? ^TP
+
+Historical customer: @115850 u guys are degrading your services.i ordrd one item w/my prime acc, dlvry dt was 30.Still not delivered useless prime membrship1/2
+Historical AmazonHelp reply: @162533 Apologies for the delay in the delivery of your order, Pradeep. We'd like to take a closer look. 1/2 ^HD",1,1,2,5,2,2,True,Maithresh,Customer asks why they are being asked to tip a Prime Now driver; response incorrectly claims the order hasn't arrived.,2026-09-11T10:50:56.768181+00:00,2026-09-11T10:50:56.768181+00:00
+gold-187,@115821 Remind me. Why do I pay for Prime again? https://t.co/d5nZh4tnak,"I'm sorry this needs further investigation. Please contact Amazon through a secure support channel, and do not post order, address, account, or payment details publicly.","Historical customer: Hey @115821 could you maybe notify a person BEFORE you charge them for a year of Prime?
+Historical AmazonHelp reply: @209457 I'm sorry you weren't expecting that charge! We can send a reminder to your e-mail but the reminder is set by the...1/2
+
+Historical customer: @115830 Why are you telling me I'm not a Prime member? You certainly took my money.
+Historical AmazonHelp reply: @598553 We'd like to help the best we can, Peter. Without giving any personal information, will you tell us more about what's going on? ^HC
+
+Historical customer: @357899 @AmazonHelp I still don't understand that fact that I already pay for prime, but they want me to pay again for unlimited... Screw that noise...
+Historical AmazonHelp reply: @357898 The main difference is that Amazon Music Unlimited offers access to more music https://t.co/hmEZi2Ha4J ^KM",3,3,3,5,4,5,True,Maithresh,"Message is vague and link-dependent, so conservative escalation is reasonable, though not especially helpful.",2026-09-11T10:50:56.768181+00:00,2026-09-11T10:50:56.768181+00:00
+gold-029,@amazonhelp why isn't no-rush shipping an option on my account anymore. For any item?,"I'm sorry you're having trouble with this payment or refund. Because it requires account-specific review, please contact Amazon through a secure support channel and do not post payment or account details publicly.","Historical customer: #AmazonIndia quality of service has detoriated a lot, earlier i used to receive shipment before schedule date and now getting such update. https://t.co/fKs1NiDEMr
+Historical AmazonHelp reply: @158484 Sorry for the delay in delivery of your order. Please report this to our support team here: https://t.co/TdDksLo6Mf. ^HD
+
+Historical customer: @AmazonHelp Is there anyway to have a package delivered &amp; not use @123967? My package didn't arrive yesterday &amp; is now delayed.
+Historical AmazonHelp reply: @364448 I'm sorry this happened! We'd like to see which options we have available for you here: https://t.co/hApLpMlfHN ^QJ
+
+Historical customer: @AmazonHelp where is my order it was suppose to get delivered by today havent got it yet
+Historical AmazonHelp reply: @201849 We apologize for the inconvenience. Please contact us here: https://t.co/vlvfJr4nN9 and we'll help you. ^ZH",1,1,3,5,2,2,True,Maithresh,No-Rush Shipping availability is incorrectly framed as a payment or refund problem.,2026-09-11T10:50:56.768181+00:00,2026-09-11T10:50:56.768181+00:00
+gold-011,"@AmazonHelp grrrr trying to watch Vikings today on prime but it keeps saying band with to low.
+
+A load of b.s. everything else is running fine","I'm sorry this needs further investigation. Please contact Amazon through a secure support channel, and do not post order, address, account, or payment details publicly.","Historical customer: @AmazonHelp can i get schedule of prime movies and tv shows
+Historical AmazonHelp reply: @306600 I wasn't able to comprehend this. Could you please elaborate? ^HK
+
+Historical customer: @AmazonHelp Whether all winners declare on the contest watch five titles on prime video??
+Historical AmazonHelp reply: @420318 Could you please let us know which contest are you referring to? So we can assist you better. ^KH
+
+Historical customer: @115821 @AmazonHelp Why cant we watch prime content on mobile devices
+Historical AmazonHelp reply: @128086 I'm sorry for the frustration! Are you trying to watch from the Prime Video app? ^AC",4,2,3,5,4,5,True,Maithresh,"Safe, but Prime Video bandwidth or playback could receive basic troubleshooting rather than immediate escalation.",2026-09-11T10:50:56.768181+00:00,2026-09-11T10:50:56.768181+00:00
+gold-087,@AmazonHelp I can’t use my MasterCard gift card to reload my amazon account. I don’t know what I am doing wrong. It’s a fully loaded $50.00 gift card.,"I'm sorry you're dealing with this. Because this may involve account security or unauthorized activity, please contact Amazon through a secure support channel. Do not post account, order, payment, transaction, or authentication details publicly.","Historical customer: @118919 hi i am purchased 1000rs Amazon gift card but i don't get anything and my account block plz help me https://t.co/QjAMUfVMyD
+Historical AmazonHelp reply: @508574 Apologies for the trouble. Kindly reply to the email you've received from Account specialist team for assistance. ^MO
+
+Historical customer: @AmazonHelp I ordered a Netflix gift card yesterday &amp; I still haven't received the email with the card info &amp; I can't login to amazon.
+Historical AmazonHelp reply: @178198 Oh no! We'd like to help. Are you getting an error when you try to log in? Have you been able to clear your cache and cookies? ^NM
+
+Historical customer: Contempt by @115821 .au with not even reply to email giftcard service query. Lord save us when Big Four rule. Anybody there @AmazonHelp ??
+Historical AmazonHelp reply: @472500 I'm sorry you haven't received a reply yet. We'd like to try to help. Will you please tell us more about what's going on?  ^CO",2,2,3,5,2,2,True,Maithresh,Gift-card reload trouble is incorrectly framed as possible account security or unauthorized activity.,2026-09-11T10:50:56.768181+00:00,2026-09-11T10:50:56.768181+00:00
+gold-182,@116618 Now y'all just took $107.14 out of my account. Why are y'all fukking up my streaming????!!!  Ain't had a problem until a payment was collected . Dont start the bs🙄👀🤔,"I'm sorry you're having trouble with this payment or refund. Because it requires account-specific review, please contact Amazon through a secure support channel and do not post payment or account details publicly.","Historical customer: @AmazonHelp how do I find out why you have taken £1 from my account if I have no orders in progress?
+Historical AmazonHelp reply: @494482 Just get in touch and we'll look into it for you: https://t.co/JzP7hlA23B. ^BM
+
+Historical customer: @115850 why are you not refunding my payments
+Historical AmazonHelp reply: @372748 I'm sorry about this. We'd like to help. Please share your details here: https://t.co/GIJyeYqKE0. We'll reach out to you. ^VN
+
+Historical customer: I DONT EVEN HAVE AN @115821 PRIME ACCOUNT AND THEY CHARGED ME $107 jfkshaifkak so pissed off right now 😭👿👿
+Historical AmazonHelp reply: @401606 I'm sorry for the unexpected charge! You can view and cancel your Prime membership, here: https://t.co/SIHlRjry4g ^EB",5,4,4,5,5,5,True,Maithresh,Strong match: unexpected payment issue legitimately requires account-specific secure review.,2026-09-11T10:50:56.768181+00:00,2026-09-11T10:50:56.768181+00:00
+gold-181,"@115821 hey Amazon, nice going...still don’t have my credit on the shipping. The CSR lady was helpful and guys made her not keep her word...shame, shame... 2 hours...right!!!","I'm sorry your order hasn't arrived as expected. This appears to require order-specific investigation, so please contact Amazon through a secure support channel and avoid posting order or address details publicly.","Historical customer: I’m thankful that #Amazon customer service is quick to credit and/or rectify the situation when we call in &amp; report it. Thanks @[PHONE]/3)
+Historical AmazonHelp reply: @399287 I'm so sorry you didn't receive your order as expected. We appreciate you calling to report this to us. ^MB
+
+Historical customer: Treated so horribly by Amazon. They double charged us after losing our package and refuse to credit the extra charge. #Amazon #AmazonSucks
+Historical AmazonHelp reply: @439719 I'm so sorry to hear about the extra charge! When you contacted us, what info or options were we able to provide? ^JN
+
+Historical customer: @AmazonHelp My package was suppose to arrive by 8! The amazon shipping service is terrible! I always have problems with it
+Historical AmazonHelp reply: @347596 We're here to help. Can you confirm for me the carrier set to deliver this order here: https://t.co/q4LAMZ3tbE? ^GG",2,2,3,5,3,2,True,Maithresh,"Customer is missing a promised shipping credit, but response incorrectly says the order hasn't arrived.",2026-09-11T10:50:56.768181+00:00,2026-09-11T10:50:56.768181+00:00
+gold-095,@115830 how do I return a parcel that has been delivered to my address but the person no longer lives here?,"I'm sorry your order hasn't arrived as expected. This appears to require order-specific investigation, so please contact Amazon through a secure support channel and avoid posting order or address details publicly.","Historical customer: @AmazonHelp out parcel says delivered on my account to a neighbour but nobody has it and no note through door
+Historical AmazonHelp reply: @218493 I'm sorry for the trouble. We'd like to look at this with you. Please contact us here: https://t.co/JzP7hlA23B ^MH
+
+Historical customer: @AmazonHelp Hi there. My parcel was supposedly delivered to a neighbour but is nowhere to be found. Can you advise how to proceed? Thanks!
+Historical AmazonHelp reply: @389113 I'm so sorry to hear this! Here's some tips for a parcel you are unable to locate: https://t.co/PaDuqehvUk ^MJ
+
+Historical customer: @115830 been getting regular deliveries from these for years, now mrs gets message we can't deliver as your address doesn't exist. WTF
+Historical AmazonHelp reply: @394185 I'm sorry for the delivery issues. Is this occurring with a specific carrier? Do you need help with a current order?  ^CO",1,1,3,5,2,2,True,Maithresh,Customer wants to return a parcel belonging to a former resident; response incorrectly treats it as their missing order.,2026-09-11T10:50:56.768181+00:00,2026-09-11T10:50:56.768181+00:00
+gold-070,I marked a package I got from @115821 today for a return and THEY ARE GOING TO CHARGE ME FOR RETURN SHIPPING for the first time ever. What's that about? Holidays? Or new all-the-time policy?,"I'm sorry you're having trouble with this payment or refund. Because it requires account-specific review, please contact Amazon through a secure support channel and do not post payment or account details publicly.","Historical customer: Why do I even pay for @115821 if over 50% of my packages don't arrive by the ""guarantee"" date?
+Historical AmazonHelp reply: @180439 I'm so sorry for the poor experience! Is this regarding a current order shown here: https://t.co/Y5jpI9gRhE? ^AG
+
+Historical customer: @115821 said they're not going to reimburse me my package I never received @134015 DISPUTE THE WHOLE CHARGE PLEASE !!!!
+Historical AmazonHelp reply: @757894 I'm sorry to hear of any trouble! Will you tell us more about what's happening? Why did we say refunding was not an option? Please don't include any personal or account specific information. ^CS
+
+Historical customer: @115830 hello, what's your policy on Christmas returns? #gettingorganised
+Historical AmazonHelp reply: @470333 Hi, Vicky! You can find out our Christmas Season Return Policy here: https://t.co/IxQ0VraaXh ^MW",4,3,4,5,4,5,True,Maithresh,Return-shipping charge or policy dispute reasonably fits account-specific payment or return review.,2026-09-11T10:50:56.768181+00:00,2026-09-11T10:50:56.768181+00:00
+gold-083,@115850 I have placed an Order for a camera two days ago and there is no sign of progress yet in shipment/dispatch. Please let me know how can I reach out to seller for update about it ?,"I'm sorry this needs further investigation. Please contact Amazon through a secure support channel, and do not post order, address, account, or payment details publicly.","Historical customer: @AmazonHelp its been 36 hours of ordering but still product has not even dispatched yet. Any issue regarding product or courier service?
+Historical AmazonHelp reply: @181606 We will provide you with all the information required, kindly contact here https://t.co/00q4Sqj9zL for an update on the order. ^RD
+
+Historical customer: @115830 #disappointed ... place an order for early delivery and receive an email on delivery day to say it’s not been posted
+Historical AmazonHelp reply: @551663 Sorry to hear that! Have you received a revised delivery date? ^RL
+
+Historical customer: @115850 HELP me with order no [PHONE] which is not shipped yet.
+Historical AmazonHelp reply: @123344 Sorry about that! We'll surely help. Kindly report this to our team here :https://t.co/2t6DQoUmNZ and we will do the 1/2 ^PR",4,2,3,5,4,5,True,Maithresh,"Secure escalation is acceptable for the unshipped order, but it doesn't answer how to contact the seller.",2026-09-11T10:50:56.768181+00:00,2026-09-11T10:50:56.768181+00:00
+gold-035,@AmazonHelp ordered arrived and went to pick it up and someone had already opened it. Nothing inside. What can we do?,"I'm sorry this needs further investigation. Please contact Amazon through a secure support channel, and do not post order, address, account, or payment details publicly.","Historical customer: @AmazonHelp 2 Days no Pick up Arrived ! Waiting since yesterday ! No updates..... nothing
+Historical AmazonHelp reply: @307355 Sorry for the trouble you've had. Have you escalated this to our support team here: https://t.co/2t6DQoUmNZ for help? ^MM
+
+Historical customer: Ordered something from Amazon and it was missing a part🙄
+Historical AmazonHelp reply: @214325 Sorry your order wasn't complete! Was it shipped by Amazon or third-party seller as seen here: https://t.co/Y5jpI9gRhE? ^JM
+
+Historical customer: @AmazonHelp hi I just received an order from you and it’s arrived damaged :(
+Historical AmazonHelp reply: @192340 I'm terribly sorry your order arrived damaged! Please see the avail refund/replace options here: https://t.co/icfSETpdft ^WJ",4,3,4,5,4,5,True,Maithresh,Opened or empty package requires case-specific investigation; generic escalation is safe and defensible.,2026-09-11T10:50:56.768181+00:00,2026-09-11T10:50:56.768181+00:00
+gold-157,"@115850 @AmazonHelp @13150 @7092 
+Pathetic service.. Cheaters.. Fraud.. Delivered Used Mobile.. Disgusting. Business loss fr me","I'm sorry you're dealing with this. Because this may involve account security or unauthorized activity, please contact Amazon through a secure support channel. Do not post account, order, payment, transaction, or authentication details publicly.","Historical customer: @115850 @AmazonHelp Again u showed ur pathetic service. U r doing fraud.
+Historical AmazonHelp reply: @628422 That's quite a remark. Could you please let us what went wrong so that we can assist you accordingly? ^HS
+
+Historical customer: @115850 very poor service in Amazon my Amazon number [PHONE]
+Historical AmazonHelp reply: @206023 Seems like you had an unpleasant experience. Please let us know what went wrong? We will look into it. Please don’t  1/2^SB
+
+Historical customer: Amazon is fruad company Amazon is cheating all customers @115850
+Historical AmazonHelp reply: @215499 Seems like you had a bad experience. We'd like to assist you with this. Kindly let us know what went wrong. ^PJ",2,2,3,5,3,3,True,Maithresh,"Receiving a used mobile is primarily a product or order problem, but the response interprets “fraud” as account-security risk.",2026-09-11T10:50:56.768181+00:00,2026-09-11T10:50:56.768181+00:00
+gold-058,"Amazons customer service is garbage. Just got hung up on after being accused of hacking my own account. Real nice, @115821","I'm sorry you're dealing with this. Because this may involve account security or unauthorized activity, please contact Amazon through a secure support channel. Do not post account, order, payment, transaction, or authentication details publicly.","Historical customer: @115850 Amazon's customer service is very nonsense its customer care service has become very nonsense, not helping people pockets are being stupid
+Historical AmazonHelp reply: @170829 Hello Malik, could you please elaborate more on your concern? We'll definitely look into it. ^PS
+
+Historical customer: @115821 @AmazonHelp your customer service sucks
+Historical AmazonHelp reply: @343482 We'd like to help in any way we can. Do you mind telling us what's going on? No account sensitive info please. ^NM
+
+Historical customer: @AmazonHelp I got hacked and your customer service isn’t really doing anything to help me with my problem.
+Historical AmazonHelp reply: @533100 (1/2) We're sorry for the account trouble! What options were provided to you when you contacted our support team?",5,4,4,5,5,5,True,Maithresh,Strong security and account context and secure escalation are appropriate.,2026-09-11T10:50:56.768181+00:00,2026-09-11T10:50:56.768181+00:00
+gold-045,@115850 someone is placing orders in my number continuously. I am getting calls 4m ur delivery agents regarding this everyday. But I dnt knw the bastard. Can u pls cl me. Hw can I provide my contact number ?,"I'm sorry your order hasn't arrived as expected. This appears to require order-specific investigation, so please contact Amazon through a secure support channel and avoid posting order or address details publicly.","Historical customer: @115850 try to give delivery persons contact number to customers than making them wonder what the heck to do
+Historical AmazonHelp reply: @414013 I’m sorry about the issue you’re facing with delivery. Let us look into it. Please (1/2)^HR
+
+Historical customer: @115850 @115850 ORDER # [PHONE] I have call twice on 4 Sep and 6 Sep But delivery guy is not coming to pick up .2
+Historical AmazonHelp reply: @190398 Sorry to know your item hasn't been picked-up yet. We certainly did not expect this to happen. 1/3 ^PS
+
+Historical customer: @115850 der is no way I can reach ur CustomerService agent if I hav not placd any order yet. Can I not hav general questions be4 ordering?
+Historical AmazonHelp reply: @367520 We regret the inconvenience. You may connect with our support team here:   https://t.co/vlvfJr4nN9 for general queries. ^SB",2,2,3,5,2,2,True,Maithresh,"Unauthorized orders using the customer's number should be security or account escalation, not “your order hasn't arrived.”",2026-09-11T10:50:56.768181+00:00,2026-09-11T10:50:56.768181+00:00
+gold-020,"@115850 @AmazonHelp once again amazon disappointed me.he send me defective product and items was full of dust. i will suggest do not buy any items 
+from amazon.","I'm sorry this needs further investigation. Please contact Amazon through a secure support channel, and do not post order, address, account, or payment details publicly.","Historical customer: @115821 @AmazonHelp your customer service sucks
+Historical AmazonHelp reply: @343482 We'd like to help in any way we can. Do you mind telling us what's going on? No account sensitive info please. ^NM
+
+Historical customer: unpleasant and extremely dissatisfied with @115821 @AmazonHelp
+Historical AmazonHelp reply: @486691 Apologies for the miscommunication, Nilay. Please report it to our support team here: https://t.co/vlvfJr4nN9 for the help. ^RS
+
+Historical customer: @115850 My experience during this Amazon Sale, I bought many items and I got defect product's, diff colour than ordered and old product's
+Historical AmazonHelp reply: @207163 I'm sorry about the situation. You may replace the orders using the link here:  https://t.co/3yqvLnyTxi ^SG",4,3,4,5,4,5,True,Maithresh,"Defective product evidence supports escalation, though a more product-specific response would be more useful.",2026-09-11T10:50:56.768181+00:00,2026-09-11T10:50:56.768181+00:00
+gold-191,Hey @AmazonHelp I have a consigment of 2 orders showing as delivered but nowhere to be seen. Currently stuck in a cycle of going to your various carriers' websites and none recognise the tracking number...,"I'm sorry your order hasn't arrived as expected. This appears to require order-specific investigation, so please contact Amazon through a secure support channel and avoid posting order or address details publicly.","Historical customer: When your amazon package says that it's delivered but it's nowhere to be found 🤔🤔🤔🤔😐
+Historical AmazonHelp reply: @209471 Uh oh! Sometimes packages are left out of sight. Have you checked the areas and information here: https://t.co/uflLFMRSDp ^AJ
+
+Historical customer: Meanwhile still not sure if they have alerted Amazon as my account shows both still items out for delivery.
+Historical AmazonHelp reply: @258684 Oh no! If you don't receive the parcel, please contact us directly to explore options: https://t.co/JzP7hlA23B ^JF
+
+Historical customer: @AmazonHelp okay its been over a week since my package was marked as delivered and i did everything you guys said and its still not here.
+Historical AmazonHelp reply: @196828 I'm sorry, Ky! We would like to help get this resolved! Please reach out via phone/chat here: https://t.co/hApLpM3Ejd ^CN",5,4,4,5,5,5,True,Maithresh,Excellent match for two packages marked delivered but missing; secure order-specific investigation is appropriate.,2026-09-11T10:50:56.768181+00:00,2026-09-11T10:50:56.768181+00:00
+gold-079,@115830 spent 3 days asking neighbours if they took in my parcel classed as delivered to resident. Turns out amazon delivery classes behind my bin in the pissing rain as a sentient being. #soaked,"I'm sorry your order hasn't arrived as expected. This appears to require order-specific investigation, so please contact Amazon through a secure support channel and avoid posting order or address details publicly.","Historical customer: Great job @115821 @AmazonHelp leaving my parcels on the doorstep for the whole world to see!!! Glad we pay delivery for no actual reason
+Historical AmazonHelp reply: @692185 I'm sorry for the trouble with the delivery, Hayley.  Please give us a chance to take a closer look and provide feedback by reaching out via phone or chat here: https://t.co/JzP7hlA23B. ^TG
+
+Historical customer: @AmazonHelp out parcel says delivered on my account to a neighbour but nobody has it and no note through door
+Historical AmazonHelp reply: @218493 I'm sorry for the trouble. We'd like to look at this with you. Please contact us here: https://t.co/JzP7hlA23B ^MH
+
+Historical customer: @AmazonHelp A parcel of mine says it has been delivered and it hasn’t been. Would love some help please x
+Historical AmazonHelp reply: @652196 I'm sorry you're having trouble locating your parcel! We can help! Here are some tips to help locate a parcel that's been marked delivered: https://t.co/4fwuH3d808 ^TK",5,4,4,5,5,5,True,Maithresh,Parcel was marked delivered but left improperly; order-specific escalation is strongly supported.,2026-09-11T10:50:56.768181+00:00,2026-09-11T10:50:56.768181+00:00
+gold-060,"@AmazonHelp so if a NEXT DAY amazon prime takes 3 days, how is this different from standard free delivery and what am I paying for ??","I'm sorry your order hasn't arrived as expected. This appears to require order-specific investigation, so please contact Amazon through a secure support channel and avoid posting order or address details publicly.","Historical customer: @115830 @AmazonHelp not sure why I ordered on thurs with next day with prime yet I got a email at 6am to say it will be delivered today.
+Historical AmazonHelp reply: @479300 Sorry to hear this. When you ordered it, did it advise delivery for Friday? ^PK
+
+Historical customer: @AmazonHelp when did prime change from 2 day to 1 week?
+Historical AmazonHelp reply: @283086 Hey there! We'd like to help. Have we missed the estimated delivery date shown here: https://t.co/Y5jpI9gRhE ^NM
+
+Historical customer: Ahh but is it really coming today though #amazonprime ? My guaranteed next day delivery has been rattling in the back of a van since Friday https://t.co/i19SeeZyZ1
+Historical AmazonHelp reply: @383792 Apologies - Please reach out: https://t.co/JzP7hlA23B we'll be happy to look into your order further. ^TP",5,3,4,5,5,5,True,Maithresh,Evidence strongly supports failed Prime or next-day delivery handling; safe escalation is appropriate but generic.,2026-09-11T10:50:56.768181+00:00,2026-09-11T10:50:56.768181+00:00
+gold-088,tbh @115821 prime is useless until they handle their own shipping and can actually what I ordered to me in two days.,"I'm sorry this needs further investigation. Please contact Amazon through a secure support channel, and do not post order, address, account, or payment details publicly.","Historical customer: I'm SICK of paying for @115821 Prime for 2-day shipping, only to have time sensitive items ordered to arrive 3-4 days later. Waste of good $
+Historical AmazonHelp reply: @609640 I'm sorry for the trouble with the delivery of your orders! Are you noticing this trend with one carrier or many? ^TG
+
+Historical customer: Ummmm as an @115821 prime member, I’m highly disappointed that my shipping time has been extended😒😒
+Historical AmazonHelp reply: @342693 I'm sorry about the delay! We aim to deliver by the date given in your order confirmation e-mail. Have we missed that date? ^TK
+
+Historical customer: Is it me or is @115821 Prime rarely actually next day delivery any more? 😬
+Historical AmazonHelp reply: @705042 Hi, sorry to hear that, are you having delivery issues? ^AS",4,3,3,5,4,5,True,Maithresh,"Prime shipping complaint is relevant, but generic escalation is less useful than asking whether the promised date was actually missed.",2026-09-11T10:50:56.768181+00:00,2026-09-11T10:50:56.768181+00:00
+gold-039,"@115821 @AmazonHelp you guys have these random couriers that are NOT delivering packages, because they don’t want to do the footwork in an mid-rise.","I'm sorry your order hasn't arrived as expected. This appears to require order-specific investigation, so please contact Amazon through a secure support channel and avoid posting order or address details publicly.","Historical customer: @115821 ,Amazon delivery team , a bunch of liars , amazon should stop delivering and let that to the pros , fedex or ups , is just crazy !!!!
+Historical AmazonHelp reply: @383431 I'm sorry for any trouble! Without sharing account information, can you tell us more about what's going on? ^SB
+
+Historical customer: @115850 and let me tell you Amazon transportation sucks big time, u guys better close it and start using other courier services.
+Historical AmazonHelp reply: @351528 Request you to wait till estimate delivery date for an update. It should be delivered accordingly. ^RW
+
+Historical customer: Great job @115821 @AmazonHelp leaving my parcels on the doorstep for the whole world to see!!! Glad we pay delivery for no actual reason
+Historical AmazonHelp reply: @692185 I'm sorry for the trouble with the delivery, Hayley.  Please give us a chance to take a closer look and provide feedback by reaching out via phone or chat here: https://t.co/JzP7hlA23B. ^TG",5,4,4,5,5,5,True,Maithresh,Repeated courier non-delivery maps well to order-specific investigation and historical handling.,2026-09-11T10:50:56.768181+00:00,2026-09-11T10:50:56.768181+00:00
+gold-195,@115821 @118706 I was literally sitting in my living room. What problem did you experience...? https://t.co/ctUNaH68rp,"I'm sorry this needs further investigation. Please contact Amazon through a secure support channel, and do not post order, address, account, or payment details publicly.","Historical customer: @115850 problem still not solved....check and answer plz https://t.co/4kExTUu7rE
+Historical AmazonHelp reply: @191861 Sorry to know that. I'd like to assist you with this. Please fill the form here: https://t.co/GIJyeYqKE0. ^PS
+
+Historical customer: @115821 and @1016 has me frustrated today.
+Historical AmazonHelp reply: @406717 That's not good! Without disclosing personal information. Will you tell us more about what's going on? We'd be happy to help. ^SK
+
+Historical customer: @115821 y’all have me completely messed up today .
+Historical AmazonHelp reply: @209456 So sorry to hear this! Without providing account information, can you let us know what's going on? We're here to help! ^AD",4,3,3,5,4,5,True,Maithresh,"Missing linked context makes escalation defensible, though asking for more non-sensitive context could be more useful.",2026-09-11T10:50:56.768181+00:00,2026-09-11T10:50:56.768181+00:00
+gold-122,Sigh 😞 thanks @115821 https://t.co/wO8KiuxItb,"I'm sorry this needs further investigation. Please contact Amazon through a secure support channel, and do not post order, address, account, or payment details publicly.","Historical customer: Thanks for this @115821 https://t.co/qfCDzbPmhf
+Historical AmazonHelp reply: @361182 Oh, no! Who was the carrier for this delivery, Amy? You can check in your orders here:  https://t.co/Y5jpI9gRhE ^DG
+
+Historical customer: Shout out to @115821 for sending me an empty package 🙄
+Historical AmazonHelp reply: @706925 Oh no! We would like the chance to fix that.  Contact us by phone or chat from here:  https://t.co/hApLpMlfHN ^CH
+
+Historical customer: Thank you @115821 for early delivery life saver
+Historical AmazonHelp reply: @171196 😎 Glad it got to you safely. I hope you enjoy your day. ^CR",3,2,3,5,4,5,True,Maithresh,Very ambiguous and link-dependent message; safe escalation is reasonable but offers little help.,2026-09-11T10:50:56.768181+00:00,2026-09-11T10:50:56.768181+00:00
+gold-028,@115850 Are your call center not working 24/7?,"I'm sorry this needs further investigation. Please contact Amazon through a secure support channel, and do not post order, address, account, or payment details publicly.","Historical customer: @115850 The call feature on your website doesn't seem to be working. Please connect.
+Historical AmazonHelp reply: @324804 That's odd. Everything seems fine, please connect with us here: https://t.co/TdDksLo6Mf ^MS
+
+Historical customer: Service becoming worse day by day. Can't get in touch with any of your executives for an inquiry.. @115850
+Historical AmazonHelp reply: @504624 That's strange. We'd like to help. Could you elaborate the query? We'll reach out to you soon. ^VM
+
+Historical customer: @115850 Can I contact you, calling you from 2 days Everytime fails [PHONE]
+Historical AmazonHelp reply: @456254 details as we consider them to be personal information. Our Twitter page is visible to public. ^PB (2/2)",4,2,3,5,4,5,True,Maithresh,"Safe, but a simple call-center-hours or availability question should probably receive an informational answer rather than escalation.",2026-09-11T10:50:56.768181+00:00,2026-09-11T10:50:56.768181+00:00
+gold-126,@115821 wtf is going on?,"I'm sorry this needs further investigation. Please contact Amazon through a secure support channel, and do not post order, address, account, or payment details publicly.","Historical customer: Wtf @115821 https://t.co/MyervkfgEV
+Historical AmazonHelp reply: @457181 I am so sorry about your package! You can find your return options here: https://t.co/UJtaNP3cYk I hope this helps! ^LS
+
+Historical customer: @115821 support has gone to shit
+Historical AmazonHelp reply: @502175 I'm sorry you've had poor support from us. We'd like to help if we can. Would you let us know more about what's going on? ^AM
+
+Historical customer: @115821 got me fucked up 😡
+Historical AmazonHelp reply: @686679 Oh no, Gary! I'm sorry if we've let you down! Without posting personal/acct information, can you tell us more about the issue? We're here to help! ^BN",4,2,3,5,4,5,True,Maithresh,"Safe handling, but for a vague complaint it would be better to ask for more details instead of immediately escalating.",2026-09-11T10:50:56.768181+00:00,2026-09-11T10:50:56.768181+00:00
+gold-007,"@AmazonHelp Hi, i just had an inquiry about price because i was thinking about ordering the Razer Blackwidow Chroma V2 and the Razer Deathadder as the prices on them had gone down and as soon as i was about to order them, they went back up!","I'm sorry this needs further investigation. Please contact Amazon through a secure support channel, and do not post order, address, account, or payment details publicly.","Historical customer: @AmazonHelp When I had place the order that time this product is in big discount, now it is not...
+Historical AmazonHelp reply: @402019 I understand your concern. However, once the order is canceled it can't be reinstated. I'd request you to place a new order. ^AP
+
+Historical customer: @AmazonHelp Need To Talk About Guess The Price Contest... Please Arrange Call Back... It's More Than A Month No Update On My Prize...!!
+Historical AmazonHelp reply: @171324 You may request for a call back from our support team via https://t.co/TxK11znixD. Do let us know for further concern. ^AM
+
+Historical customer: @AmazonHelp I need help with a product
+Historical AmazonHelp reply: @190605 We don't have access to accounts over Twitter, but we'd like to help, if we can. What's going on? ^BH",3,2,3,5,3,5,True,Maithresh,Price-change complaint does not fit the taxonomy well; escalation is safe but not very helpful.,2026-09-11T10:50:56.768181+00:00,2026-09-11T10:50:56.768181+00:00
+gold-004,Dear @115830 how the hell do you cancel a kindle book ordered in error? There is no option to cancel!!,"I'm sorry this needs further investigation. Please contact Amazon through a secure support channel, and do not post order, address, account, or payment details publicly.","Historical customer: @AmazonHelp I had ordered 4 books out of which I cancelled 1 but you seem to have cancelled 3 books.. pls rectify the same.
+Historical AmazonHelp reply: @183038 I understand your concern regarding the cancellation of the order. Please reach out to us here: https://t.co/vlvfJr4nN9 and we'll check this for you. ^AH
+
+Historical customer: Someone playing with my kindle ordered a Sidney book and now can't find a way to cancel that shit. There are other ways to spend that $7
+Historical AmazonHelp reply: @174310 Hi, you can return the Kindle book by following the steps here: https://t.co/n1zCeindGF ^TS
+
+Historical customer: @AmazonHelp I am not able to cancel my order..plz help
+Historical AmazonHelp reply: @161170 We'd be happy to help! These steps will help walk you through canceling the order: https://t.co/vmXqEMJN6J ^ML",4,2,3,5,4,5,True,Maithresh,"Evidence contains direct Kindle cancellation or return guidance, so generic escalation is overly conservative.",2026-09-11T10:50:56.768181+00:00,2026-09-11T10:50:56.768181+00:00
+gold-101,@AmazonHelp so why would amazon cancel my order when all I asked for was an update because it wasn’t in. Now you want me to pay an extra 60 bucks to reorder my items because the sales over? #baitandswitch,"I'm sorry this needs further investigation. Please contact Amazon through a secure support channel, and do not post order, address, account, or payment details publicly.","Historical customer: @AmazonHelp I am not able to cancel my order..plz help
+Historical AmazonHelp reply: @161170 We'd be happy to help! These steps will help walk you through canceling the order: https://t.co/vmXqEMJN6J ^ML
+
+Historical customer: @AmazonHelp again #bad #experience Product ordered, cancelled. Now not able to order tht product due to qty restrictions #badservice #amazon
+Historical AmazonHelp reply: @158949 Kindly revert to the email sent by our account specialist team. We'll check this for you. ^SG
+
+Historical customer: @AmazonHelp And can’t even cancel it? What’s going on
+Historical AmazonHelp reply: @467055 You can not cancel as it's too far into dispatch process - does the order status provide a delivery date ? ^TD",4,3,4,5,4,5,True,Maithresh,"Human review is appropriate because Amazon already cancelled the order and the customer lost the sale price, but response is generic.",2026-09-11T10:50:56.768181+00:00,2026-09-11T10:50:56.768181+00:00
+gold-023,"@AmazonHelp prime membership says it’s suspended, updated payment method but still says it’s suspended? How do I fix it to get Prime back?","I'm sorry this needs further investigation. Please contact Amazon through a secure support channel, and do not post order, address, account, or payment details publicly.","Historical customer: @AmazonHelp Hello! I paid for my Prime account July of this year but my account is saying I am no longer a Prime member. Help please?
+Historical AmazonHelp reply: @289380 I'm so sorry! We don't have access to your account via Twitter. Please call or chat with us here: https://t.co/hApLpMlfHN ^MH
+
+Historical customer: @AmazonHelp renewed my Prime membership using Amazon pay. Still waiting on that Rs. 500 cash back after 72hrs. C'mon guys, you're dropping the balls way too often these days. Please fix it.
+Historical AmazonHelp reply: @357332 Sorry to know you haven't received your cash back. Kindly reach out to our support team here: https://t.co/TdDksLo6Mf. We'll look into it. ^PS
+
+Historical customer: @115850 my prime membership has expired, shud i even renew? considering d fact tat my friends who r non prime get their package w/o delay!
+Historical AmazonHelp reply: @415725 That's a personal call. However, you may refer to the benefits being a Prime member here: https://t.co/ZCcbKpTY1E ^SG",5,4,4,5,5,5,True,Maithresh,Suspended Prime membership after payment update clearly requires account-specific secure support.,2026-09-11T10:50:56.768181+00:00,2026-09-11T10:50:56.768181+00:00

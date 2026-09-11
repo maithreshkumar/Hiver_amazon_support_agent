@@ -1,0 +1,8 @@
+{
+  "provider": "ollama",
+  "model": "qwen3-embedding:0.6b",
+  "records": 3000,
+  "dimensions": 1024,
+  "source": "data/processed/retrieval_corpus.parquet",
+  "training_only": true
+}

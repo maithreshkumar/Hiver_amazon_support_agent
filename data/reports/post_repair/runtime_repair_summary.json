@@ -1,0 +1,80 @@
+{
+  "records": 48,
+  "changed_routes": 3,
+  "changed_final_replies": 33,
+  "routing": {
+    "rows": 48,
+    "correct": 31,
+    "incorrect": 17,
+    "accuracy": 0.6458333333333334,
+    "escalation_precision": 0.6382978723404256,
+    "escalation_recall": 1.0,
+    "escalation_f1": 0.7792207792207793,
+    "auto_handle_precision": 1.0,
+    "auto_handle_recall": 0.05555555555555555,
+    "auto_handle_f1": 0.10526315789473684,
+    "support": {
+      "AUTO_HANDLE": 18,
+      "ESCALATE": 30
+    },
+    "false_auto_handle_count": 0,
+    "false_auto_handle_rate_among_human_escalations": 0.0,
+    "false_escalation_count": 17,
+    "confusion_matrix": {
+      "labels": [
+        "AUTO_HANDLE",
+        "ESCALATE"
+      ],
+      "values": [
+        [
+          1,
+          17
+        ],
+        [
+          0,
+          30
+        ]
+      ],
+      "rows_are_human_columns_are_system": true
+    },
+    "generated_at": "2026-09-10T18:35:43.816585+00:00",
+    "scope": "Post-repair routing/safety reprocessing of the frozen 48 Phase 3 raw drafts",
+    "scope_warning": "These routing metrics cover the real generated-response sample, not all 200 intent-evaluation rows.",
+    "disagreement_breakdown_primary_category": {
+      "safety_override": 4,
+      "classifier_error": 7,
+      "unsupported_claim": 5,
+      "provider_failure": 1
+    },
+    "disagreement_example_ids": [
+      "gold-044",
+      "gold-114",
+      "gold-094",
+      "gold-131",
+      "gold-040",
+      "gold-117",
+      "gold-047",
+      "gold-078",
+      "gold-011",
+      "gold-087",
+      "gold-095",
+      "gold-083",
+      "gold-060",
+      "gold-088",
+      "gold-122",
+      "gold-028",
+      "gold-004"
+    ]
+  },
+  "response": {
+    "generated_at": "2026-09-10T18:35:43.816585+00:00",
+    "scope": "Post-repair routing/safety reprocessing of the frozen 48 Phase 3 raw drafts",
+    "records": 48,
+    "provider_failures": 5,
+    "unsupported_claim_flags": 28,
+    "safety_overrides": 47,
+    "auto_handle": 1,
+    "escalate": 47,
+    "raw_and_final_drafts_preserved": true
+  }
+}

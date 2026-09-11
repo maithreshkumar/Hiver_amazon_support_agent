@@ -1,0 +1,89 @@
+{
+  "generated_at": "2026-09-11T11:32:15.358004+00:00",
+  "configured_threshold": 0.72,
+  "threshold_source": "Frozen Phase 2 development-time policy; not selected on golden results.",
+  "correct_predictions": {
+    "count": 82,
+    "min": 0.19703027606010437,
+    "p25": 0.5043762177228928,
+    "median": 0.6843315958976746,
+    "mean": 0.657450671966483,
+    "p75": 0.8040831834077835,
+    "max": 0.94159334897995
+  },
+  "incorrect_predictions": {
+    "count": 118,
+    "min": 0.11243830621242523,
+    "p25": 0.38793329894542694,
+    "median": 0.5602012872695923,
+    "mean": 0.5550521869780654,
+    "p75": 0.7496187835931778,
+    "max": 0.9042584896087646
+  },
+  "thresholds": [
+    {
+      "threshold": 0.0,
+      "covered": 200,
+      "coverage": 1.0,
+      "low_confidence_escalations": 0,
+      "accuracy_on_covered": 0.41,
+      "macro_f1_on_covered": 0.4324837113975529
+    },
+    {
+      "threshold": 0.5,
+      "covered": 133,
+      "coverage": 0.665,
+      "low_confidence_escalations": 67,
+      "accuracy_on_covered": 0.46616541353383456,
+      "macro_f1_on_covered": 0.511126616508117
+    },
+    {
+      "threshold": 0.6,
+      "covered": 108,
+      "coverage": 0.54,
+      "low_confidence_escalations": 92,
+      "accuracy_on_covered": 0.49074074074074076,
+      "macro_f1_on_covered": 0.520631512317084
+    },
+    {
+      "threshold": 0.7,
+      "covered": 77,
+      "coverage": 0.385,
+      "low_confidence_escalations": 123,
+      "accuracy_on_covered": 0.5194805194805194,
+      "macro_f1_on_covered": 0.48471102971102975
+    },
+    {
+      "threshold": 0.72,
+      "covered": 73,
+      "coverage": 0.365,
+      "low_confidence_escalations": 127,
+      "accuracy_on_covered": 0.5342465753424658,
+      "macro_f1_on_covered": 0.4906848988370727
+    },
+    {
+      "threshold": 0.75,
+      "covered": 65,
+      "coverage": 0.325,
+      "low_confidence_escalations": 135,
+      "accuracy_on_covered": 0.5384615384615384,
+      "macro_f1_on_covered": 0.4441467147988887
+    },
+    {
+      "threshold": 0.8,
+      "covered": 43,
+      "coverage": 0.215,
+      "low_confidence_escalations": 157,
+      "accuracy_on_covered": 0.5116279069767442,
+      "macro_f1_on_covered": 0.32460016835016836
+    },
+    {
+      "threshold": 0.9,
+      "covered": 12,
+      "coverage": 0.06,
+      "low_confidence_escalations": 188,
+      "accuracy_on_covered": 0.9166666666666666,
+      "macro_f1_on_covered": 0.15
+    }
+  ]
+}

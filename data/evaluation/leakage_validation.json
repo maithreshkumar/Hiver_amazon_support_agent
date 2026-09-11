@@ -1,0 +1,27 @@
+{
+  "generated_at": "2026-09-11T15:14:48.190811+00:00",
+  "algorithm": "sha256(hiver-amazon-support-thread-v1 + ':' + normalized_thread_id)",
+  "rows": 69910,
+  "membership_counts": {
+    "train": 57572,
+    "test": 12338,
+    "weak_labels": 2514,
+    "retrieval_index": 3000,
+    "golden": 200
+  },
+  "golden_overlap_counts": {
+    "train": 0,
+    "weak_labels": 0,
+    "retrieval_index": 0
+  },
+  "source_sha256": {
+    "train": "5190b827e6e691080f9d3361a6ae8a8adc189dda8ea9531ef03fbfb58b9e20a4",
+    "test": "bf073377819fe75fb38ec79a1488739d6589f5b9dcd21c5e07deddd3c035eebf",
+    "weak_labels": "0f6a13c9e6056934f4768625098e6c8161fe60c038ef189b9c54e182591c98be",
+    "retrieval_index": "01f77edaf845b023bd5148d192b7d1553881a24b9bd1cf76d6b925f52a11b53d",
+    "golden": "9273e9c34ffa28579b898af20f8954c76fc5d386c39ed9a3a259d168cd36cd0f"
+  },
+  "membership_sha256": "50e00608183184e26ee75a2b61d7905a4bac74bcad479b05b1571d1d4328f931",
+  "raw_thread_ids_included": false,
+  "validation": "PASS"
+}

@@ -61,6 +61,9 @@ def calculate_human_judge_agreement(
     ratings_path: str | Path = "data/golden/reply_quality_human_ratings.csv",
     judge_path: str | Path = "data/reports/reply_quality_judge.json",
     output_path: str | Path = "data/reports/human_judge_agreement.json",
+    scope: str = "48 human-rated RAG+safety responses matched to the original frozen LLM judge run",
+    judge_rerun_after_human_ratings: bool = False,
+    post_hoc_judge_experiment: bool = False,
 ) -> dict[str, object]:
     validate_reply_ratings(ratings_path, require_complete=True)
     ratings = load_reply_ratings(ratings_path)
@@ -137,7 +140,8 @@ def calculate_human_judge_agreement(
     ).head(15)
     result = {
         "generated_at": datetime.now(UTC).isoformat(),
-        "scope": "48 human-rated RAG+safety responses matched to the original frozen LLM judge run",
+        "artifact_set_version": "hiver-submission-v1",
+        "scope": scope,
         "rubric_dimensions": list(DIMENSIONS),
         "human_rating_rows": len(ratings),
         "paired_dimension_ratings": len(long_frame),
@@ -145,8 +149,8 @@ def calculate_human_judge_agreement(
         "judge_model": judge_payload["judge_model"],
         "judge_prompt_version": judge_payload["prompt_version"],
         "judge_rubric_version": judge_payload["rubric_version"],
-        "judge_rerun_after_human_ratings": False,
-        "post_hoc_judge_experiment": False,
+        "judge_rerun_after_human_ratings": judge_rerun_after_human_ratings,
+        "post_hoc_judge_experiment": post_hoc_judge_experiment,
         "ratings_sha256": hashlib.sha256(Path(ratings_path).read_bytes()).hexdigest(),
         "judge_sha256": hashlib.sha256(judge_file.read_bytes()).hexdigest(),
         "overall_pooled_dimensions": overall,

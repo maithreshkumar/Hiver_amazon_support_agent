@@ -1,0 +1,14 @@
+{
+  "generated_at": "2026-09-11T11:32:16.490918+00:00",
+  "artifact_set_version": "hiver-submission-v1",
+  "source_response_path": "data/reports/post_repair/golden_response_outputs_post_repair.json",
+  "source_response_sha256": "eb4a4b9098ffd84d7f6ec9cee5d4f8b2a86750a336961d39880865d2bfe2e66c",
+  "scope": "Post-repair routing/safety reprocessing of the frozen 48 Phase 3 raw drafts",
+  "records": 48,
+  "provider_failures": 5,
+  "unsupported_claim_flags": 28,
+  "safety_overrides": 47,
+  "auto_handle": 1,
+  "escalate": 47,
+  "raw_and_final_drafts_preserved": true
+}

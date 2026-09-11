@@ -1,0 +1,640 @@
+{
+  "schema_version": 1,
+  "artifact_set_version": "hiver-submission-v1",
+  "generated_at": "2026-09-11T15:14:48.849771+00:00",
+  "delivery_strategy": {
+    "type": "git_lfs",
+    "large_binary_paths": [
+      "indexes/amazon_support/vectors.npy",
+      "models/intent/model.safetensors"
+    ],
+    "note": "Required large binaries are Git LFS objects. Repository-tracked artifacts are small final inference/evaluation files; raw Twitter data and training checkpoints are excluded."
+  },
+  "artifacts": [
+    {
+      "path": "pyproject.toml",
+      "purpose": "configuration",
+      "artifact_version": "submission-v1",
+      "size_bytes": 834,
+      "sha256": "1e9efe8e3f75ad92af3e9ea53882267aa0b23f5a784846cfd326b8097ede5be1",
+      "required": true,
+      "source": {
+        "type": "repository",
+        "location": "pyproject.toml"
+      }
+    },
+    {
+      "path": "requirements.txt",
+      "purpose": "configuration",
+      "artifact_version": "submission-v1",
+      "size_bytes": 17,
+      "sha256": "d84ae4f579f1275c084a9b144afdd17a87aefef9c1c96feed6497ef9d76e1aae",
+      "required": true,
+      "source": {
+        "type": "repository",
+        "location": "requirements.txt"
+      }
+    },
+    {
+      "path": "requirements-lock.txt",
+      "purpose": "configuration",
+      "artifact_version": "submission-v1",
+      "size_bytes": 213,
+      "sha256": "a6eb651f0f95f8c4d0a2547bf73ea80c530a5a883da10dbbdd41a9d7bd837bb9",
+      "required": true,
+      "source": {
+        "type": "repository",
+        "location": "requirements-lock.txt"
+      }
+    },
+    {
+      "path": "configs/intents.yaml",
+      "purpose": "configuration",
+      "artifact_version": "submission-v1",
+      "size_bytes": 4998,
+      "sha256": "81e4637fa9f0d6f804e4c10a41cae7292450f86b91909319d4cbbc0ed04b8650",
+      "required": true,
+      "source": {
+        "type": "repository",
+        "location": "configs/intents.yaml"
+      }
+    },
+    {
+      "path": "configs/escalation_policy.yaml",
+      "purpose": "configuration",
+      "artifact_version": "submission-v1",
+      "size_bytes": 1118,
+      "sha256": "ad37732552e4229acc1777376ad5a7333316d4cd571c582fc322a64382975c93",
+      "required": true,
+      "source": {
+        "type": "repository",
+        "location": "configs/escalation_policy.yaml"
+      }
+    },
+    {
+      "path": "configs/runtime.yaml",
+      "purpose": "configuration",
+      "artifact_version": "submission-v1",
+      "size_bytes": 305,
+      "sha256": "384f8b3265413d0434cf93f52782f792b5a971ddb16f234854f6afa3add9d8ad",
+      "required": true,
+      "source": {
+        "type": "repository",
+        "location": "configs/runtime.yaml"
+      }
+    },
+    {
+      "path": "configs/retrieval.yaml",
+      "purpose": "configuration",
+      "artifact_version": "submission-v1",
+      "size_bytes": 248,
+      "sha256": "b1dc0b08f9606943cbbfb8fb29bfd73ca8c83f4518f8fd94e5ad8d60411d097f",
+      "required": true,
+      "source": {
+        "type": "repository",
+        "location": "configs/retrieval.yaml"
+      }
+    },
+    {
+      "path": "configs/judge.yaml",
+      "purpose": "configuration",
+      "artifact_version": "submission-v1",
+      "size_bytes": 325,
+      "sha256": "cb7ea5188b5611e2668451ec62c84ee1e44378d57bfe3252664af44870e38309",
+      "required": true,
+      "source": {
+        "type": "repository",
+        "location": "configs/judge.yaml"
+      }
+    },
+    {
+      "path": "configs/training.yaml",
+      "purpose": "configuration",
+      "artifact_version": "submission-v1",
+      "size_bytes": 594,
+      "sha256": "87f773c3671b527b91d0b1f0686d6b5f17fa8ea73fa3dbb1c345d708d0bb2e5b",
+      "required": true,
+      "source": {
+        "type": "repository",
+        "location": "configs/training.yaml"
+      }
+    },
+    {
+      "path": "data/governance/HUMAN_APPROVAL.md",
+      "purpose": "configuration",
+      "artifact_version": "submission-v1",
+      "size_bytes": 898,
+      "sha256": "292f9692bd50c948dfa9ba47fc34f94dba18a0d44361d0d8853259ea1207d0eb",
+      "required": true,
+      "source": {
+        "type": "repository",
+        "location": "data/governance/HUMAN_APPROVAL.md"
+      }
+    },
+    {
+      "path": "models/intent/model.safetensors",
+      "purpose": "intent model",
+      "artifact_version": "submission-v1",
+      "size_bytes": 328523040,
+      "sha256": "a5bc475daafab580fcb6c3a3e58c2b8755160f357a50f2410a2f8c81dc5a7e7d",
+      "required": true,
+      "source": {
+        "type": "git_lfs",
+        "location": "models/intent/model.safetensors"
+      }
+    },
+    {
+      "path": "models/intent/config.json",
+      "purpose": "intent model",
+      "artifact_version": "submission-v1",
+      "size_bytes": 1654,
+      "sha256": "93494bb225dc7e918f2e8684475f7c83f656fbf3f789089232391517afe7b567",
+      "required": true,
+      "source": {
+        "type": "repository",
+        "location": "models/intent/config.json"
+      }
+    },
+    {
+      "path": "models/intent/metadata.json",
+      "purpose": "intent model",
+      "artifact_version": "submission-v1",
+      "size_bytes": 1091,
+      "sha256": "e2bd84f395fa78eedde8fa76766425f36e0e6e2d0ce4eacdbcbe46788e812f50",
+      "required": true,
+      "source": {
+        "type": "repository",
+        "location": "models/intent/metadata.json"
+      }
+    },
+    {
+      "path": "models/intent/tokenizer.json",
+      "purpose": "intent model",
+      "artifact_version": "submission-v1",
+      "size_bytes": 3558895,
+      "sha256": "db25aa8145ce0699a2457cf774766707f474768f6e4e0390e94c383dc386b097",
+      "required": true,
+      "source": {
+        "type": "repository",
+        "location": "models/intent/tokenizer.json"
+      }
+    },
+    {
+      "path": "models/intent/tokenizer_config.json",
+      "purpose": "intent model",
+      "artifact_version": "submission-v1",
+      "size_bytes": 405,
+      "sha256": "2f2141028bec1009d3cbce417eb92e8a9019a2e568e309db3991cae3d20a3d22",
+      "required": true,
+      "source": {
+        "type": "repository",
+        "location": "models/intent/tokenizer_config.json"
+      }
+    },
+    {
+      "path": "models/baselines/simple.joblib",
+      "purpose": "baselines",
+      "artifact_version": "submission-v1",
+      "size_bytes": 1019938,
+      "sha256": "a2986a98ea490eda7dd9294a3886a3433b346cbb9c18ca6f3373e635eff17d84",
+      "required": true,
+      "source": {
+        "type": "repository",
+        "location": "models/baselines/simple.joblib"
+      }
+    },
+    {
+      "path": "models/baselines/trivial.joblib",
+      "purpose": "baselines",
+      "artifact_version": "submission-v1",
+      "size_bytes": 118,
+      "sha256": "84d4d2a4a4248d170f09b3956974a346265aae8525472eab8f6a9f9739c1878a",
+      "required": true,
+      "source": {
+        "type": "repository",
+        "location": "models/baselines/trivial.joblib"
+      }
+    },
+    {
+      "path": "indexes/amazon_support/manifest.json",
+      "purpose": "retrieval index",
+      "artifact_version": "submission-v1",
+      "size_bytes": 189,
+      "sha256": "846a16f8fe30bbea64dec8c5e7aadbc833b000b4759e21cd5b4d4f2bd4656c57",
+      "required": true,
+      "source": {
+        "type": "repository",
+        "location": "indexes/amazon_support/manifest.json"
+      }
+    },
+    {
+      "path": "indexes/amazon_support/metadata.parquet",
+      "purpose": "retrieval index",
+      "artifact_version": "submission-v1",
+      "size_bytes": 495748,
+      "sha256": "01f77edaf845b023bd5148d192b7d1553881a24b9bd1cf76d6b925f52a11b53d",
+      "required": true,
+      "source": {
+        "type": "repository",
+        "location": "indexes/amazon_support/metadata.parquet"
+      }
+    },
+    {
+      "path": "indexes/amazon_support/vectors.npy",
+      "purpose": "retrieval index",
+      "artifact_version": "submission-v1",
+      "size_bytes": 12288128,
+      "sha256": "cc6ac3dae6454eeec7c7a6c859befdd5d3d967ba3c6c46e8569614246cc14aee",
+      "required": true,
+      "source": {
+        "type": "git_lfs",
+        "location": "indexes/amazon_support/vectors.npy"
+      }
+    },
+    {
+      "path": "data/golden/golden_candidates.csv",
+      "purpose": "gold and human ratings",
+      "artifact_version": "submission-v1",
+      "size_bytes": 47589,
+      "sha256": "6540dfa2cfc1857238ede86914cd34f96163ecb94f87f4e4c5233671cec2ada3",
+      "required": true,
+      "source": {
+        "type": "repository",
+        "location": "data/golden/golden_candidates.csv"
+      }
+    },
+    {
+      "path": "data/golden/golden_set.csv",
+      "purpose": "gold and human ratings",
+      "artifact_version": "submission-v1",
+      "size_bytes": 78709,
+      "sha256": "9273e9c34ffa28579b898af20f8954c76fc5d386c39ed9a3a259d168cd36cd0f",
+      "required": true,
+      "source": {
+        "type": "repository",
+        "location": "data/golden/golden_set.csv"
+      }
+    },
+    {
+      "path": "data/golden/import_provenance.json",
+      "purpose": "gold and human ratings",
+      "artifact_version": "submission-v1",
+      "size_bytes": 843,
+      "sha256": "787f3437a33f241dae2ad46e4c262e01e07c922f13cf2527df0d19f0d4dc40d9",
+      "required": true,
+      "source": {
+        "type": "repository",
+        "location": "data/golden/import_provenance.json"
+      }
+    },
+    {
+      "path": "data/golden/reply_quality_human_ratings.csv",
+      "purpose": "gold and human ratings",
+      "artifact_version": "submission-v1",
+      "size_bytes": 65712,
+      "sha256": "2dd1545f8322f5b6364138ed9dd533cfc04b4d3c8a59d472e6226d9bd59d732a",
+      "required": true,
+      "source": {
+        "type": "repository",
+        "location": "data/golden/reply_quality_human_ratings.csv"
+      }
+    },
+    {
+      "path": "data/golden/reply_rating_import_provenance.json",
+      "purpose": "gold and human ratings",
+      "artifact_version": "submission-v1",
+      "size_bytes": 1051,
+      "sha256": "6158d4baded271cb868e24955b6847270c097498f8665bd3369f12be1658e442",
+      "required": true,
+      "source": {
+        "type": "repository",
+        "location": "data/golden/reply_rating_import_provenance.json"
+      }
+    },
+    {
+      "path": "data/golden/reply_quality_human_ratings_post_repair.csv",
+      "purpose": "gold and human ratings",
+      "artifact_version": "submission-v1",
+      "size_bytes": 66030,
+      "sha256": "b06709c781980fe56866f201c9342ea5c912e047a9ca1b6a43c6c43373bf5745",
+      "required": true,
+      "source": {
+        "type": "repository",
+        "location": "data/golden/reply_quality_human_ratings_post_repair.csv"
+      }
+    },
+    {
+      "path": "data/golden/reply_quality_post_repair_provenance.json",
+      "purpose": "gold and human ratings",
+      "artifact_version": "submission-v1",
+      "size_bytes": 874,
+      "sha256": "4f3f5474064c036a0c34920efd925ba1e72ef842e97dae531131e448f7451b9b",
+      "required": true,
+      "source": {
+        "type": "repository",
+        "location": "data/golden/reply_quality_post_repair_provenance.json"
+      }
+    },
+    {
+      "path": "data/evaluation/leakage_membership.parquet",
+      "purpose": "compact leakage evidence",
+      "artifact_version": "submission-v1",
+      "size_bytes": 2313330,
+      "sha256": "50e00608183184e26ee75a2b61d7905a4bac74bcad479b05b1571d1d4328f931",
+      "required": true,
+      "source": {
+        "type": "repository",
+        "location": "data/evaluation/leakage_membership.parquet"
+      }
+    },
+    {
+      "path": "data/evaluation/leakage_validation.json",
+      "purpose": "compact leakage evidence",
+      "artifact_version": "submission-v1",
+      "size_bytes": 1022,
+      "sha256": "ddfa79729d572bc2447844492886a57ce0f950ee6645e7b273381c35ba7233ee",
+      "required": true,
+      "source": {
+        "type": "repository",
+        "location": "data/evaluation/leakage_validation.json"
+      }
+    },
+    {
+      "path": "data/reports/final_intent_metrics.json",
+      "purpose": "final intent metrics",
+      "artifact_version": "submission-v1",
+      "size_bytes": 18416,
+      "sha256": "e59d4fd06a4101d0c3b465ae66a5e1f89272330c44aace8c63d9cc1ec3ba92d3",
+      "required": true,
+      "source": {
+        "type": "repository",
+        "location": "data/reports/final_intent_metrics.json"
+      }
+    },
+    {
+      "path": "data/reports/final_intent_per_intent.csv",
+      "purpose": "final intent metrics",
+      "artifact_version": "submission-v1",
+      "size_bytes": 2852,
+      "sha256": "4110410924e475672da54e829291070972b189ed6826471cdc3d71f5dcb609c7",
+      "required": true,
+      "source": {
+        "type": "repository",
+        "location": "data/reports/final_intent_per_intent.csv"
+      }
+    },
+    {
+      "path": "data/reports/final_intent_confusion_matrices.csv",
+      "purpose": "final intent metrics",
+      "artifact_version": "submission-v1",
+      "size_bytes": 2782,
+      "sha256": "e5356e155c720aa036bb1705e89362b8fe81730505a1950ec68e29d7b93221e2",
+      "required": true,
+      "source": {
+        "type": "repository",
+        "location": "data/reports/final_intent_confusion_matrices.csv"
+      }
+    },
+    {
+      "path": "data/reports/final_intent_predictions.csv",
+      "purpose": "final intent metrics",
+      "artifact_version": "submission-v1",
+      "size_bytes": 64996,
+      "sha256": "f4a23cbf7ccad5dc8ca400a07000ed93d336efd59f47a9195f477f7b33c6a50b",
+      "required": true,
+      "source": {
+        "type": "repository",
+        "location": "data/reports/final_intent_predictions.csv"
+      }
+    },
+    {
+      "path": "data/reports/confidence_analysis.json",
+      "purpose": "final intent metrics",
+      "artifact_version": "submission-v1",
+      "size_bytes": 2515,
+      "sha256": "17417aa2955d68ce575328f3686d75693afc54c3932ec7e601796c041122e089",
+      "required": true,
+      "source": {
+        "type": "repository",
+        "location": "data/reports/confidence_analysis.json"
+      }
+    },
+    {
+      "path": "data/reports/near_duplicate_audit.json",
+      "purpose": "final intent metrics",
+      "artifact_version": "submission-v1",
+      "size_bytes": 3108,
+      "sha256": "7a2dfa94df29807f5f81e99289ef412dba09d053bd2f8e6156ca9e8fc7bce8a6",
+      "required": true,
+      "source": {
+        "type": "repository",
+        "location": "data/reports/near_duplicate_audit.json"
+      }
+    },
+    {
+      "path": "data/reports/data_quality.json",
+      "purpose": "final intent metrics",
+      "artifact_version": "submission-v1",
+      "size_bytes": 1728,
+      "sha256": "aa6591862fb2595bc4d6118b7a0820e3dd150a3e67aca19c9937881fd91cf4a1",
+      "required": true,
+      "source": {
+        "type": "repository",
+        "location": "data/reports/data_quality.json"
+      }
+    },
+    {
+      "path": "data/reports/post_repair/golden_response_outputs_post_repair.json",
+      "purpose": "final post repair evaluation",
+      "artifact_version": "submission-v1",
+      "size_bytes": 246975,
+      "sha256": "eb4a4b9098ffd84d7f6ec9cee5d4f8b2a86750a336961d39880865d2bfe2e66c",
+      "required": true,
+      "source": {
+        "type": "repository",
+        "location": "data/reports/post_repair/golden_response_outputs_post_repair.json"
+      }
+    },
+    {
+      "path": "data/reports/post_repair/reply_quality_judge_post_repair.json",
+      "purpose": "final post repair evaluation",
+      "artifact_version": "submission-v1",
+      "size_bytes": 111913,
+      "sha256": "f39018488bec6256033bab7a5146c73bb9fd09505824a6d184160d779e37e268",
+      "required": true,
+      "source": {
+        "type": "repository",
+        "location": "data/reports/post_repair/reply_quality_judge_post_repair.json"
+      }
+    },
+    {
+      "path": "data/reports/post_repair/reply_quality_judge_post_repair.jsonl",
+      "purpose": "final post repair evaluation",
+      "artifact_version": "submission-v1",
+      "size_bytes": 82862,
+      "sha256": "a45f4e16764cea9e9f47815bcd95fc0a81d0b02d76c5ea3133ac31720c1a51f1",
+      "required": true,
+      "source": {
+        "type": "repository",
+        "location": "data/reports/post_repair/reply_quality_judge_post_repair.jsonl"
+      }
+    },
+    {
+      "path": "data/reports/post_repair/human_judge_agreement_post_repair.json",
+      "purpose": "final post repair evaluation",
+      "artifact_version": "submission-v1",
+      "size_bytes": 30433,
+      "sha256": "678ed89d5e0502cae2b03663c3ce71f7912a62d0cd63a394816be1bbc59b45fc",
+      "required": true,
+      "source": {
+        "type": "repository",
+        "location": "data/reports/post_repair/human_judge_agreement_post_repair.json"
+      }
+    },
+    {
+      "path": "data/reports/post_repair/human_judge_agreement_by_dimension.csv",
+      "purpose": "final post repair evaluation",
+      "artifact_version": "submission-v1",
+      "size_bytes": 1280,
+      "sha256": "e035c1027bd7e6a7079dfb50b795b1a2e81a18718bb977b18675d15daf6a6f7e",
+      "required": true,
+      "source": {
+        "type": "repository",
+        "location": "data/reports/post_repair/human_judge_agreement_by_dimension.csv"
+      }
+    },
+    {
+      "path": "data/reports/post_repair/human_judge_largest_disagreements.csv",
+      "purpose": "final post repair evaluation",
+      "artifact_version": "submission-v1",
+      "size_bytes": 9457,
+      "sha256": "de86f8ba88d9bf682e5a019a54c4487db60859d60f9a149b70da7c4823ae6fb5",
+      "required": true,
+      "source": {
+        "type": "repository",
+        "location": "data/reports/post_repair/human_judge_largest_disagreements.csv"
+      }
+    },
+    {
+      "path": "data/reports/post_repair/routing_metrics.json",
+      "purpose": "final post repair evaluation",
+      "artifact_version": "submission-v1",
+      "size_bytes": 1777,
+      "sha256": "6639eb7809ea9e7fe247ad6b222ff8e27a263367299b2db80ee37dc70b6e85ed",
+      "required": true,
+      "source": {
+        "type": "repository",
+        "location": "data/reports/post_repair/routing_metrics.json"
+      }
+    },
+    {
+      "path": "data/reports/post_repair/retrieval_analysis.json",
+      "purpose": "final post repair evaluation",
+      "artifact_version": "submission-v1",
+      "size_bytes": 2358,
+      "sha256": "4012cdd98b2a88c282bc750669d1e939ebadf60434f5423b8ae6d9c4f19ce13a",
+      "required": true,
+      "source": {
+        "type": "repository",
+        "location": "data/reports/post_repair/retrieval_analysis.json"
+      }
+    },
+    {
+      "path": "data/reports/post_repair/latency_analysis.json",
+      "purpose": "final post repair evaluation",
+      "artifact_version": "submission-v1",
+      "size_bytes": 1773,
+      "sha256": "231b64d85d06fd827e45ba61bdf52fbd25027bb778ae65ded8550391ffde7a24",
+      "required": true,
+      "source": {
+        "type": "repository",
+        "location": "data/reports/post_repair/latency_analysis.json"
+      }
+    },
+    {
+      "path": "data/reports/post_repair/response_evaluation_summary.json",
+      "purpose": "final post repair evaluation",
+      "artifact_version": "submission-v1",
+      "size_bytes": 583,
+      "sha256": "e7feca32a33e954d1a38e065bf01f0f23309a6d21d0167d6d82d44fe7455fce9",
+      "required": true,
+      "source": {
+        "type": "repository",
+        "location": "data/reports/post_repair/response_evaluation_summary.json"
+      }
+    },
+    {
+      "path": "data/reports/post_repair/failure_analysis.json",
+      "purpose": "final post repair evaluation",
+      "artifact_version": "submission-v1",
+      "size_bytes": 6426,
+      "sha256": "1571ed6c0cbf56e36ce02437a5a3317600e8c689ceba45cd1dc252701b530289",
+      "required": true,
+      "source": {
+        "type": "repository",
+        "location": "data/reports/post_repair/failure_analysis.json"
+      }
+    },
+    {
+      "path": "data/reports/post_repair/runtime_repair_summary.json",
+      "purpose": "final post repair evaluation",
+      "artifact_version": "submission-v1",
+      "size_bytes": 2128,
+      "sha256": "56e6bc075b2d62955181afcf0c922c11dd80d770319bb382d22c352002a4bce8",
+      "required": true,
+      "source": {
+        "type": "repository",
+        "location": "data/reports/post_repair/runtime_repair_summary.json"
+      }
+    },
+    {
+      "path": "data/reports/golden_response_outputs.json",
+      "purpose": "historical pre repair evaluation",
+      "artifact_version": "submission-v1",
+      "size_bytes": 210546,
+      "sha256": "e3d92772d1b19ffe359dbb33069632d051e44ac0a324474a37cd7a4cc378f096",
+      "required": true,
+      "source": {
+        "type": "repository",
+        "location": "data/reports/golden_response_outputs.json"
+      }
+    },
+    {
+      "path": "data/reports/reply_quality_judge.json",
+      "purpose": "historical pre repair evaluation",
+      "artifact_version": "submission-v1",
+      "size_bytes": 102484,
+      "sha256": "5e9a087bfdb766d5ea2193e031b24e1222e0ff6b6326467ed3bdb5ce881060e7",
+      "required": true,
+      "source": {
+        "type": "repository",
+        "location": "data/reports/reply_quality_judge.json"
+      }
+    },
+    {
+      "path": "data/reports/reply_quality_judge.jsonl",
+      "purpose": "historical pre repair evaluation",
+      "artifact_version": "submission-v1",
+      "size_bytes": 74619,
+      "sha256": "b4232d24d6d70f638c3268f2c036e700ac158238a0280c9cf9a8a0e0c959a749",
+      "required": true,
+      "source": {
+        "type": "repository",
+        "location": "data/reports/reply_quality_judge.jsonl"
+      }
+    },
+    {
+      "path": "data/reports/human_judge_agreement.json",
+      "purpose": "historical pre repair evaluation",
+      "artifact_version": "submission-v1",
+      "size_bytes": 30804,
+      "sha256": "87e69c88720e30597ae475d7a410a94dae7cdf86e1943a02b177e60222212ebc",
+      "required": true,
+      "source": {
+        "type": "repository",
+        "location": "data/reports/human_judge_agreement.json"
+      }
+    }
+  ],
+  "total_size_bytes": 349486731
+}

@@ -17,28 +17,24 @@ def pct(value: float) -> str:
 def main() -> None:
     intent = read("final_intent_metrics.json")["models"]
     confidence = read("confidence_analysis.json")
-    routing = read("routing_metrics.json")
-    retrieval = read("retrieval_analysis.json")
-    latency = read("latency_analysis.json")
-    responses = read("response_evaluation_summary.json")
+    routing = read("post_repair/routing_metrics.json")
+    retrieval = read("post_repair/retrieval_analysis.json")
+    latency = read("post_repair/latency_analysis.json")
+    responses = read("post_repair/response_evaluation_summary.json")
     duplicates = read("near_duplicate_audit.json")
-    failures = read("failure_analysis.json")["top_five"]
-    provenance = json.loads(Path("data/golden/import_provenance.json").read_text(encoding="utf-8"))
-    judge_path = Path("data/reports/reply_quality_judge.json")
-    judge = json.loads(judge_path.read_text(encoding="utf-8")) if judge_path.exists() else None
-    agreement_path = Path("data/reports/human_judge_agreement.json")
-    agreement = json.loads(agreement_path.read_text(encoding="utf-8")) if agreement_path.exists() else None
-    safety_outlier = (
-        next(
-            (
-                item for item in agreement["largest_disagreements"]
-                if item["example_id"] == "gold-147" and item["dimension"] == "safety"
-            ),
-            None,
-        )
-        if agreement else None
+    failures = read("post_repair/failure_analysis.json")["top_five"]
+    repair_summary_path = Path("data/reports/post_repair/runtime_repair_summary.json")
+    repair_summary = (
+        json.loads(repair_summary_path.read_text(encoding="utf-8"))
+        if repair_summary_path.exists()
+        else None
     )
-    ratings_path = Path("data/golden/reply_quality_human_ratings.csv")
+    provenance = json.loads(Path("data/golden/import_provenance.json").read_text(encoding="utf-8"))
+    judge_path = Path("data/reports/post_repair/reply_quality_judge_post_repair.json")
+    judge = json.loads(judge_path.read_text(encoding="utf-8")) if judge_path.exists() else None
+    agreement_path = Path("data/reports/post_repair/human_judge_agreement_post_repair.json")
+    agreement = json.loads(agreement_path.read_text(encoding="utf-8")) if agreement_path.exists() else None
+    ratings_path = Path("data/golden/reply_quality_human_ratings_post_repair.csv")
     rating_status = validate_reply_ratings(ratings_path) if ratings_path.exists() else {"rows": 0, "completed": 0, "remaining": 0}
     configured = next(row for row in confidence["thresholds"] if row["threshold"] == 0.72)
 
@@ -48,8 +44,8 @@ def main() -> None:
         "## Status",
         "",
         (
-            f"**Phase 3 is complete.** Human reply ratings: **{rating_status['completed']}/{rating_status['rows']}**. "
-            "The original frozen judge was not rerun or tuned after human ratings were observed."
+            f"**Phase 3 is complete.** Final post-repair human reply ratings: **{rating_status['completed']}/{rating_status['rows']}**. "
+            "The historical pre-repair judge remains unchanged. The fixed-rubric post-repair judge comparison is explicitly post-hoc and was not tuned against the human scores."
             if agreement and rating_status["completed"] == rating_status["rows"]
             else f"Automated evaluation is complete through the human reply-rating checkpoint. Human reply ratings: **{rating_status['completed']}/{rating_status['rows']}**. Judge-agreement metrics remain pending."
         ),
@@ -88,6 +84,12 @@ def main() -> None:
         "",
         f"The real classifier → qwen3 embedding retrieval → qwen3:4b generation → deterministic safety → routing path was run on a deterministic {routing['rows']}-example stratified subset. This subset was chosen before response-quality inspection to fit the required 40–50 human-rating range and the measured CPU generation cost. Intent headline metrics remain on all 200. The routing figures below must not be described as 200-row routing results.",
         "",
+        (
+            f"After manually observed runtime defects, the saved raw drafts were passed through the repaired deterministic validator, router, and canonical final-response builder without rerunning or tuning the LLM. This changed {repair_summary['changed_routes']} routes and {repair_summary['changed_final_replies']} final replies. These are the final runtime routing metrics."
+            if repair_summary
+            else "No post-repair runtime reprocessing artifact was available."
+        ),
+        "",
         f"Routing accuracy was **{routing['correct']}/{routing['rows']} ({pct(routing['accuracy'])})**. Escalation precision/recall/F1 were **{routing['escalation_precision']:.4f}/{routing['escalation_recall']:.4f}/{routing['escalation_f1']:.4f}**. There were **{routing['false_auto_handle_count']} false auto-handles** ({pct(routing['false_auto_handle_rate_among_human_escalations'])} of human escalations) and **{routing['false_escalation_count']} false escalations**. The system auto-handled {responses['auto_handle']} and escalated {responses['escalate']} cases; {responses['safety_overrides']} drafts triggered the deterministic safety backstop and {responses['provider_failures']} provider/structured-output failures safely escalated.",
         "",
         "Disagreements were primarily attributable to frozen-classifier errors, low confidence, unsupported-claim/safety overrides, provider failures, and conservative-policy mismatch. False auto-handle remains the higher-severity error even though false escalation is more common.",
@@ -123,6 +125,8 @@ def main() -> None:
             "",
             "## Human–LLM judge agreement",
             "",
+            "These metrics describe the final post-repair responses. The human personally ranked every score without seeing judge scores. The post-repair judge pass retained the original model, rubric, prompt, and temperature; it reused 15 byte-identical judgments and evaluated 33 changed replies. Because it occurred after the behavioral repair and human-rating checkpoint, it is explicitly post-hoc and does not replace the preserved pre-repair evaluation.",
+            "",
             f"Across **{agreement['paired_dimension_ratings']} paired dimension scores** from {agreement['human_rating_rows']} responses, exact agreement was **{pct(pooled['exact_agreement'])}** and agreement within ±1 was **{pct(pooled['agreement_within_one'])}**. Linear/quadratic weighted Cohen's kappa were **{pooled['linear_weighted_cohen_kappa']:.4f}/{pooled['quadratic_weighted_cohen_kappa']:.4f}**, indicating no useful agreement beyond chance in this sample. Pooled Pearson/Spearman correlations were **{pooled['pearson_correlation']:.4f}/{pooled['spearman_rank_correlation']:.4f}**.",
             "",
             f"Per-response aggregate human and judge means were **{aggregate['human_mean']:.3f}** and **{aggregate['judge_mean']:.3f}**. The judge's mean bias was **{aggregate['judge_minus_human_mean_bias']:.3f}** points, with Pearson/Spearman correlations **{aggregate['pearson_correlation']:.3f}/{aggregate['spearman_rank_correlation']:.3f}**.",
@@ -139,9 +143,9 @@ def main() -> None:
             "",
             f"The largest systematic bias was Safety under-scoring: human mean {agreement['per_dimension']['safety']['human_distribution']['mean']:.3f} versus judge mean {agreement['per_dimension']['safety']['judge_distribution']['mean']:.3f} ({agreement['per_dimension']['safety']['judge_minus_human_mean_bias']:+.3f}). The judge also under-scored unsupported-claim avoidance ({agreement['per_dimension']['unsupported_claim_avoidance']['judge_minus_human_mean_bias']:+.3f}), historical consistency ({agreement['per_dimension']['historical_consistency']['judge_minus_human_mean_bias']:+.3f}), and groundedness ({agreement['per_dimension']['groundedness']['judge_minus_human_mean_bias']:+.3f}), while over-scoring helpfulness ({agreement['per_dimension']['helpfulness']['judge_minus_human_mean_bias']:+.3f}). Actionability bias was smaller ({agreement['per_dimension']['actionability']['judge_minus_human_mean_bias']:+.3f}), but agreement remained weak.",
             "",
-            f"The deliberate privacy failure `gold-147` received human Safety={safety_outlier['human_score'] if safety_outlier else 'n.a.'} and judge Safety={safety_outlier['judge_score'] if safety_outlier else 'n.a.'}. The response repeated the customer's phone number publicly; the judge rationale incorrectly described the response as providing a secure contact method. This is direct evidence that the small local judge is not reliable enough to replace human safety review.",
+            "The original pre-repair `gold-147` response repeated a phone number and received human Safety=1. The repaired final response no longer echoes that PII; the post-repair human file assigns Safety=5 to all 48 final responses. The historical rating and judge artifacts remain packaged separately so this repair is auditable rather than erased.",
             "",
-            "Human rating preparation used semi-automation, with the human making every final score decision. Score distributions, 1–5 confusion matrices, correlations, and the 15 largest paired disagreements are preserved in `data/reports/human_judge_agreement.json` and companion CSVs.",
+            "Automation was used to prepare and enter the rating CSV, but the human personally ranked and approved every score. Score distributions, 1–5 confusion matrices, correlations, and the 15 largest paired disagreements are preserved in `data/reports/post_repair/human_judge_agreement_post_repair.json` and companion CSVs.",
         ]
     total = latency["measurements_seconds"]["total_component_sum"]
     generation = latency["measurements_seconds"]["generation"]
@@ -160,7 +164,7 @@ def main() -> None:
             "",
             f"Customer: {failure['customer_message']}",
             "",
-            f"Expected `{failure['expected_intent']}` / `{failure['expected_route']}`; predicted `{failure['predicted_intent']}` / `{failure['predicted_route']}` at confidence {failure['intent_confidence']:.4f}, top-1 similarity {failure['top1_similarity']:.4f}. Root cause category: `{failure['why']}`. The concrete response and remediation are preserved in `data/reports/failure_analysis.json`.",
+            f"Expected `{failure['expected_intent']}` / `{failure['expected_route']}`; predicted `{failure['predicted_intent']}` / `{failure['predicted_route']}` at confidence {failure['intent_confidence']:.4f}, top-1 similarity {failure['top1_similarity']:.4f}. Root cause category: `{failure['why']}`. The concrete response and remediation are preserved in `data/reports/post_repair/failure_analysis.json`.",
             "",
         ]
     lines += [
@@ -202,28 +206,23 @@ def main() -> None:
         "",
         "## Reproduction",
         "",
-        "With dependencies, local models, and persisted response/judge outputs already present:",
+        "From an artifact-ready clone, the single reviewer command is:",
         "",
         "```powershell",
-        "python scripts\\validate_golden.py",
-        "python scripts\\evaluate_final_intents.py",
-        "python scripts\\audit_golden_duplicates.py --threshold 0.35",
-        "python scripts\\analyze_phase3_outputs.py",
-        "python scripts\\evaluate_human_judge_agreement.py",
-        "python scripts\\build_phase3_report.py",
-        "python -m pytest -q",
+        "python scripts\\reproduce_headline.py",
         "```",
         "",
-        "Regenerating the qwen3:4b responses or independent judge is intentionally separate because CPU inference can exceed the approximately 15-minute headline-metric reproduction target:",
+        "Artifact fetch and explicit verification, when needed:",
         "",
         "```powershell",
-        "python scripts\\run_golden_responses.py --size 48",
-        "python scripts\\judge_replies.py",
+        "python scripts\\fetch_submission_artifacts.py",
+        "python scripts\\verify_submission_artifacts.py",
+        "python scripts\\preflight_submission.py",
         "```",
         "",
         "## Human-rating completion",
         "",
-        f"The canonical blinded file contains {rating_status['rows']} rows and {rating_status['completed']} completed ratings. The imported CSV was preserved byte-for-byte with SHA-256 `{agreement['ratings_sha256'] if agreement else 'pending'}`. The original judge was not regenerated after import. No further human checkpoint is required for this Phase 3 evaluation.",
+        f"The final post-repair file contains {rating_status['rows']} rows and {rating_status['completed']} completed ratings. It is preserved byte-for-byte with SHA-256 `{agreement['ratings_sha256'] if agreement else 'pending'}`. The fixed post-repair judge artifact is used only as a comparison against these human scores; the historical pre-repair evaluation is retained separately. No further human checkpoint is required.",
     ]
     Path("PHASE_3_EVALUATION_REPORT.md").write_text("\n".join(lines) + "\n", encoding="utf-8")
 

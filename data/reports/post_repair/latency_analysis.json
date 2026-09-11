@@ -1,0 +1,52 @@
+{
+  "generated_at": "2026-09-11T11:32:16.490918+00:00",
+  "artifact_set_version": "hiver-submission-v1",
+  "source_response_path": "data/reports/post_repair/golden_response_outputs_post_repair.json",
+  "source_response_sha256": "eb4a4b9098ffd84d7f6ec9cee5d4f8b2a86750a336961d39880865d2bfe2e66c",
+  "scope": "Post-repair routing/safety reprocessing of the frozen 48 Phase 3 raw drafts",
+  "provider": "ollama",
+  "model": "qwen3:4b",
+  "measurements_seconds": {
+    "intent": {
+      "count": 48,
+      "min": 0.014016299999639159,
+      "median": 0.02459429999908025,
+      "mean": 0.039167364583742405,
+      "p95": 0.038341434999529155,
+      "max": 0.705589900000632
+    },
+    "embedding_and_retrieval": {
+      "count": 48,
+      "min": 0.09956520208091509,
+      "median": 0.282430391303933,
+      "mean": 0.27562191883679865,
+      "p95": 0.28308364630556754,
+      "max": 0.3189406913024868
+    },
+    "generation": {
+      "count": 48,
+      "min": 2.7136497999999847,
+      "median": 20.281674199999543,
+      "mean": 25.643576422916414,
+      "p95": 71.21313852000092,
+      "max": 137.142923899999
+    },
+    "safety_and_routing": {
+      "count": 48,
+      "min": 7.00001692166552e-07,
+      "median": 3.7099998735357076e-05,
+      "mean": 0.0004354833333006051,
+      "p95": 0.0018866350003008843,
+      "max": 0.00506400000085705
+    },
+    "total_component_sum": {
+      "count": 48,
+      "min": 3.0211362913050834,
+      "median": 20.585764141304026,
+      "mean": 25.958801189670254,
+      "p95": 71.52192528630947,
+      "max": 138.16772979130292
+    }
+  },
+  "measurement_note": "Embedding was batched and its wall time amortized across pending examples; generation is real per-request wall time."
+}

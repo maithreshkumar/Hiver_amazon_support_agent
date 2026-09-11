@@ -1,4 +1,4 @@
-version: 1
+version: 2
 status: approved_by_human
 approved_at: "2026-09-09"
 approval_provenance: "Explicit user approval in the Codex project task, conditional on conservative handling of risk and uncertainty."
@@ -18,8 +18,16 @@ risk_rules:
     - payment_dispute
   text_signals:
     - unauthorized
+    - unauthorised
     - hacked
+    - compromised
+    - account takeover
     - fraud
+    - suspicious transaction
+    - stolen payment
+    - did not make
+    - don't recognize
+    - do not recognize
     - lawyer
     - legal action
     - dangerous

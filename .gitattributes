@@ -1,0 +1,2 @@
+models/intent/model.safetensors filter=lfs diff=lfs merge=lfs -text
+indexes/amazon_support/vectors.npy filter=lfs diff=lfs merge=lfs -text

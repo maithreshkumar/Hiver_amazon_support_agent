@@ -1,0 +1,85 @@
+{
+  "generated_at": "2026-09-11T11:32:16.488235+00:00",
+  "method": "character TF-IDF cosine similarity after lowercasing and removing URLs/mentions",
+  "threshold": 0.35,
+  "rows": 200,
+  "exact_normalized_duplicate_pairs": 0,
+  "near_duplicate_pairs": 8,
+  "examples_in_near_duplicate_pairs": 9,
+  "human_review_noted_semantic_pairs": [
+    {
+      "left_example_id": "gold-004",
+      "right_example_id": "gold-117",
+      "theme": "accidental Kindle purchase cancellation",
+      "detected_at_configured_threshold": false,
+      "note": "Preserved as a qualitative near-duplicate noted during human review; lexical character TF-IDF may miss paraphrases."
+    }
+  ],
+  "sampling_effect_note": "Near-duplicate themes can overweight a behavior in a 200-example set. No examples were removed after labels were observed.",
+  "pairs": [
+    {
+      "left_example_id": "gold-122",
+      "right_example_id": "gold-149",
+      "similarity": 0.5041739804899619,
+      "exact_normalized_duplicate": false,
+      "left_intent": "general_or_context_missing",
+      "right_intent": "general_or_context_missing"
+    },
+    {
+      "left_example_id": "gold-129",
+      "right_example_id": "gold-149",
+      "similarity": 0.47037358534756424,
+      "exact_normalized_duplicate": false,
+      "left_intent": "general_or_context_missing",
+      "right_intent": "general_or_context_missing"
+    },
+    {
+      "left_example_id": "gold-144",
+      "right_example_id": "gold-149",
+      "similarity": 0.41721820374705454,
+      "exact_normalized_duplicate": false,
+      "left_intent": "general_or_context_missing",
+      "right_intent": "general_or_context_missing"
+    },
+    {
+      "left_example_id": "gold-122",
+      "right_example_id": "gold-129",
+      "similarity": 0.41351891468969126,
+      "exact_normalized_duplicate": false,
+      "left_intent": "general_or_context_missing",
+      "right_intent": "general_or_context_missing"
+    },
+    {
+      "left_example_id": "gold-168",
+      "right_example_id": "gold-172",
+      "similarity": 0.40619185383914796,
+      "exact_normalized_duplicate": false,
+      "left_intent": "account_access_or_security",
+      "right_intent": "account_access_or_security"
+    },
+    {
+      "left_example_id": "gold-027",
+      "right_example_id": "gold-149",
+      "similarity": 0.3777420686628418,
+      "exact_normalized_duplicate": false,
+      "left_intent": "delivered_but_missing",
+      "right_intent": "general_or_context_missing"
+    },
+    {
+      "left_example_id": "gold-122",
+      "right_example_id": "gold-144",
+      "similarity": 0.3667884936072292,
+      "exact_normalized_duplicate": false,
+      "left_intent": "general_or_context_missing",
+      "right_intent": "general_or_context_missing"
+    },
+    {
+      "left_example_id": "gold-036",
+      "right_example_id": "gold-086",
+      "similarity": 0.3519494635517148,
+      "exact_normalized_duplicate": false,
+      "left_intent": "general_or_context_missing",
+      "right_intent": "general_or_context_missing"
+    }
+  ]
+}

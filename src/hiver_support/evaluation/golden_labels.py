@@ -23,6 +23,7 @@ STRING_COLUMNS = [
     "human_escalation", "human_reason", "label_source", "labeler_id",
 ]
 TIMESTAMP_COLUMNS = ["labeled_at", "updated_at"]
+LEAKAGE_HASH_NAMESPACE = "hiver-amazon-support-thread-v1"
 
 
 def _coerce_golden_schema(frame: pd.DataFrame) -> pd.DataFrame:
@@ -146,6 +147,7 @@ def validate_golden_set(
     test_path: str | Path = "data/processed/test.parquet",
     retrieval_path: str | Path = "data/processed/retrieval_corpus.parquet",
     weak_labels_path: str | Path = "data/processed/weak_labels.parquet",
+    compact_leakage_path: str | Path = "data/evaluation/leakage_membership.parquet",
 ) -> dict[str, object]:
     frame = load_golden_set(golden_path)
     errors: list[str] = []
@@ -164,19 +166,57 @@ def validate_golden_set(
     if not candidate_view.equals(golden_view):
         errors.append("canonical examples/messages differ from the sealed candidate file")
 
-    ids = set(frame["thread_id"])
-    train_ids = set(pd.read_parquet(train_path, columns=["thread_id"])["thread_id"].astype(str))
-    test_ids = set(pd.read_parquet(test_path, columns=["thread_id"])["thread_id"].astype(str))
-    retrieval_ids = set(pd.read_parquet(retrieval_path, columns=["thread_id"])["thread_id"].astype(str))
-    weak_ids = set(pd.read_parquet(weak_labels_path, columns=["thread_id"])["thread_id"].astype(str))
-    if ids - test_ids:
-        errors.append(f"{len(ids - test_ids)} golden threads are outside the test split")
-    if ids & train_ids:
-        errors.append(f"{len(ids & train_ids)} golden threads overlap the train split")
-    if ids & retrieval_ids:
-        errors.append(f"{len(ids & retrieval_ids)} golden threads overlap retrieval")
-    if ids & weak_ids:
-        errors.append(f"{len(ids & weak_ids)} golden threads overlap weak labels")
+    ids = {str(value).strip() for value in frame["thread_id"]}
+    full_paths = [Path(train_path), Path(test_path), Path(retrieval_path), Path(weak_labels_path)]
+    if all(path.exists() for path in full_paths):
+        train_ids = set(pd.read_parquet(train_path, columns=["thread_id"])["thread_id"].astype(str))
+        test_ids = set(pd.read_parquet(test_path, columns=["thread_id"])["thread_id"].astype(str))
+        retrieval_ids = set(pd.read_parquet(retrieval_path, columns=["thread_id"])["thread_id"].astype(str))
+        weak_ids = set(pd.read_parquet(weak_labels_path, columns=["thread_id"])["thread_id"].astype(str))
+        outside_test = len(ids - test_ids)
+        train_overlap = len(ids & train_ids)
+        retrieval_overlap = len(ids & retrieval_ids)
+        weak_overlap = len(ids & weak_ids)
+    else:
+        compact_path = Path(compact_leakage_path)
+        if not compact_path.exists():
+            missing = ", ".join(str(path) for path in full_paths if not path.exists())
+            raise FileNotFoundError(
+                "Golden leakage validation requires either the source split files or the compact "
+                f"membership artifact; missing: {missing}; {compact_path}"
+            )
+        compact = pd.read_parquet(compact_path)
+        required_membership = {
+            "thread_id_sha256", "in_train", "in_test", "in_weak_labels",
+            "in_retrieval_index", "in_golden",
+        }
+        if set(compact.columns) != required_membership or compact["thread_id_sha256"].duplicated().any():
+            raise ValueError("Compact leakage membership schema or uniqueness is invalid")
+        golden_hashes = {
+            hashlib.sha256(
+                f"{LEAKAGE_HASH_NAMESPACE}:{thread_id}".encode("utf-8")
+            ).hexdigest()
+            for thread_id in ids
+        }
+        sealed_hashes = set(compact.loc[compact["in_golden"], "thread_id_sha256"])
+        if golden_hashes != sealed_hashes:
+            errors.append("golden thread hashes differ from the compact sealed membership")
+        outside_test = len(golden_hashes - set(compact.loc[compact["in_test"], "thread_id_sha256"]))
+        train_overlap = len(golden_hashes & set(compact.loc[compact["in_train"], "thread_id_sha256"]))
+        retrieval_overlap = len(
+            golden_hashes & set(compact.loc[compact["in_retrieval_index"], "thread_id_sha256"])
+        )
+        weak_overlap = len(
+            golden_hashes & set(compact.loc[compact["in_weak_labels"], "thread_id_sha256"])
+        )
+    if outside_test:
+        errors.append(f"{outside_test} golden threads are outside the test split")
+    if train_overlap:
+        errors.append(f"{train_overlap} golden threads overlap the train split")
+    if retrieval_overlap:
+        errors.append(f"{retrieval_overlap} golden threads overlap retrieval")
+    if weak_overlap:
+        errors.append(f"{weak_overlap} golden threads overlap weak labels")
 
     complete = _complete_mask(frame)
     allowed_intents = {item.name for item in load_approved_taxonomy()}
@@ -204,9 +244,9 @@ def validate_golden_set(
     return {
         "rows": len(frame), "unique_examples": int(frame["example_id"].nunique()),
         "unique_threads": int(frame["thread_id"].nunique()), "completed": int(complete.sum()),
-        "remaining": int(len(frame) - complete.sum()), "train_overlap": len(ids & train_ids),
-        "retrieval_overlap": len(ids & retrieval_ids), "weak_label_overlap": len(ids & weak_ids),
-        "all_in_test_split": not bool(ids - test_ids),
+        "remaining": int(len(frame) - complete.sum()), "train_overlap": train_overlap,
+        "retrieval_overlap": retrieval_overlap, "weak_label_overlap": weak_overlap,
+        "all_in_test_split": outside_test == 0,
     }
 
 

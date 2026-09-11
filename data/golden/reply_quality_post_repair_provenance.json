@@ -1,0 +1,19 @@
+{
+  "validated_on": "2026-09-11",
+  "canonical_path": "data/golden/reply_quality_human_ratings_post_repair.csv",
+  "canonical_sha256": "b06709c781980fe56866f201c9342ea5c912e047a9ca1b6a43c6c43373bf5745",
+  "response_path": "data/reports/post_repair/golden_response_outputs_post_repair.json",
+  "response_sha256": "eb4a4b9098ffd84d7f6ec9cee5d4f8b2a86750a336961d39880865d2bfe2e66c",
+  "annotation_methodology": "The human labeler personally ranked and approved every score. Automation was used only to prepare and enter the completed CSV.",
+  "human_final_decisions": true,
+  "ratings_modified_during_validation": false,
+  "blinded_to_llm_judge_scores": true,
+  "validation": {
+    "rows": 48,
+    "completed": 48,
+    "remaining": 0,
+    "unique_example_ids": 48,
+    "same_ids_and_order_as_post_repair_responses": true,
+    "messages_and_responses_match_exactly": true
+  }
+}

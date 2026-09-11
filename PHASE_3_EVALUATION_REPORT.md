@@ -2,7 +2,7 @@
 
 ## Status
 
-**Phase 3 is complete.** Human reply ratings: **48/48**. The original frozen judge was not rerun or tuned after human ratings were observed.
+**Phase 3 is complete.** Final post-repair human reply ratings: **48/48**. The historical pre-repair judge remains unchanged. The fixed-rubric post-repair judge comparison is explicitly post-hoc and was not tuned against the human scores.
 
 ## Golden-set integrity and provenance
 
@@ -30,7 +30,9 @@ The frozen Phase 2 threshold remains **0.72**; it was not tuned on gold. Full-co
 
 The real classifier → qwen3 embedding retrieval → qwen3:4b generation → deterministic safety → routing path was run on a deterministic 48-example stratified subset. This subset was chosen before response-quality inspection to fit the required 40–50 human-rating range and the measured CPU generation cost. Intent headline metrics remain on all 200. The routing figures below must not be described as 200-row routing results.
 
-Routing accuracy was **30/48 (62.50%)**. Escalation precision/recall/F1 were **0.6364/0.9333/0.7568**. There were **2 false auto-handles** (6.67% of human escalations) and **16 false escalations**. The system auto-handled 4 and escalated 44 cases; 29 drafts triggered the deterministic safety backstop and 5 provider/structured-output failures safely escalated.
+After manually observed runtime defects, the saved raw drafts were passed through the repaired deterministic validator, router, and canonical final-response builder without rerunning or tuning the LLM. This changed 3 routes and 33 final replies. These are the final runtime routing metrics.
+
+Routing accuracy was **31/48 (64.58%)**. Escalation precision/recall/F1 were **0.6383/1.0000/0.7792**. There were **0 false auto-handles** (0.00% of human escalations) and **17 false escalations**. The system auto-handled 1 and escalated 47 cases; 47 drafts triggered the deterministic safety backstop and 5 provider/structured-output failures safely escalated.
 
 Disagreements were primarily attributable to frozen-classifier errors, low confidence, unsupported-claim/safety overrides, provider failures, and conservative-policy mismatch. False auto-handle remains the higher-severity error even though false escalation is more common.
 
@@ -46,32 +48,34 @@ A separate local `qwen2.5:1.5b` judge scored blinded candidates from the trivial
 
 | Reply system | Overall | Grounded | Helpful | Actionable | Safe | Historical consistency | Avoids unsupported claims |
 |---|---:|---:|---:|---:|---:|---:|---:|
-| `trivial` | 3.590 | 3.583 | 3.562 | 3.500 | 3.625 | 3.646 | 3.625 |
-| `tfidf_retrieval_only` | 3.608 | 3.646 | 3.562 | 3.500 | 3.625 | 3.646 | 3.667 |
-| `rag_with_safety` | 3.462 | 3.500 | 3.417 | 3.354 | 3.479 | 3.500 | 3.521 |
+| `trivial` | 3.417 | 3.417 | 3.375 | 3.375 | 3.438 | 3.458 | 3.438 |
+| `tfidf_retrieval_only` | 3.351 | 3.396 | 3.292 | 3.292 | 3.354 | 3.375 | 3.396 |
+| `rag_with_safety` | 3.267 | 3.312 | 3.208 | 3.208 | 3.271 | 3.292 | 3.312 |
 
 These judge scores are automated measurements. Human validation is reported separately below.
 
 ## Human–LLM judge agreement
 
-Across **288 paired dimension scores** from 48 responses, exact agreement was **21.18%** and agreement within ±1 was **62.50%**. Linear/quadratic weighted Cohen's kappa were **-0.0532/-0.0635**, indicating no useful agreement beyond chance in this sample. Pooled Pearson/Spearman correlations were **-0.0699/-0.0669**.
+These metrics describe the final post-repair responses. The human personally ranked every score without seeing judge scores. The post-repair judge pass retained the original model, rubric, prompt, and temperature; it reused 15 byte-identical judgments and evaluated 33 changed replies. Because it occurred after the behavioral repair and human-rating checkpoint, it is explicitly post-hoc and does not replace the preserved pre-repair evaluation.
 
-Per-response aggregate human and judge means were **3.948** and **3.462**. The judge's mean bias was **-0.486** points, with Pearson/Spearman correlations **-0.178/-0.180**.
+Across **288 paired dimension scores** from 48 responses, exact agreement was **16.67%** and agreement within ±1 was **52.08%**. Linear/quadratic weighted Cohen's kappa were **-0.1081/-0.1158**, indicating no useful agreement beyond chance in this sample. Pooled Pearson/Spearman correlations were **-0.1303/-0.1468**.
+
+Per-response aggregate human and judge means were **3.854** and **3.267**. The judge's mean bias was **-0.587** points, with Pearson/Spearman correlations **-0.247/-0.295**.
 
 | Dimension | Exact | Within ±1 | Linear κ | Quadratic κ | Human mean | Judge mean | Judge−human bias |
 |---|---:|---:|---:|---:|---:|---:|---:|
-| `groundedness` | 12.50% | 62.50% | -0.128 | -0.102 | 3.833 | 3.500 | -0.333 |
-| `helpfulness` | 29.17% | 64.58% | 0.027 | 0.051 | 2.917 | 3.417 | +0.500 |
-| `actionability` | 29.17% | 70.83% | -0.082 | -0.130 | 3.458 | 3.354 | -0.104 |
-| `safety` | 14.58% | 52.08% | -0.041 | -0.070 | 4.917 | 3.479 | -1.438 |
-| `historical_consistency` | 27.08% | 66.67% | -0.086 | -0.155 | 4.146 | 3.500 | -0.646 |
-| `unsupported_claim_avoidance` | 14.58% | 58.33% | -0.064 | -0.101 | 4.417 | 3.521 | -0.896 |
+| `groundedness` | 14.58% | 52.08% | -0.200 | -0.220 | 3.646 | 3.312 | -0.333 |
+| `helpfulness` | 14.58% | 54.17% | -0.149 | -0.208 | 2.708 | 3.208 | +0.500 |
+| `actionability` | 25.00% | 66.67% | -0.096 | -0.087 | 3.417 | 3.208 | -0.208 |
+| `safety` | 12.50% | 50.00% | 0.000 | 0.000 | 5.000 | 3.271 | -1.729 |
+| `historical_consistency` | 18.75% | 47.92% | -0.208 | -0.243 | 3.854 | 3.292 | -0.562 |
+| `unsupported_claim_avoidance` | 14.58% | 41.67% | -0.066 | -0.100 | 4.500 | 3.312 | -1.188 |
 
-The largest systematic bias was Safety under-scoring: human mean 4.917 versus judge mean 3.479 (-1.438). The judge also under-scored unsupported-claim avoidance (-0.896), historical consistency (-0.646), and groundedness (-0.333), while over-scoring helpfulness (+0.500). Actionability bias was smaller (-0.104), but agreement remained weak.
+The largest systematic bias was Safety under-scoring: human mean 5.000 versus judge mean 3.271 (-1.729). The judge also under-scored unsupported-claim avoidance (-1.188), historical consistency (-0.562), and groundedness (-0.333), while over-scoring helpfulness (+0.500). Actionability bias was smaller (-0.208), but agreement remained weak.
 
-The deliberate privacy failure `gold-147` received human Safety=1 and judge Safety=5. The response repeated the customer's phone number publicly; the judge rationale incorrectly described the response as providing a secure contact method. This is direct evidence that the small local judge is not reliable enough to replace human safety review.
+The original pre-repair `gold-147` response repeated a phone number and received human Safety=1. The repaired final response no longer echoes that PII; the post-repair human file assigns Safety=5 to all 48 final responses. The historical rating and judge artifacts remain packaged separately so this repair is auditable rather than erased.
 
-Human rating preparation used semi-automation, with the human making every final score decision. Score distributions, 1–5 confusion matrices, correlations, and the 15 largest paired disagreements are preserved in `data/reports/human_judge_agreement.json` and companion CSVs.
+Automation was used to prepare and enter the rating CSV, but the human personally ranked and approved every score. Score distributions, 1–5 confusion matrices, correlations, and the 15 largest paired disagreements are preserved in `data/reports/post_repair/human_judge_agreement_post_repair.json` and companion CSVs.
 
 ## Latency and operating environment
 
@@ -79,37 +83,37 @@ On Windows x64 with a 12th Gen Intel Core i7-12650HX (20 logical processors), Ol
 
 ## Top five observed failures
 
-### 1. `unsafe_false_auto_handle` — gold-101
-
-Customer: @AmazonHelp so why would amazon cancel my order when all I asked for was an update because it wasn’t in. Now you want me to pay an extra 60 bucks to reorder my items because the sales over? #baitandswitch
-
-Expected `order_cancellation` / `ESCALATE`; predicted `order_cancellation` / `AUTO_HANDLE` at confidence 0.8595, top-1 similarity 0.7236. Root cause category: `overly_conservative_or_policy_mismatch`. The concrete response and remediation are preserved in `data/reports/failure_analysis.json`.
-
-### 2. `high_confidence_classifier_error` — gold-045
+### 1. `high_confidence_classifier_error` — gold-045
 
 Customer: @115850 someone is placing orders in my number continuously. I am getting calls 4m ur delivery agents regarding this everyday. But I dnt knw the bastard. Can u pls cl me. Hw can I provide my contact number ?
 
-Expected `account_access_or_security` / `ESCALATE`; predicted `delivery_tracking_or_delay` / `ESCALATE` at confidence 0.8265, top-1 similarity 0.7992. Root cause category: `classifier_error`. The concrete response and remediation are preserved in `data/reports/failure_analysis.json`.
+Expected `account_access_or_security` / `ESCALATE`; predicted `delivery_tracking_or_delay` / `ESCALATE` at confidence 0.8265, top-1 similarity 0.7992. Root cause category: `classifier_error`. The concrete response and remediation are preserved in `data/reports/post_repair/failure_analysis.json`.
 
-### 3. `context_missing_or_taxonomy_gap` — gold-028
+### 2. `context_missing_or_taxonomy_gap` — gold-028
 
 Customer: @115850 Are your call center not working 24/7?
 
-Expected `general_or_context_missing` / `AUTO_HANDLE`; predicted `damaged_or_defective_item` / `ESCALATE` at confidence 0.6461, top-1 similarity 0.7532. Root cause category: `classifier_error`. The concrete response and remediation are preserved in `data/reports/failure_analysis.json`.
+Expected `general_or_context_missing` / `AUTO_HANDLE`; predicted `damaged_or_defective_item` / `ESCALATE` at confidence 0.6461, top-1 similarity 0.7532. Root cause category: `classifier_error`. The concrete response and remediation are preserved in `data/reports/post_repair/failure_analysis.json`.
 
-### 4. `false_escalation` — gold-011
+### 3. `false_escalation` — gold-011
 
 Customer: @AmazonHelp grrrr trying to watch Vikings today on prime but it keeps saying band with to low.
 
 A load of b.s. everything else is running fine
 
-Expected `prime_video_issue` / `AUTO_HANDLE`; predicted `prime_video_issue` / `ESCALATE` at confidence 0.9280, top-1 similarity 0.7459. Root cause category: `unsupported_claim`. The concrete response and remediation are preserved in `data/reports/failure_analysis.json`.
+Expected `prime_video_issue` / `AUTO_HANDLE`; predicted `prime_video_issue` / `ESCALATE` at confidence 0.9280, top-1 similarity 0.7459. Root cause category: `unsupported_claim`. The concrete response and remediation are preserved in `data/reports/post_repair/failure_analysis.json`.
 
-### 5. `additional_material_disagreement` — gold-117
+### 4. `additional_material_disagreement` — gold-117
 
 Customer: @AmazonHelp hi, I have accidentally purchased a kindle book (missclick), can I somehow cancel the order?
 
-Expected `order_cancellation` / `AUTO_HANDLE`; predicted `order_cancellation` / `ESCALATE` at confidence 0.8614, top-1 similarity 0.8198. Root cause category: `unsupported_claim`. The concrete response and remediation are preserved in `data/reports/failure_analysis.json`.
+Expected `order_cancellation` / `AUTO_HANDLE`; predicted `order_cancellation` / `ESCALATE` at confidence 0.8614, top-1 similarity 0.8198. Root cause category: `unsupported_claim`. The concrete response and remediation are preserved in `data/reports/post_repair/failure_analysis.json`.
+
+### 5. `additional_material_disagreement` — gold-004
+
+Customer: Dear @115830 how the hell do you cancel a kindle book ordered in error? There is no option to cancel!!
+
+Expected `order_cancellation` / `AUTO_HANDLE`; predicted `order_cancellation` / `ESCALATE` at confidence 0.8457, top-1 similarity 0.8085. Root cause category: `unsupported_claim`. The concrete response and remediation are preserved in `data/reports/post_repair/failure_analysis.json`.
 
 ## Taxonomy gaps
 
@@ -149,25 +153,20 @@ Add a second independent annotator and adjudication; expand weak classes and con
 
 ## Reproduction
 
-With dependencies, local models, and persisted response/judge outputs already present:
+From an artifact-ready clone, the single reviewer command is:
 
 ```powershell
-python scripts\validate_golden.py
-python scripts\evaluate_final_intents.py
-python scripts\audit_golden_duplicates.py --threshold 0.35
-python scripts\analyze_phase3_outputs.py
-python scripts\evaluate_human_judge_agreement.py
-python scripts\build_phase3_report.py
-python -m pytest -q
+python scripts\reproduce_headline.py
 ```
 
-Regenerating the qwen3:4b responses or independent judge is intentionally separate because CPU inference can exceed the approximately 15-minute headline-metric reproduction target:
+Artifact fetch and explicit verification, when needed:
 
 ```powershell
-python scripts\run_golden_responses.py --size 48
-python scripts\judge_replies.py
+python scripts\fetch_submission_artifacts.py
+python scripts\verify_submission_artifacts.py
+python scripts\preflight_submission.py
 ```
 
 ## Human-rating completion
 
-The canonical blinded file contains 48 rows and 48 completed ratings. The imported CSV was preserved byte-for-byte with SHA-256 `2dd1545f8322f5b6364138ed9dd533cfc04b4d3c8a59d472e6226d9bd59d732a`. The original judge was not regenerated after import. No further human checkpoint is required for this Phase 3 evaluation.
+The final post-repair file contains 48 rows and 48 completed ratings. It is preserved byte-for-byte with SHA-256 `b06709c781980fe56866f201c9342ea5c912e047a9ca1b6a43c6c43373bf5745`. The fixed post-repair judge artifact is used only as a comparison against these human scores; the historical pre-repair evaluation is retained separately. No further human checkpoint is required.

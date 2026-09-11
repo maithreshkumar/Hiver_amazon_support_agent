@@ -15,8 +15,14 @@ def _normalize(text: str) -> str:
     return " ".join(re.sub(r"https?://\S+|@\w+", " ", text.casefold()).split())
 
 
-def run_near_duplicate_audit(threshold: float = 0.35) -> dict[str, object]:
-    validate_golden_set(require_complete=True)
+def run_near_duplicate_audit(
+    threshold: float = 0.35,
+    output_path: str | Path = "data/reports/near_duplicate_audit.json",
+    *,
+    validate_inputs: bool = True,
+) -> dict[str, object]:
+    if validate_inputs:
+        validate_golden_set(require_complete=True)
     frame = load_golden_set()
     normalized = frame["customer_message"].astype(str).map(_normalize)
     vectors = TfidfVectorizer(analyzer="char_wb", ngram_range=(3, 5), min_df=1).fit_transform(normalized)
@@ -60,5 +66,7 @@ def run_near_duplicate_audit(threshold: float = 0.35) -> dict[str, object]:
         ),
         "pairs": pairs,
     }
-    Path("data/reports/near_duplicate_audit.json").write_text(json.dumps(result, indent=2) + "\n", encoding="utf-8")
+    target = Path(output_path)
+    target.parent.mkdir(parents=True, exist_ok=True)
+    target.write_text(json.dumps(result, indent=2) + "\n", encoding="utf-8")
     return result

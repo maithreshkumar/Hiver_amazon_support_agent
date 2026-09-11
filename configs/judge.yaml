@@ -3,7 +3,7 @@ model: qwen2.5:1.5b
 base_url: http://localhost:11434
 temperature: 0.0
 timeout_seconds: 180
-num_predict: 800
+num_predict: 1200
 prompt_version: reply-judge-v1
 rubric_version: support-quality-v1
 dimensions:

@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+import hashlib
 import re
 from datetime import UTC, datetime
 from pathlib import Path
@@ -144,12 +145,18 @@ def analyze_response_outputs(
     input_path: str | Path = "data/reports/golden_response_outputs.json",
     output_dir: str | Path = "data/reports",
 ) -> dict[str, object]:
-    payload = json.loads(Path(input_path).read_text(encoding="utf-8"))
+    input_file = Path(input_path)
+    payload = json.loads(input_file.read_text(encoding="utf-8"))
     records = list(payload["records"])
     if not records:
         raise ValueError("No response records were found")
     generated_at = datetime.now(UTC).isoformat()
     scope = payload.get("scope", "response-evaluation sample")
+    provenance = {
+        "artifact_set_version": "hiver-submission-v1",
+        "source_response_path": input_file.as_posix(),
+        "source_response_sha256": hashlib.sha256(input_file.read_bytes()).hexdigest(),
+    }
 
     routing = calculate_routing_metrics(
         [str(r["human_route"]) for r in records], [str(r["predicted_route"]) for r in records]
@@ -161,6 +168,7 @@ def analyze_response_outputs(
         breakdown[category] = breakdown.get(category, 0) + 1
     routing.update({
         "generated_at": generated_at,
+        **provenance,
         "scope": scope,
         "scope_warning": "These routing metrics cover the real generated-response sample, not all 200 intent-evaluation rows.",
         "disagreement_breakdown_primary_category": breakdown,
@@ -189,6 +197,7 @@ def analyze_response_outputs(
                 legacy_style_rows += 1
     retrieval = {
         "generated_at": generated_at,
+        **provenance,
         "scope": scope,
         "terminology_warning": (
             "No human retrieval-relevance labels exist, so these are similarity/evidence-usefulness diagnostics, not retrieval accuracy."
@@ -215,6 +224,7 @@ def analyze_response_outputs(
     latency_keys = ["intent", "embedding_and_retrieval", "generation", "safety_and_routing", "total_component_sum"]
     latency = {
         "generated_at": generated_at,
+        **provenance,
         "scope": scope,
         "provider": records[0].get("provider"),
         "model": records[0].get("model"),
@@ -225,6 +235,7 @@ def analyze_response_outputs(
     }
     response = {
         "generated_at": generated_at,
+        **provenance,
         "scope": scope,
         "records": len(records),
         "provider_failures": sum(bool(r.get("provider_error")) for r in records),
@@ -236,6 +247,7 @@ def analyze_response_outputs(
     }
     failures = {
         "generated_at": generated_at,
+        **provenance,
         "selection_method": "Deterministic category-first selection from real errors; no examples were manually substituted.",
         "scope": scope,
         "top_five": _failure_examples(records),

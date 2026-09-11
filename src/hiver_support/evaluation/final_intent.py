@@ -48,8 +48,15 @@ def _distribution(values: list[float]) -> dict[str, float | int | None]:
     }
 
 
-def run_final_intent_evaluation() -> dict[str, object]:
-    validate_golden_set(require_complete=True)
+def run_final_intent_evaluation(
+    output_dir: str | Path = "data/reports",
+    *,
+    validate_inputs: bool = True,
+) -> dict[str, object]:
+    directory = Path(output_dir)
+    directory.mkdir(parents=True, exist_ok=True)
+    if validate_inputs:
+        validate_golden_set(require_complete=True)
     golden = load_golden_set()
     taxonomy = load_approved_taxonomy()
     labels = [item.name for item in taxonomy]
@@ -67,6 +74,8 @@ def run_final_intent_evaluation() -> dict[str, object]:
 
     metrics = {
         "generated_at": datetime.now(UTC).isoformat(),
+        "artifact_set_version": "hiver-submission-v1",
+        "intent_model_version": str(classifier.metadata.get("version", "unknown")),
         "ground_truth": "200 human-reviewed golden examples; assisted annotation with human final decisions",
         "taxonomy_version": "1.0",
         "models": {
@@ -75,7 +84,9 @@ def run_final_intent_evaluation() -> dict[str, object]:
             "distilroberta": _metrics(expected, neural_labels, labels),
         },
     }
-    Path("data/reports/final_intent_metrics.json").write_text(json.dumps(metrics, indent=2) + "\n", encoding="utf-8")
+    (directory / "final_intent_metrics.json").write_text(
+        json.dumps(metrics, indent=2) + "\n", encoding="utf-8"
+    )
     per_intent_rows: list[dict[str, object]] = []
     confusion_rows: list[dict[str, object]] = []
     for model_name, model_metrics in metrics["models"].items():
@@ -92,8 +103,10 @@ def run_final_intent_evaluation() -> dict[str, object]:
         matrix = model_metrics["confusion_matrix"]["values"]
         for expected_label, values in zip(labels, matrix, strict=True):
             confusion_rows.append({"model": model_name, "expected_intent": expected_label, **dict(zip(labels, values, strict=True))})
-    pd.DataFrame(per_intent_rows).to_csv("data/reports/final_intent_per_intent.csv", index=False)
-    pd.DataFrame(confusion_rows).to_csv("data/reports/final_intent_confusion_matrices.csv", index=False)
+    pd.DataFrame(per_intent_rows).to_csv(directory / "final_intent_per_intent.csv", index=False)
+    pd.DataFrame(confusion_rows).to_csv(
+        directory / "final_intent_confusion_matrices.csv", index=False
+    )
 
     thresholds: list[dict[str, object]] = []
     for threshold in (0.0, 0.50, 0.60, 0.70, 0.72, 0.75, 0.80, 0.90):
@@ -116,7 +129,9 @@ def run_final_intent_evaluation() -> dict[str, object]:
         "incorrect_predictions": _distribution([c for c, a, b in zip(confidences, expected, neural_labels, strict=True) if a != b]),
         "thresholds": thresholds,
     }
-    Path("data/reports/confidence_analysis.json").write_text(json.dumps(confidence, indent=2) + "\n", encoding="utf-8")
+    (directory / "confidence_analysis.json").write_text(
+        json.dumps(confidence, indent=2) + "\n", encoding="utf-8"
+    )
 
     predictions = golden[["example_id", "thread_id", "customer_message", "human_intent", "human_escalation"]].copy()
     predictions["trivial_intent"] = trivial_labels
@@ -126,5 +141,5 @@ def run_final_intent_evaluation() -> dict[str, object]:
     predictions["intent_correct"] = [a == b for a, b in zip(expected, neural_labels, strict=True)]
     predictions["secondary_intent"] = [item.secondary_intent or "" for item in neural]
     predictions["ambiguity_score"] = [item.ambiguity_score for item in neural]
-    predictions.to_csv("data/reports/final_intent_predictions.csv", index=False)
+    predictions.to_csv(directory / "final_intent_predictions.csv", index=False)
     return {"metrics": metrics, "confidence": confidence}

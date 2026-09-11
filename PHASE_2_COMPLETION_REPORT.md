@@ -1,5 +1,7 @@
 # Phase 2 completion report
 
+> **Historical snapshot:** This report records Phase 2 at completion and is superseded for submission metrics by `README.md`, `PHASE_3_EVALUATION_REPORT.md`, and `FINAL_BEHAVIORAL_REPAIR_REPORT.md`. Do not use Phase 2 numbers as final repaired-system results.
+
 ## Status
 
 **YES — Phase 2 is complete. Ready to begin the separately authorized Phase 3 human-labeling workflow.**

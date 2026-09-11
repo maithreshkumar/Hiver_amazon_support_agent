@@ -1,0 +1,36 @@
+{
+  "version": "weak-ai-20260909T150508Z",
+  "base_model": "distilroberta-base",
+  "labels": [
+    "delivery_tracking_or_delay",
+    "delivered_but_missing",
+    "return_request",
+    "refund_or_payment_issue",
+    "order_cancellation",
+    "damaged_or_defective_item",
+    "wrong_or_incomplete_item",
+    "account_access_or_security",
+    "prime_membership",
+    "prime_video_issue",
+    "seller_or_marketplace_issue",
+    "general_or_context_missing"
+  ],
+  "training_rows": 2136,
+  "validation_rows": 378,
+  "metrics_against_weak_labels": {
+    "loss": 0.502937912940979,
+    "accuracy": 0.8809523809523809,
+    "macro_f1": 0.8837487561138425,
+    "weighted_f1": 0.8793312985189526,
+    "runtime": 8.5191,
+    "samples_per_second": 44.371,
+    "steps_per_second": 1.409
+  },
+  "chronological_development_diagnostic": {
+    "reference_type": "evaluation-only silver labels from single high-precision taxonomy signals",
+    "rows": 1126,
+    "accuracy": 0.8552397868561279,
+    "macro_f1": 0.8325418679991142,
+    "weighted_f1": 0.8489114548346652
+  }
+}

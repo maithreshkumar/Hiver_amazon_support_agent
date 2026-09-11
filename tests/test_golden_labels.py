@@ -30,6 +30,24 @@ def test_unbiased_canonical_golden_file_is_isolated() -> None:
     assert result["all_in_test_split"] is True
 
 
+def test_golden_validation_uses_compact_membership_without_processed_splits(
+    tmp_path: Path,
+) -> None:
+    missing = tmp_path / "not-shipped.parquet"
+    result = validate_golden_set(
+        require_complete=False,
+        train_path=missing,
+        test_path=missing,
+        retrieval_path=missing,
+        weak_labels_path=missing,
+    )
+    assert result["rows"] == 200
+    assert result["train_overlap"] == 0
+    assert result["retrieval_overlap"] == 0
+    assert result["weak_label_overlap"] == 0
+    assert result["all_in_test_split"] is True
+
+
 def test_untouched_csv_loads_with_explicit_schema(tmp_path: Path) -> None:
     frame = load_golden_set(initialize_golden_set(output_path=tmp_path / "untouched.csv"))
     assert is_bool_dtype(frame["human_label_complete"].dtype)

@@ -35,7 +35,37 @@ def parse_json_object(text: str) -> dict[str, Any]:
         try:
             value = json.loads(cleaned[start : end + 1])
         except json.JSONDecodeError as fallback_exc:
-            raise ProviderUnavailable("Provider returned malformed or truncated JSON") from fallback_exc
+            candidate = cleaned[start:]
+            stack: list[str] = []
+            in_string = False
+            escaped = False
+            mismatched = False
+            for character in candidate:
+                if in_string:
+                    if escaped:
+                        escaped = False
+                    elif character == "\\":
+                        escaped = True
+                    elif character == '"':
+                        in_string = False
+                    continue
+                if character == '"':
+                    in_string = True
+                elif character in "{[":
+                    stack.append(character)
+                elif character in "}]":
+                    expected = "{" if character == "}" else "["
+                    if not stack or stack.pop() != expected:
+                        mismatched = True
+                        break
+            if not in_string and not mismatched and 0 < len(stack) <= 4:
+                completed = candidate + "".join("}" if item == "{" else "]" for item in reversed(stack))
+                try:
+                    value = json.loads(completed)
+                except json.JSONDecodeError:
+                    raise ProviderUnavailable("Provider returned malformed or truncated JSON") from fallback_exc
+            else:
+                raise ProviderUnavailable("Provider returned malformed or truncated JSON") from fallback_exc
     if not isinstance(value, dict):
         raise ProviderUnavailable("Provider structured output must be a JSON object")
     return value

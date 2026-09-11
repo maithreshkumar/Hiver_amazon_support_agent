@@ -1,2 +1,1 @@
--e .[dev]
-
+-e .[phase2,dev]

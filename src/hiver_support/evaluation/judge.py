@@ -55,8 +55,12 @@ def _validate_result(value: dict[str, object]) -> dict[str, object]:
 def run_reply_judge(
     response_path: str | Path = "data/reports/golden_response_outputs.json",
     output_path: str | Path = "data/reports/reply_quality_judge.jsonl",
+    summary_output_path: str | Path = "data/reports/reply_quality_judge.json",
+    *,
+    allow_legacy_cache: bool = True,
 ) -> dict[str, object]:
-    response_payload = json.loads(Path(response_path).read_text(encoding="utf-8"))
+    response_file = Path(response_path)
+    response_payload = json.loads(response_file.read_text(encoding="utf-8"))
     records = list(response_payload["records"])
     config = load_yaml("configs/judge.yaml")
     provider_config = dict(config)
@@ -67,6 +71,7 @@ def run_reply_judge(
         raise ValueError("Judge must be separate from the response-generation model")
 
     target = Path(output_path)
+    target.parent.mkdir(parents=True, exist_ok=True)
     existing: dict[str, dict[str, object]] = {}
     if target.exists():
         for line in target.read_text(encoding="utf-8").splitlines():
@@ -90,8 +95,6 @@ def run_reply_judge(
 
     for position, record in enumerate(records, 1):
         example_id = str(record["example_id"])
-        if example_id in existing:
-            continue
         mapping = _candidate_mapping(example_id)
         replies = {
             "trivial": str(record["trivial_reply"]),
@@ -111,16 +114,49 @@ def run_reply_judge(
             "historical_evidence": evidence,
             "candidates": {blind: replies[system] for blind, system in mapping.items()},
         }, ensure_ascii=False)
+        evaluation_input_sha256 = hashlib.sha256(
+            json.dumps(
+                {
+                    "judge_model": provider.model,
+                    "prompt_version": str(config["prompt_version"]),
+                    "rubric_version": str(config["rubric_version"]),
+                    "system_prompt": system_prompt,
+                    "user_prompt": user_prompt,
+                },
+                ensure_ascii=False,
+                sort_keys=True,
+            ).encode("utf-8")
+        ).hexdigest()
+        if example_id in existing:
+            cached_hash = existing[example_id].get("evaluation_input_sha256")
+            if cached_hash is None and allow_legacy_cache:
+                continue
+            if cached_hash != evaluation_input_sha256:
+                raise ValueError(
+                    f"Cached judge input does not match {example_id}; use a new output path"
+                )
+            continue
         last_error = ""
         judged = None
-        for attempt in range(2):
+        for attempt in range(5):
             try:
-                judged = _validate_result(provider.structured_generate(system_prompt, user_prompt, schema))
+                format_retry = (
+                    ""
+                    if attempt == 0
+                    else (
+                        "\nYour previous response was structurally invalid. Return one complete JSON object "
+                        "with exactly candidates A, B, and C; include all six integer scores and one brief "
+                        "rationale for each. Do not omit a candidate or add prose outside JSON."
+                    )
+                )
+                judged = _validate_result(
+                    provider.structured_generate(system_prompt + format_retry, user_prompt, schema)
+                )
                 break
             except (ProviderUnavailable, ValueError, TypeError, KeyError) as exc:
                 last_error = str(exc)
         if judged is None:
-            raise ProviderUnavailable(f"Judge failed twice for {example_id}: {last_error}")
+            raise ProviderUnavailable(f"Judge failed five times for {example_id}: {last_error}")
         by_system = {mapping[blind]: judged[blind] for blind in ("A", "B", "C")}
         result = {
             "example_id": example_id,
@@ -131,6 +167,8 @@ def run_reply_judge(
             "blinded_candidate_mapping": mapping,
             "scores_by_system": by_system,
             "human_ratings_visible_to_judge": False,
+            "evaluation_input_sha256": evaluation_input_sha256,
+            "reused_byte_identical_pre_repair_judgment": False,
             "judged_at": datetime.now(UTC).isoformat(),
         }
         existing[example_id] = result
@@ -158,9 +196,12 @@ def run_reply_judge(
         "human_ratings_visible_to_judge": False,
         "prompt_version": config["prompt_version"],
         "rubric_version": config["rubric_version"],
+        "source_response_path": str(response_file.as_posix()),
+        "source_response_sha256": hashlib.sha256(response_file.read_bytes()).hexdigest(),
         "mean_scores": aggregates,
         "records": ordered,
     }
-    Path("data/reports/reply_quality_judge.json").write_text(json.dumps(payload, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+    summary = Path(summary_output_path)
+    summary.parent.mkdir(parents=True, exist_ok=True)
+    summary.write_text(json.dumps(payload, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
     return payload
-

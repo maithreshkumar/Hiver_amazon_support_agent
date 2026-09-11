@@ -1,8 +1,8 @@
 {
   "imported_at": "2026-09-10T16:19:26.839965+00:00",
-  "source_path": "C:\\Users\\Maithresh\\Desktop\\Hiver_amazon_support_agent\\data\\golden\\reply_quality_human_ratings_import.csv",
+  "source_path": "data/golden/reply_quality_human_ratings_import.csv",
   "source_sha256": "2dd1545f8322f5b6364138ed9dd533cfc04b4d3c8a59d472e6226d9bd59d732a",
-  "canonical_path": "C:\\Users\\Maithresh\\Desktop\\Hiver_amazon_support_agent\\data\\golden\\reply_quality_human_ratings.csv",
+  "canonical_path": "data/golden/reply_quality_human_ratings.csv",
   "canonical_sha256": "2dd1545f8322f5b6364138ed9dd533cfc04b4d3c8a59d472e6226d9bd59d732a",
   "backup_path": "C:\\Users\\Maithresh\\Desktop\\Hiver_amazon_support_agent\\data\\golden\\reply_quality_human_ratings.pre-human-import.csv",
   "annotation_methodology": "Human-reviewed reply-quality ratings prepared with semi-automation; the human made the final rating decisions for every rubric dimension.",

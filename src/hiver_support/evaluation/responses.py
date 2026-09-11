@@ -15,12 +15,13 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from hiver_support.config import load_yaml
 from hiver_support.errors import ProviderUnavailable
 from hiver_support.evaluation.golden_labels import load_golden_set, validate_golden_set
-from hiver_support.generation.reply import GroundedReplyGenerator
+from hiver_support.generation.reply import DraftValidation, GroundedReplyGenerator
 from hiver_support.intents.predict import IntentClassifier
 from hiver_support.intents.taxonomy import load_approved_taxonomy
 from hiver_support.llm.factory import create_provider
 from hiver_support.retrieval.embedder import OllamaEmbedder
 from hiver_support.retrieval.index import LocalVectorIndex
+from hiver_support.routing.final_response import build_final_response
 from hiver_support.routing.policy import RoutingPolicy
 
 
@@ -142,12 +143,21 @@ def run_response_evaluation(size: int = 48) -> dict[str, object]:
         generation_latency = time.perf_counter() - generation_started
         routing_started = time.perf_counter()
         if generated is None:
-            reply = (
-                "I'm sorry this needs further investigation. Please contact Amazon through a secure "
-                "support channel, and do not post order, address, account, or payment details publicly."
+            final = build_final_response(
+                message=message,
+                intent=prediction.label,
+                raw_draft="",
+                validation=DraftValidation(),
+                routing=policy.provider_failure_decision(
+                    message=message,
+                    intent=prediction.label,
+                    intent_confidence=prediction.confidence,
+                    ambiguity_score=prediction.ambiguity_score,
+                ),
             )
-            route, route_reason = "ESCALATE", "The configured local model provider was unavailable."
-            raw_draft, grounding, unsupported, override, evidence_ids = "", 0.0, True, True, []
+            reply, route, route_reason = final.reply, final.decision, final.reason
+            reason_codes, validation_flags, template = final.reason_codes, [], final.template
+            raw_draft, grounding, unsupported, override, evidence_ids = "", 0.0, False, True, []
         else:
             best_similarity = max((match.similarity for match in matches), default=0.0)
             decision = policy.decide(
@@ -155,11 +165,21 @@ def run_response_evaluation(size: int = 48) -> dict[str, object]:
                 best_similarity=best_similarity, grounding_confidence=generated.grounding_confidence,
                 unsupported_claim=generated.unsupported_claim_detected,
                 ambiguity_score=prediction.ambiguity_score,
+                safety_flags=generated.validation.flags,
             )
-            route, route_reason = decision.decision, decision.reason
-            reply, raw_draft = generated.draft_reply, generated.raw_draft
+            final = build_final_response(
+                message=message,
+                intent=prediction.label,
+                raw_draft=generated.raw_draft,
+                validation=generated.validation,
+                routing=decision,
+            )
+            route, route_reason = final.decision, final.reason
+            reply, raw_draft = final.reply, generated.raw_draft
             grounding, unsupported = generated.grounding_confidence, generated.unsupported_claim_detected
-            override, evidence_ids = generated.safety_override_applied, generated.evidence_thread_ids
+            override, evidence_ids = final.safety_override_applied, generated.evidence_thread_ids
+            reason_codes = final.reason_codes
+            validation_flags, template = list(generated.validation.flags), final.template
         routing_latency = time.perf_counter() - routing_started
         simple = simple_replies[int(item["position"])]
         record = {
@@ -173,6 +193,8 @@ def run_response_evaluation(size: int = 48) -> dict[str, object]:
             "final_safe_response": reply, "grounding_confidence": grounding,
             "unsupported_claim_detected": unsupported, "safety_override": override,
             "predicted_route": route, "routing_reason": route_reason,
+            "routing_reason_codes": reason_codes, "safety_validation_flags": validation_flags,
+            "final_response_template": template,
             "provider": generator.provider.name, "model": generator.provider.model,
             "prompt_version": "amazon-grounded-v1", "provider_error": provider_error,
             "trivial_reply": TRIVIAL_REPLY, "tfidf_reply": simple["reply"],
