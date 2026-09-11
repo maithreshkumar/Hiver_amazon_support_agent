@@ -315,3 +315,199 @@ Do not regenerate the sealed 200-example golden set or tune against it.
 ## Historical reports
 
 `PHASE_2_COMPLETION_REPORT.md` is a historical Phase 2 snapshot. It is superseded for final metrics by this README, `PHASE_3_EVALUATION_REPORT.md`, and `FINAL_BEHAVIORAL_REPAIR_REPORT.md`. Historical pre-repair responses, ratings, judge outputs, and agreement artifacts remain packaged for auditability and must not be presented as final repaired-system results.
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+## Start the application
+
+After reading the project details above, use the following steps to reproduce the results or start the live Amazon support agent.
+
+> **Tested environment:** Windows 11 with Python 3.14.3. Python 3.11+ is supported.
+> Run the commands below from the repository root using PowerShell.
+
+### Required software
+
+Install these before continuing:
+
+* Git
+* Git LFS
+* Python 3.11+
+* Ollama — required only for the live AI agent
+
+The trained DistilRoBERTa intent classifier and retrieval index are already included with the submission artifacts. They do not need to be trained again.
+
+---
+
+### Initialize Git LFS
+
+```powershell
+git lfs install
+git lfs pull
+```
+
+---
+
+### Create Python environment
+
+```powershell
+python -m venv .venv
+.\.venv\Scripts\Activate.ps1
+```
+
+---
+
+### Install Python dependencies
+
+```powershell
+python -m pip install --upgrade pip
+python -m pip install -r requirements-lock.txt
+```
+
+---
+
+### Retrieve required artifacts
+
+```powershell
+python scripts\fetch_submission_artifacts.py
+```
+
+This verifies and retrieves any missing submission artifacts. The original full Twitter dataset is **not required**.
+
+---
+
+### Verify project setup
+
+```powershell
+python scripts\preflight_submission.py
+```
+
+A correctly prepared installation should finish with:
+
+```text
+READY FOR HEADLINE REPRODUCTION
+```
+
+---
+
+### Reproduce final results
+
+```powershell
+python scripts\reproduce_headline.py
+```
+
+This reproduces the final headline evaluation using:
+
+* the 200-example golden set
+* DistilRoBERTa intent classifier
+* trivial baseline
+* TF-IDF + logistic-regression baseline
+* frozen retrieval artifacts
+* final post-repair responses
+* 48 human reply-quality ratings
+* frozen LLM-judge outputs
+
+No retraining or Ollama calls are required for this step.
+
+---
+
+### Install the AI models
+
+The live support agent uses the following local Ollama models:
+
+* `qwen3:4b` — grounded reply generation
+* `qwen3-embedding:0.6b` — semantic retrieval embeddings
+
+Start Ollama in one terminal:
+
+```powershell
+ollama serve
+```
+
+Then, in another terminal:
+
+```powershell
+ollama pull qwen3:4b
+ollama pull qwen3-embedding:0.6b
+```
+
+The independent evaluation judge uses `qwen2.5:1.5b`, but it is **not required to start the live agent or reproduce the frozen headline results**.
+
+---
+
+### Start the live agent
+
+Make sure the Python virtual environment is active and Ollama is running, then execute:
+
+```powershell
+python scripts\demo.py
+```
+
+You can now enter customer-support messages directly into the CLI.
+
+Example:
+
+```text
+Customer > My package is three days late. Where is it?
+```
+
+The agent returns:
+
+* predicted intent
+* confidence and ambiguity
+* retrieved historical AmazonHelp evidence
+* generated draft
+* safety-validation result
+* `AUTO_HANDLE` or `ESCALATE`
+* final customer-facing response
+* routing reason and provenance
+
+Type:
+
+```text
+exit
+```
+
+to close the agent.
+
+---
+
+### Run automated tests
+
+```powershell
+python -m pytest -q
+```
+
+The final submission currently contains **69 passing tests** covering classification, retrieval, safety validation, routing, fallback handling, artifact integrity, leakage protection, and submission reproducibility.
+
+---
+
+### Quick command reference
+
+**Reproduce evaluation:**
+
+```powershell
+.\.venv\Scripts\Activate.ps1
+python scripts\preflight_submission.py
+python scripts\reproduce_headline.py
+```
+
+**Start live AI agent:**
+
+```powershell
+.\.venv\Scripts\Activate.ps1
+ollama serve
+```
+
+Then in another terminal:
+
+```powershell
+.\.venv\Scripts\Activate.ps1
+python scripts\demo.py
+```
+
+If the Ollama models have not previously been installed:
+
+```powershell
+ollama pull qwen3:4b
+ollama pull qwen3-embedding:0.6b
+```
